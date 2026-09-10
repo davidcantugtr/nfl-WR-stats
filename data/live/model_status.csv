@@ -1,7 +1,7 @@
 key,value
-stat_season,2025
-data_status,HISTORICAL_2025_BASELINE
-teams_with_top3,32
-wr_rows,96
+stat_season,2026
+data_status,CURRENT_2026
+teams_with_top3,2
+wr_rows,6
 sharp_metric,Pass Efficiency DEF
 sharp_rule,Never guess; preserve last verified value and flag stale
