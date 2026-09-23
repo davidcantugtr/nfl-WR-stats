@@ -8,7 +8,10 @@ LIVE = ROOT / "data" / "live"
 LIVE.mkdir(parents=True, exist_ok=True)
 
 STAT_URL = "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_{season}.csv"
-SCHED_URL = "https://github.com/nflverse/nflverse-data/releases/download/schedules/schedules.csv"
+SCHED_URLS = [
+    "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv",
+    "https://github.com/nflverse/nflverse-data/releases/download/schedules/schedules.csv",
+]
 TEAM_ALIASES = {"LA":"LA","LAR":"LA","JAC":"JAX"}
 
 
@@ -54,92 +57,67 @@ def build_summary(season: int, df: pd.DataFrame, status: str) -> pd.DataFrame:
         if c not in df.columns:
             df[c] = 0
         df[c] = pd.to_numeric(df[c], errors="coerce").fillna(0)
-
     team_week = df.groupby(["team", "week"], as_index=False)["targets"].sum().rename(columns={"targets":"team_targets"})
     df = df.merge(team_week, on=["team", "week"], how="left")
     df["weekly_target_share"] = (df["targets"] / df["team_targets"].replace(0, pd.NA)).fillna(0)
-
     if "position" not in df.columns:
         raise RuntimeError("position column required to isolate WRs")
     wr = df[df["position"].eq("WR")].copy()
-
     team_season_targets = df.groupby("team", as_index=False)["targets"].sum().rename(columns={"targets":"team_season_targets"})
-    g = wr.groupby(["team", "player"], as_index=False).agg(
-        games=("week", "nunique"),
-        targets=("targets", "sum"),
-        receptions=("receptions", "sum"),
-        receiving_yards=("receiving_yards", "sum"),
-        receiving_tds=("receiving_tds", "sum"),
-        target_share_weekly_mean=("weekly_target_share", "mean"),
-        target_share_weekly_median=("weekly_target_share", "median"),
-        receiving_yards_median=("receiving_yards", "median"),
-        receiving_yards_std=("receiving_yards", "std"),
-    )
-    td_games = wr.assign(td_hit=(wr["receiving_tds"] > 0).astype(int)).groupby(["team", "player"], as_index=False)["td_hit"].sum().rename(columns={"td_hit":"games_with_td"})
-    g = g.merge(td_games, on=["team", "player"], how="left").merge(team_season_targets, on="team", how="left")
-    g["target_share"] = (g["targets"] / g["team_season_targets"].replace(0, pd.NA)).fillna(0)
-    g["yards_per_game"] = g["receiving_yards"] / g["games"].replace(0, pd.NA)
-    g["td_game_rate"] = g["games_with_td"] / g["games"].replace(0, pd.NA)
-    g["catch_rate"] = g["receptions"] / g["targets"].replace(0, pd.NA)
-    g["receiving_yards_std"] = g["receiving_yards_std"].fillna(0)
-
-    g["target_rank_team"] = g.groupby("team")["target_share"].rank(method="first", ascending=False).astype(int)
-    g["yards_rank_team"] = g.groupby("team")["receiving_yards"].rank(method="first", ascending=False).astype(int)
-    g["td_consistency_rank_team"] = g.sort_values(["team","td_game_rate","receiving_tds","targets"], ascending=[True,False,False,False]).groupby("team").cumcount() + 1
-
-    top = g[g["target_rank_team"] <= 3].copy().sort_values(["team","target_rank_team"])
-    top["usage_role"] = top["target_rank_team"].map({1:"WR1",2:"WR2",3:"WR3"})
-    top["stat_season"] = season
-    top["data_status"] = status
-    cols = [
-        "team","usage_role","player","games","targets","target_share","target_share_weekly_mean","target_share_weekly_median",
-        "receptions","catch_rate","receiving_yards","yards_per_game","receiving_yards_median","receiving_yards_std","yards_rank_team",
-        "receiving_tds","games_with_td","td_game_rate","td_consistency_rank_team","stat_season","data_status"
-    ]
+    g = wr.groupby(["team", "player"], as_index=False).agg(games=("week","nunique"),targets=("targets","sum"),receptions=("receptions","sum"),receiving_yards=("receiving_yards","sum"),receiving_tds=("receiving_tds","sum"),target_share_weekly_mean=("weekly_target_share","mean"),target_share_weekly_median=("weekly_target_share","median"),receiving_yards_median=("receiving_yards","median"),receiving_yards_std=("receiving_yards","std"))
+    td_games = wr.assign(td_hit=(wr["receiving_tds"] > 0).astype(int)).groupby(["team","player"],as_index=False)["td_hit"].sum().rename(columns={"td_hit":"games_with_td"})
+    g = g.merge(td_games,on=["team","player"],how="left").merge(team_season_targets,on="team",how="left")
+    g["target_share"]=(g["targets"]/g["team_season_targets"].replace(0,pd.NA)).fillna(0)
+    g["yards_per_game"]=g["receiving_yards"]/g["games"].replace(0,pd.NA)
+    g["td_game_rate"]=g["games_with_td"]/g["games"].replace(0,pd.NA)
+    g["catch_rate"]=g["receptions"]/g["targets"].replace(0,pd.NA)
+    g["receiving_yards_std"]=g["receiving_yards_std"].fillna(0)
+    g["target_rank_team"]=g.groupby("team")["target_share"].rank(method="first",ascending=False).astype(int)
+    g["yards_rank_team"]=g.groupby("team")["receiving_yards"].rank(method="first",ascending=False).astype(int)
+    g["td_consistency_rank_team"]=g.sort_values(["team","td_game_rate","receiving_tds","targets"],ascending=[True,False,False,False]).groupby("team").cumcount()+1
+    top=g[g["target_rank_team"]<=3].copy().sort_values(["team","target_rank_team"])
+    top["usage_role"]=top["target_rank_team"].map({1:"WR1",2:"WR2",3:"WR3"})
+    top["stat_season"]=season; top["data_status"]=status
+    cols=["team","usage_role","player","games","targets","target_share","target_share_weekly_mean","target_share_weekly_median","receptions","catch_rate","receiving_yards","yards_per_game","receiving_yards_median","receiving_yards_std","yards_rank_team","receiving_tds","games_with_td","td_game_rate","td_consistency_rank_team","stat_season","data_status"]
     return top[cols]
 
 
-def write_csv(df: pd.DataFrame, name: str):
-    df.to_csv(LIVE / name, index=False)
+def write_csv(df,name): df.to_csv(LIVE/name,index=False)
 
 
 def build_matchups():
-    try:
-        sched = read_csv_url(SCHED_URL)
-        sched = sched[(sched["season"] == 2026) & (sched["game_type"] == "REG")].copy()
-        sched["home_team"] = normalize_team(sched["home_team"])
-        sched["away_team"] = normalize_team(sched["away_team"])
-        out=[]
-        for _,r in sched.iterrows():
-            out.append([r["week"],r["away_team"],r["home_team"],"A",r.get("gameday","")])
-            out.append([r["week"],r["home_team"],r["away_team"],"H",r.get("gameday","")])
-        pd.DataFrame(out, columns=["week","team","opponent","site","gameday"]).to_csv(LIVE/"schedule_2026.csv",index=False)
-    except Exception:
-        pd.DataFrame(columns=["week","team","opponent","site","gameday"]).to_csv(LIVE/"schedule_2026.csv",index=False)
+    last_error=None
+    for url in SCHED_URLS:
+        try:
+            sched=read_csv_url(url)
+            season_col="season" if "season" in sched.columns else None
+            type_col="game_type" if "game_type" in sched.columns else None
+            if not season_col: raise RuntimeError("schedule has no season column")
+            sched=sched[pd.to_numeric(sched[season_col],errors="coerce").eq(2026)].copy()
+            if type_col: sched=sched[sched[type_col].eq("REG")].copy()
+            if sched.empty: raise RuntimeError("2026 regular-season schedule empty")
+            sched["home_team"]=normalize_team(sched["home_team"]); sched["away_team"]=normalize_team(sched["away_team"])
+            date_col="gameday" if "gameday" in sched.columns else ("game_date" if "game_date" in sched.columns else None)
+            out=[]
+            for _,r in sched.iterrows():
+                gd=r.get(date_col,"") if date_col else ""
+                out.append([r["week"],r["away_team"],r["home_team"],"A",gd]); out.append([r["week"],r["home_team"],r["away_team"],"H",gd])
+            result=pd.DataFrame(out,columns=["week","team","opponent","site","gameday"])
+            if result["team"].nunique()<32: raise RuntimeError(f"schedule coverage only {result['team'].nunique()} teams")
+            result.to_csv(LIVE/"schedule_2026.csv",index=False)
+            return len(result),url
+        except Exception as e: last_error=e
+    pd.DataFrame(columns=["week","team","opponent","site","gameday"]).to_csv(LIVE/"schedule_2026.csv",index=False)
+    raise RuntimeError(f"schedule ingestion failed: {last_error}")
 
 
 def main():
-    season, df, status = choose_baseline()
-    summary = build_summary(season, df, status)
-    write_csv(summary, "wr_top3_summary.csv")
-    write_csv(summary.sort_values(["target_share","targets"], ascending=False), "target_share_leaderboard.csv")
-    write_csv(summary.sort_values(["td_game_rate","receiving_tds","targets"], ascending=False), "td_consistency_leaderboard.csv")
-    write_csv(summary.sort_values(["receiving_yards","yards_per_game"], ascending=False), "receiving_yards_leaderboard.csv")
+    season,df,status=choose_baseline(); summary=build_summary(season,df,status)
+    write_csv(summary,"wr_top3_summary.csv"); write_csv(summary.sort_values(["target_share","targets"],ascending=False),"target_share_leaderboard.csv"); write_csv(summary.sort_values(["td_game_rate","receiving_tds","targets"],ascending=False),"td_consistency_leaderboard.csv"); write_csv(summary.sort_values(["receiving_yards","yards_per_game"],ascending=False),"receiving_yards_leaderboard.csv")
+    sharp_path=ROOT/"config"/"sharp_pass_def_2026.csv"
+    if sharp_path.exists(): pd.read_csv(sharp_path).to_csv(LIVE/"sharp_pass_def_2026.csv",index=False)
+    schedule_rows,schedule_source=build_matchups()
+    pd.DataFrame([["stat_season",season],["data_status",status],["teams_with_top3",summary["team"].nunique()],["wr_rows",len(summary)],["schedule_rows",schedule_rows],["schedule_source",schedule_source],["sharp_metric","Pass Efficiency DEF"],["sharp_rule","Never guess; preserve last verified value and flag stale"]],columns=["key","value"]).to_csv(LIVE/"model_status.csv",index=False)
+    print(f"PASS: {summary['team'].nunique()} teams / {len(summary)} WR top-3 rows / {schedule_rows} schedule rows / source season {season}")
 
-    sharp_path = ROOT / "config" / "sharp_pass_def_2026.csv"
-    if sharp_path.exists():
-        pd.read_csv(sharp_path).to_csv(LIVE / "sharp_pass_def_2026.csv", index=False)
-
-    build_matchups()
-    pd.DataFrame([
-        ["stat_season",season],
-        ["data_status",status],
-        ["teams_with_top3",summary["team"].nunique()],
-        ["wr_rows",len(summary)],
-        ["sharp_metric","Pass Efficiency DEF"],
-        ["sharp_rule","Never guess; preserve last verified value and flag stale"],
-    ], columns=["key","value"]).to_csv(LIVE / "model_status.csv", index=False)
-    print(f"PASS: {summary['team'].nunique()} teams / {len(summary)} WR top-3 rows / source season {season}")
-
-if __name__ == "__main__":
-    main()
+if __name__=="__main__": main()
