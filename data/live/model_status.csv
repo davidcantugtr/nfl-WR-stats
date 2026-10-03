@@ -1,9 +1,11 @@
 key,value
 stat_season,2026
-data_status,CURRENT_2026
-teams_with_top3,32
-wr_rows,96
-schedule_rows,544
-schedule_source,https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv
-sharp_metric,Pass Efficiency DEF
-sharp_rule,Never guess; preserve last verified value and flag stale
+current_target_week,4
+data_status,CURRENT_2026_WEEK4
+schedule_source,NFL official Week 4 schedule
+sharp_metric,Pass Efficiency DEF + Pass Pro Efficiency DEF
+sharp_rule,Week 4 verified from user-supplied Sharp screenshots
+injury_source,ESPN Week 4 availability cross-check
+projection_source,ESPN Week 4 workload baseline + Sharp matchup context
+eligibility_rule,Primary live board requires current role and availability; questionable players flagged
+last_model_refresh,2026-10-03
