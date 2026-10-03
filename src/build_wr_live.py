@@ -1,123 +1,277 @@
 from __future__ import annotations
 
 from pathlib import Path
+import re
+import shutil
+
+import numpy as np
 import pandas as pd
 
+SEASON = 2026
+MIN_SNAP_SHARE = 0.20
 ROOT = Path(__file__).resolve().parents[1]
 LIVE = ROOT / "data" / "live"
-LIVE.mkdir(parents=True, exist_ok=True)
-
+ARCHIVE = ROOT / "data" / "archive"
 STAT_URL = "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_{season}.csv"
+SNAP_URL = "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_{season}.csv"
 SCHED_URLS = [
     "https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv",
     "https://github.com/nflverse/nflverse-data/releases/download/schedules/schedules.csv",
 ]
-TEAM_ALIASES = {"LA":"LA","LAR":"LA","JAC":"JAX"}
+TEAM_ALIASES = {"LAR": "LA", "JAC": "JAX"}
+GENERATED_FILES = [
+    "current_week_model.csv", "model_status.csv", "primary_wr_dashboard.csv",
+    "receiving_yards_leaderboard.csv", "schedule_2026.csv", "target_share_leaderboard.csv",
+    "td_consistency_leaderboard.csv", "wr_top3_summary.csv", "wr_weekly_actuals_2026.csv",
+]
 
 
-def read_csv_url(url: str) -> pd.DataFrame:
+def read_csv(url: str) -> pd.DataFrame:
     return pd.read_csv(url, low_memory=False)
 
 
-def normalize_team(s):
-    return s.map(lambda x: TEAM_ALIASES.get(x, x) if pd.notna(x) else x)
+def normalize_team(series: pd.Series) -> pd.Series:
+    return series.map(lambda value: TEAM_ALIASES.get(value, value) if pd.notna(value) else value)
 
 
-def load_player_stats(season: int) -> pd.DataFrame:
-    df = read_csv_url(STAT_URL.format(season=season))
-    if "season_type" in df.columns:
-        df = df[df["season_type"].eq("REG")].copy()
-    if "recent_team" in df.columns:
-        df["team"] = normalize_team(df["recent_team"])
-    elif "team" in df.columns:
-        df["team"] = normalize_team(df["team"])
-    else:
-        raise RuntimeError("No team column found")
-    if "player_display_name" in df.columns:
-        df["player"] = df["player_display_name"]
-    elif "player_name" in df.columns:
-        df["player"] = df["player_name"]
-    else:
-        raise RuntimeError("No player name column found")
-    return df
+def clean_name(value: object) -> str:
+    text = re.sub(r"[^a-z0-9 ]", "", str(value).lower())
+    return re.sub(r"\b(jr|sr|ii|iii|iv)\b", "", text).strip()
 
 
-def choose_baseline() -> tuple[int, pd.DataFrame, str]:
-    try:
-        cur = load_player_stats(2026)
-        if len(cur) and float(cur.get("targets", pd.Series(dtype=float)).fillna(0).sum()) > 0:
-            return 2026, cur, "CURRENT_2026"
-    except Exception:
-        pass
-    return 2025, load_player_stats(2025), "HISTORICAL_2025_BASELINE"
+def get_target_week() -> int:
+    current = pd.read_csv(LIVE / "current_week_model.csv")
+    weeks = pd.to_numeric(current["week"], errors="raise")
+    if weeks.nunique() != 1:
+        raise RuntimeError("current_week_model.csv must contain exactly one target week")
+    return int(weeks.iloc[0])
 
 
-def build_summary(season: int, df: pd.DataFrame, status: str) -> pd.DataFrame:
-    for c in ["targets", "receptions", "receiving_yards", "receiving_tds"]:
-        if c not in df.columns:
-            df[c] = 0
-        df[c] = pd.to_numeric(df[c], errors="coerce").fillna(0)
-    team_week = df.groupby(["team", "week"], as_index=False)["targets"].sum().rename(columns={"targets":"team_targets"})
-    df = df.merge(team_week, on=["team", "week"], how="left")
-    df["weekly_target_share"] = (df["targets"] / df["team_targets"].replace(0, pd.NA)).fillna(0)
-    if "position" not in df.columns:
-        raise RuntimeError("position column required to isolate WRs")
-    wr = df[df["position"].eq("WR")].copy()
-    team_season_targets = df.groupby("team", as_index=False)["targets"].sum().rename(columns={"targets":"team_season_targets"})
-    g = wr.groupby(["team", "player"], as_index=False).agg(games=("week","nunique"),targets=("targets","sum"),receptions=("receptions","sum"),receiving_yards=("receiving_yards","sum"),receiving_tds=("receiving_tds","sum"),target_share_weekly_mean=("weekly_target_share","mean"),target_share_weekly_median=("weekly_target_share","median"),receiving_yards_median=("receiving_yards","median"),receiving_yards_std=("receiving_yards","std"))
-    td_games = wr.assign(td_hit=(wr["receiving_tds"] > 0).astype(int)).groupby(["team","player"],as_index=False)["td_hit"].sum().rename(columns={"td_hit":"games_with_td"})
-    g = g.merge(td_games,on=["team","player"],how="left").merge(team_season_targets,on="team",how="left")
-    g["target_share"]=(g["targets"]/g["team_season_targets"].replace(0,pd.NA)).fillna(0)
-    g["yards_per_game"]=g["receiving_yards"]/g["games"].replace(0,pd.NA)
-    g["td_game_rate"]=g["games_with_td"]/g["games"].replace(0,pd.NA)
-    g["catch_rate"]=g["receptions"]/g["targets"].replace(0,pd.NA)
-    g["receiving_yards_std"]=g["receiving_yards_std"].fillna(0)
-    g["target_rank_team"]=g.groupby("team")["target_share"].rank(method="first",ascending=False).astype(int)
-    g["yards_rank_team"]=g.groupby("team")["receiving_yards"].rank(method="first",ascending=False).astype(int)
-    g["td_consistency_rank_team"]=g.sort_values(["team","td_game_rate","receiving_tds","targets"],ascending=[True,False,False,False]).groupby("team").cumcount()+1
-    top=g[g["target_rank_team"]<=3].copy().sort_values(["team","target_rank_team"])
-    top["usage_role"]=top["target_rank_team"].map({1:"WR1",2:"WR2",3:"WR3"})
-    top["stat_season"]=season; top["data_status"]=status
-    cols=["team","usage_role","player","games","targets","target_share","target_share_weekly_mean","target_share_weekly_median","receptions","catch_rate","receiving_yards","yards_per_game","receiving_yards_median","receiving_yards_std","yards_rank_team","receiving_tds","games_with_td","td_game_rate","td_consistency_rank_team","stat_season","data_status"]
-    return top[cols]
+def archive_live(week: int) -> None:
+    destination = ARCHIVE / f"week_{week}" / "pre_refresh"
+    destination.mkdir(parents=True, exist_ok=True)
+    for name in GENERATED_FILES:
+        source = LIVE / name
+        target = destination / name
+        if source.exists() and not target.exists():
+            shutil.copy2(source, target)
 
 
-def write_csv(df,name): df.to_csv(LIVE/name,index=False)
+def load_stats() -> pd.DataFrame:
+    stats = read_csv(STAT_URL.format(season=SEASON))
+    if "season_type" in stats:
+        stats = stats.loc[stats["season_type"].eq("REG")].copy()
+    if stats.empty:
+        raise RuntimeError(f"The {SEASON} player feed is empty; refusing a historical fallback")
+    team_col = "recent_team" if "recent_team" in stats else "team"
+    name_col = "player_display_name" if "player_display_name" in stats else "player_name"
+    stats["team"] = normalize_team(stats[team_col])
+    stats["player"] = stats[name_col]
+    stats["player_key"] = stats["player"].map(clean_name)
+    return stats
 
 
-def build_matchups():
-    last_error=None
+def load_snaps() -> pd.DataFrame:
+    snaps = read_csv(SNAP_URL.format(season=SEASON))
+    if "game_type" in snaps:
+        snaps = snaps.loc[snaps["game_type"].eq("REG")].copy()
+    snaps["team"] = normalize_team(snaps["team"])
+    snaps["player_key"] = snaps["player"].map(clean_name)
+    for column in ["offense_snaps", "offense_pct"]:
+        snaps[column] = pd.to_numeric(snaps[column], errors="coerce").fillna(0)
+    return snaps
+
+
+def build_summary(stats: pd.DataFrame, snaps: pd.DataFrame, week: int) -> tuple[pd.DataFrame, pd.DataFrame]:
+    completed = stats.loc[pd.to_numeric(stats["week"], errors="coerce").lt(week)].copy()
+    if completed.empty:
+        raise RuntimeError(f"No completed player statistics exist before target Week {week}")
+    for column in ["targets", "receptions", "receiving_yards", "receiving_tds"]:
+        completed[column] = pd.to_numeric(completed.get(column, 0), errors="coerce").fillna(0)
+    snap_history = snaps.loc[pd.to_numeric(snaps["week"], errors="coerce").lt(week), [
+        "week", "team", "player_key", "offense_snaps", "offense_pct"
+    ]]
+    completed = completed.merge(snap_history, on=["week", "team", "player_key"], how="left")
+    completed[["offense_snaps", "offense_pct"]] = completed[["offense_snaps", "offense_pct"]].fillna(0)
+    team_week = completed.groupby(["team", "week"], as_index=False)["targets"].sum().rename(
+        columns={"targets": "team_targets"}
+    )
+    completed = completed.merge(team_week, on=["team", "week"], how="left")
+    completed["weekly_target_share"] = (
+        completed["targets"] / completed["team_targets"].replace(0, pd.NA)
+    ).fillna(0)
+    actual_columns = [
+        "week", "game_id", "team", "opponent_team", "player", "player_key", "position",
+        "targets", "receptions", "receiving_yards", "receiving_tds", "weekly_target_share",
+        "offense_snaps", "offense_pct",
+    ]
+    weekly_actuals = completed[actual_columns].sort_values(
+        ["week", "team", "targets"], ascending=[True, True, False]
+    )
+    wr = completed.loc[completed["position"].eq("WR")].copy()
+    latest = wr.sort_values("week").groupby(["team", "player_key"], as_index=False).tail(1)[
+        ["team", "player_key", "offense_pct"]
+    ].rename(columns={"offense_pct": "latest_snap_share"})
+    team_targets = completed.groupby("team", as_index=False)["targets"].sum().rename(
+        columns={"targets": "team_season_targets"}
+    )
+    grouped = wr.groupby(["team", "player_key", "player"], as_index=False).agg(
+        games=("week", "nunique"), targets=("targets", "sum"), receptions=("receptions", "sum"),
+        receiving_yards=("receiving_yards", "sum"), receiving_tds=("receiving_tds", "sum"),
+        target_share_weekly_mean=("weekly_target_share", "mean"),
+        target_share_weekly_median=("weekly_target_share", "median"),
+        receiving_yards_median=("receiving_yards", "median"),
+        receiving_yards_std=("receiving_yards", "std"), offense_snaps=("offense_snaps", "sum"),
+        snap_share_mean=("offense_pct", "mean"), max_snap_share=("offense_pct", "max"),
+    )
+    td_games = wr.assign(td_hit=wr["receiving_tds"].gt(0).astype(int)).groupby(
+        ["team", "player_key"], as_index=False
+    )["td_hit"].sum().rename(columns={"td_hit": "games_with_td"})
+    grouped = grouped.merge(td_games, on=["team", "player_key"], how="left")
+    grouped = grouped.merge(team_targets, on="team", how="left").merge(
+        latest, on=["team", "player_key"], how="left"
+    )
+    grouped["target_share"] = (
+        grouped["targets"] / grouped["team_season_targets"].replace(0, pd.NA)
+    ).fillna(0)
+    grouped["yards_per_game"] = grouped["receiving_yards"] / grouped["games"].replace(0, pd.NA)
+    grouped["td_game_rate"] = grouped["games_with_td"] / grouped["games"].replace(0, pd.NA)
+    grouped["catch_rate"] = grouped["receptions"] / grouped["targets"].replace(0, pd.NA)
+    grouped["receiving_yards_std"] = grouped["receiving_yards_std"].fillna(0)
+    # The model rule is "hidden until the player crosses 20%," not "drop a
+    # previously established player after one injury-limited game."
+    grouped["snap_eligible"] = grouped["max_snap_share"].fillna(0).ge(MIN_SNAP_SHARE)
+    eligible = grouped.loc[grouped["snap_eligible"]].copy()
+    eligible["target_rank_team"] = eligible.groupby("team")["target_share"].rank(
+        method="first", ascending=False
+    ).astype(int)
+    eligible["yards_rank_team"] = eligible.groupby("team")["receiving_yards"].rank(
+        method="first", ascending=False
+    ).astype(int)
+    eligible["td_consistency_rank_team"] = eligible.sort_values(
+        ["team", "td_game_rate", "receiving_tds", "targets"], ascending=[True, False, False, False]
+    ).groupby("team").cumcount() + 1
+    top = eligible.loc[eligible["target_rank_team"].le(3)].copy().sort_values(
+        ["team", "target_rank_team"]
+    )
+    top["usage_role"] = top["target_rank_team"].map({1: "WR1", 2: "WR2", 3: "WR3"})
+    top["stat_season"] = SEASON
+    top["data_status"] = f"CURRENT_{SEASON}_THROUGH_WEEK_{week - 1}"
+    columns = [
+        "team", "usage_role", "player", "games", "targets", "target_share",
+        "target_share_weekly_mean", "target_share_weekly_median", "receptions", "catch_rate",
+        "receiving_yards", "yards_per_game", "receiving_yards_median", "receiving_yards_std",
+        "yards_rank_team", "receiving_tds", "games_with_td", "td_game_rate",
+        "td_consistency_rank_team", "offense_snaps", "snap_share_mean", "latest_snap_share",
+        "snap_eligible", "stat_season", "data_status",
+    ]
+    return top[columns], weekly_actuals
+
+
+def build_schedule() -> tuple[int, str]:
+    last_error: Exception | None = None
     for url in SCHED_URLS:
         try:
-            sched=read_csv_url(url)
-            season_col="season" if "season" in sched.columns else None
-            type_col="game_type" if "game_type" in sched.columns else None
-            if not season_col: raise RuntimeError("schedule has no season column")
-            sched=sched[pd.to_numeric(sched[season_col],errors="coerce").eq(2026)].copy()
-            if type_col: sched=sched[sched[type_col].eq("REG")].copy()
-            if sched.empty: raise RuntimeError("2026 regular-season schedule empty")
-            sched["home_team"]=normalize_team(sched["home_team"]); sched["away_team"]=normalize_team(sched["away_team"])
-            date_col="gameday" if "gameday" in sched.columns else ("game_date" if "game_date" in sched.columns else None)
-            out=[]
-            for _,r in sched.iterrows():
-                gd=r.get(date_col,"") if date_col else ""
-                out.append([r["week"],r["away_team"],r["home_team"],"A",gd]); out.append([r["week"],r["home_team"],r["away_team"],"H",gd])
-            result=pd.DataFrame(out,columns=["week","team","opponent","site","gameday"])
-            if result["team"].nunique()<32: raise RuntimeError(f"schedule coverage only {result['team'].nunique()} teams")
-            result.to_csv(LIVE/"schedule_2026.csv",index=False)
-            return len(result),url
-        except Exception as e: last_error=e
-    pd.DataFrame(columns=["week","team","opponent","site","gameday"]).to_csv(LIVE/"schedule_2026.csv",index=False)
+            schedule = read_csv(url)
+            schedule = schedule.loc[pd.to_numeric(schedule["season"], errors="coerce").eq(SEASON)].copy()
+            if "game_type" in schedule:
+                schedule = schedule.loc[schedule["game_type"].eq("REG")].copy()
+            schedule["home_team"] = normalize_team(schedule["home_team"])
+            schedule["away_team"] = normalize_team(schedule["away_team"])
+            date_col = "gameday" if "gameday" in schedule else "game_date"
+            rows = []
+            for _, game in schedule.iterrows():
+                rows.append([game["week"], game["away_team"], game["home_team"], "A", game.get(date_col, "")])
+                rows.append([game["week"], game["home_team"], game["away_team"], "H", game.get(date_col, "")])
+            result = pd.DataFrame(rows, columns=["week", "team", "opponent", "site", "gameday"])
+            if result["team"].nunique() != 32:
+                raise RuntimeError(f"schedule coverage has {result['team'].nunique()} teams")
+            result.to_csv(LIVE / "schedule_2026.csv", index=False)
+            return len(result), url
+        except Exception as exc:
+            last_error = exc
     raise RuntimeError(f"schedule ingestion failed: {last_error}")
 
 
-def main():
-    season,df,status=choose_baseline(); summary=build_summary(season,df,status)
-    write_csv(summary,"wr_top3_summary.csv"); write_csv(summary.sort_values(["target_share","targets"],ascending=False),"target_share_leaderboard.csv"); write_csv(summary.sort_values(["td_game_rate","receiving_tds","targets"],ascending=False),"td_consistency_leaderboard.csv"); write_csv(summary.sort_values(["receiving_yards","yards_per_game"],ascending=False),"receiving_yards_leaderboard.csv")
-    sharp_path=ROOT/"config"/"sharp_pass_def_2026.csv"
-    if sharp_path.exists(): pd.read_csv(sharp_path).to_csv(LIVE/"sharp_pass_def_2026.csv",index=False)
-    schedule_rows,schedule_source=build_matchups()
-    pd.DataFrame([["stat_season",season],["data_status",status],["teams_with_top3",summary["team"].nunique()],["wr_rows",len(summary)],["schedule_rows",schedule_rows],["schedule_source",schedule_source],["sharp_metric","Pass Efficiency DEF"],["sharp_rule","Never guess; preserve last verified value and flag stale"]],columns=["key","value"]).to_csv(LIVE/"model_status.csv",index=False)
-    print(f"PASS: {summary['team'].nunique()} teams / {len(summary)} WR top-3 rows / {schedule_rows} schedule rows / source season {season}")
+def enrich_current(summary: pd.DataFrame, week: int) -> pd.DataFrame:
+    current = pd.read_csv(LIVE / "current_week_model.csv")
+    generated = {
+        "player_key", "official_targets_through_prior_week",
+        "official_receptions_through_prior_week", "official_rec_yds_through_prior_week",
+        "yards_per_game", "target_share", "offense_snaps", "latest_snap_share",
+        "snap_eligible", "model_rec_yds_projection", "model_floor", "model_ceiling",
+        "model_eligible", "history_source",
+    }
+    current = current.drop(columns=[c for c in generated if c in current.columns])
+    current["player_key"] = current["player"].map(clean_name)
+    usage = summary[[
+        "team", "player", "targets", "receptions", "receiving_yards", "yards_per_game",
+        "target_share", "offense_snaps", "latest_snap_share", "snap_eligible",
+    ]].copy()
+    usage["player_key"] = usage["player"].map(clean_name)
+    usage = usage.drop(columns="player").rename(columns={
+        "targets": "official_targets_through_prior_week",
+        "receptions": "official_receptions_through_prior_week",
+        "receiving_yards": "official_rec_yds_through_prior_week",
+    })
+    current = current.merge(usage, on=["team", "player_key"], how="left")
+    history = pd.to_numeric(current["yards_per_game"], errors="coerce")
+    external = pd.to_numeric(current.get("espn_w4_rec_yds"), errors="coerce")
+    current["model_rec_yds_projection"] = np.where(
+        history.notna() & external.notna(), 0.40 * history + 0.60 * external, history.fillna(external)
+    )
+    current["model_floor"] = (current["model_rec_yds_projection"] * 0.62).clip(lower=0)
+    current["model_ceiling"] = current["model_rec_yds_projection"] * 1.38
+    unavailable = current["status"].astype(str).str.upper().isin(["OUT", "DOUBTFUL", "IR"])
+    current["model_eligible"] = current["snap_eligible"].fillna(False) & ~unavailable
+    current["history_source"] = f"nflverse weekly stats and snap counts through Week {week - 1}"
+    current["refresh_version"] = "v0.7-current-season-integrity"
+    current.to_csv(LIVE / "current_week_model.csv", index=False)
+    current.loc[current["model_eligible"]].sort_values(
+        ["model_rec_yds_projection", "rank"], ascending=[False, True]
+    ).to_csv(LIVE / "primary_wr_dashboard.csv", index=False)
+    return current
 
-if __name__=="__main__": main()
+
+def main() -> None:
+    LIVE.mkdir(parents=True, exist_ok=True)
+    week = get_target_week()
+    archive_live(week)
+    summary, weekly_actuals = build_summary(load_stats(), load_snaps(), week)
+    if summary["team"].nunique() != 32:
+        raise AssertionError(f"Expected 32 teams after snap gate, got {summary['team'].nunique()}")
+    summary.to_csv(LIVE / "wr_top3_summary.csv", index=False)
+    weekly_actuals.to_csv(LIVE / "wr_weekly_actuals_2026.csv", index=False)
+    summary.sort_values(["target_share", "targets"], ascending=False).to_csv(
+        LIVE / "target_share_leaderboard.csv", index=False
+    )
+    summary.sort_values(["td_game_rate", "receiving_tds", "targets"], ascending=False).to_csv(
+        LIVE / "td_consistency_leaderboard.csv", index=False
+    )
+    summary.sort_values(["receiving_yards", "yards_per_game"], ascending=False).to_csv(
+        LIVE / "receiving_yards_leaderboard.csv", index=False
+    )
+    sharp_path = ROOT / "config" / "sharp_pass_def_2026.csv"
+    if sharp_path.exists():
+        pd.read_csv(sharp_path).to_csv(LIVE / "sharp_pass_def_2026.csv", index=False)
+    schedule_rows, schedule_source = build_schedule()
+    current = enrich_current(summary, week)
+    pd.DataFrame([
+        ["stat_season", SEASON], ["current_target_week", week],
+        ["data_status", f"CURRENT_{SEASON}_THROUGH_WEEK_{week - 1}"],
+        ["teams_with_top3", summary["team"].nunique()], ["wr_rows", len(summary)],
+        ["schedule_rows", schedule_rows], ["schedule_source", schedule_source],
+        ["snap_source", SNAP_URL.format(season=SEASON)],
+        ["snap_gate", f"hidden until offensive snap share crosses {MIN_SNAP_SHARE:.0%}"],
+        ["partial_week_rule", f"Week {week} actuals excluded from Week {week} projections"],
+        ["validation_status", f"32 teams; current-season data through Week {week - 1}; history archived"],
+    ], columns=["key", "value"]).to_csv(LIVE / "model_status.csv", index=False)
+    if not current["week"].eq(week).all():
+        raise AssertionError("Current week model contains a stale week")
+    print(f"PASS: 32 teams / {len(summary)} WR1-3 rows")
+    print(f"PASS: {SEASON} stats and snaps through Week {week - 1}; partial Week {week} excluded")
+    print(f"PASS: {schedule_rows} schedule rows / target Week {week}")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,13 @@
+week,rank,player,team,opponent,role,status,sharp_pass_eff_rank,sharp_pass_pro_rank,espn_w4_targets,espn_w4_receptions,espn_w4_rec_yds,model_note
+4,1,Jaxon Smith-Njigba,SEA,LAC,WR1,ACTIVE,12,10,10,7,96,Elite observed volume and production
+4,2,Ja'Marr Chase,CIN,JAX,WR1,ACTIVE,14,30,11,8,88,Massive target concentration; pass protection is concern
+4,3,Amon-Ra St. Brown,DET,CAR,WR1,ACTIVE,30,11,11,7,86,Volume strong; Sharp pass-efficiency schedule difficult
+4,4,CeeDee Lamb,DAL,HOU,WR1,ACTIVE,18,28,9,6,76,80 percent season catch rate and stable target floor
+4,5,Chris Olave,NO,ATL,WR1,ACTIVE,26,24,9,6,83,High season target volume
+4,6,Drake London,ATL,NO,WR1,ACTIVE,11,5,9,6,81,Favorable pass-pro environment
+4,7,Zay Flowers,BAL,TEN,WR1,ACTIVE,15,8,7,5,75,Efficient role with favorable protection rank
+4,8,Garrett Wilson,NYJ,CHI,WR1,ACTIVE,4,17,8,6,68,Top-four Sharp pass-efficiency schedule
+4,9,Parker Washington,JAX,CIN,WR1,ACTIVE,20,29,8,5,70,Current Jacksonville WR1 production
+4,10,Nico Collins,HOU,DAL,WR1,QUESTIONABLE,3,4,8,5,68,Excellent Sharp pairing but availability gate
+4,11,Puka Nacua,LA,PHI,WR1,QUESTIONABLE,27,27,11,7,96,High projection but availability gate
+4,12,Justin Jefferson,MIN,MIA,WR1,QUESTIONABLE,2,1,9,6,81,Best Sharp pairing but availability gate
