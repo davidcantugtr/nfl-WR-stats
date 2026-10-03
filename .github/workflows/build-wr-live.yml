@@ -22,13 +22,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install pandas
+      - run: pip install pandas numpy
       - run: python src/build_wr_live.py
       - name: Commit generated live feeds
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/live
+          git add data/live data/archive
           if git diff --cached --quiet; then
             echo "No live-data changes"
           else
