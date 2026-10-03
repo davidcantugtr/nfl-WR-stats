@@ -1,0 +1,13 @@
+week,rank,player,team,opponent,role,status,sharp_pass_eff_rank,sharp_pass_pro_rank,season_targets,season_receptions,season_rec_yds,espn_w4_targets,espn_w4_receptions,espn_w4_rec_yds,availability,projection_source,refresh_version
+4,1,Jaxon Smith-Njigba,SEA,LAC,WR1,ACTIVE,12,10,36,27,405,10,7,96,IN,ESPN Week 4 + user Sharp,v0.6-w4
+4,2,Ja'Marr Chase,CIN,JAX,WR1,ACTIVE,14,30,25,18,185,11,8,88,IN,ESPN Week 4 + user Sharp,v0.6-w4
+4,3,Amon-Ra St. Brown,DET,CAR,WR1,ACTIVE,30,11,35,23,228,11,7,86,IN,ESPN Week 4 + user Sharp,v0.6-w4
+4,4,CeeDee Lamb,DAL,HOU,WR1,ACTIVE,18,28,25,20,309,9,6,76,IN,ESPN Week 4 + user Sharp,v0.6-w4
+4,5,Chris Olave,NO,ATL,WR1,ACTIVE,26,24,36,27,375,9,6,83,IN,ESPN Week 4 + user Sharp,v0.6-w4
+4,6,Drake London,ATL,NO,WR1,ACTIVE,11,5,20,15,274,9,6,81,IN,ESPN Week 4 + user Sharp,v0.6-w4
+4,7,Parker Washington,JAX,CIN,WR1,ACTIVE,20,29,23,15,221,8,5,70,IN,ESPN Week 4 + user Sharp,v0.6-w4
+4,8,Garrett Wilson,NYJ,CHI,WR1,ACTIVE,4,17,27,21,243,8,6,68,IN,ESPN Week 4 + user Sharp,v0.6-w4
+4,9,Nico Collins,HOU,DAL,WR1,QUESTIONABLE,3,4,10,7,75,8,5,68,FLAG,ESPN Week 4 + user Sharp,v0.6-w4
+4,10,Puka Nacua,LA,PHI,WR1,QUESTIONABLE,27,27,9,5,74,11,7,96,FLAG,ESPN Week 4 + user Sharp,v0.6-w4
+4,11,Justin Jefferson,MIN,MIA,WR1,QUESTIONABLE,2,1,17,13,179,9,6,81,FLAG,ESPN Week 4 + user Sharp,v0.6-w4
+4,12,Zay Flowers,BAL,TEN,WR1,ACTIVE,15,8,12,10,234,7,5,75,IN,ESPN Week 4 + user Sharp,v0.6-w4
