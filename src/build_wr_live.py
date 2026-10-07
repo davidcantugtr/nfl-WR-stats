@@ -92,7 +92,7 @@ def build_summary(stats: pd.DataFrame, snaps: pd.DataFrame, week: int) -> tuple[
     completed = stats.loc[pd.to_numeric(stats["week"], errors="coerce").lt(week)].copy()
     if completed.empty:
         raise RuntimeError(f"No completed player statistics exist before target Week {week}")
-    for column in ["targets", "receptions", "receiving_yards", "receiving_tds"]:
+    for column in ["targets", "receptions", "receiving_yards", "receiving_tds", "receiving_air_yards"]:
         completed[column] = pd.to_numeric(completed.get(column, 0), errors="coerce").fillna(0)
     snap_history = snaps.loc[pd.to_numeric(snaps["week"], errors="coerce").lt(week), [
         "week", "team", "player_key", "offense_snaps", "offense_pct"
@@ -119,8 +119,8 @@ def build_summary(stats: pd.DataFrame, snaps: pd.DataFrame, week: int) -> tuple[
     ).fillna(0)
     actual_columns = [
         "week", "game_id", "team", "opponent_team", "player", "player_key", "position",
-        "targets", "receptions", "receiving_yards", "receiving_tds", "weekly_target_share",
-        "offense_snaps", "offense_pct",
+        "targets", "receptions", "receiving_yards", "receiving_tds", "receiving_air_yards",
+        "weekly_target_share", "offense_snaps", "offense_pct",
     ]
     weekly_actuals = completed[actual_columns].sort_values(
         ["week", "team", "targets"], ascending=[True, True, False]
@@ -129,12 +129,14 @@ def build_summary(stats: pd.DataFrame, snaps: pd.DataFrame, week: int) -> tuple[
     latest = wr.sort_values("week").groupby(["team", "player_key"], as_index=False).tail(1)[
         ["team", "player_key", "offense_pct"]
     ].rename(columns={"offense_pct": "latest_snap_share"})
-    team_targets = completed.groupby("team", as_index=False)["targets"].sum().rename(
-        columns={"targets": "team_season_targets"}
+    team_targets = completed.groupby("team", as_index=False).agg(
+        team_season_targets=("targets", "sum"),
+        team_season_air_yards=("receiving_air_yards", "sum"),
     )
     grouped = wr.groupby(["team", "player_key", "player"], as_index=False).agg(
         games=("week", "nunique"), targets=("targets", "sum"), receptions=("receptions", "sum"),
         receiving_yards=("receiving_yards", "sum"), receiving_tds=("receiving_tds", "sum"),
+        receiving_air_yards=("receiving_air_yards", "sum"),
         target_share_weekly_mean=("weekly_target_share", "mean"),
         target_share_weekly_median=("weekly_target_share", "median"),
         receiving_yards_median=("receiving_yards", "median"),
@@ -153,6 +155,9 @@ def build_summary(stats: pd.DataFrame, snaps: pd.DataFrame, week: int) -> tuple[
         grouped["targets"] / grouped["team_season_targets"].replace(0, pd.NA)
     ).fillna(0)
     grouped["yards_per_game"] = grouped["receiving_yards"] / grouped["games"].replace(0, pd.NA)
+    grouped["air_yard_share"] = (
+        grouped["receiving_air_yards"] / grouped["team_season_air_yards"].replace(0, pd.NA)
+    ).fillna(0)
     grouped["td_game_rate"] = grouped["games_with_td"] / grouped["games"].replace(0, pd.NA)
     grouped["catch_rate"] = grouped["receptions"] / grouped["targets"].replace(0, pd.NA)
     grouped["receiving_yards_std"] = grouped["receiving_yards_std"].fillna(0)
@@ -181,6 +186,7 @@ def build_summary(stats: pd.DataFrame, snaps: pd.DataFrame, week: int) -> tuple[
         "team", "usage_role", "player", "games", "targets", "target_share",
         "target_share_weekly_mean", "target_share_weekly_median", "receptions", "catch_rate",
         "receiving_yards", "yards_per_game", "receiving_yards_median", "receiving_yards_std",
+        "receiving_air_yards", "team_season_air_yards", "air_yard_share",
         "yards_rank_team", "receiving_tds", "games_with_td", "td_game_rate",
         "td_consistency_rank_team", "offense_snaps", "team_off_snaps", "snap_share_mean",
         "latest_snap_share", "s2d_snap_share", "snap_eligible", "stat_season", "data_status",
