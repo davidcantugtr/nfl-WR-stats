@@ -1,0 +1,12 @@
+key,value
+stat_season,2026
+current_target_week,4
+data_status,CURRENT_2026_THROUGH_WEEK_3
+teams_with_top3,32
+wr_rows,96
+schedule_rows,544
+schedule_source,https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv
+snap_source,https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2026.csv
+snap_gate,hidden until offensive snap share crosses 20%
+partial_week_rule,Week 4 actuals excluded from Week 4 projections
+validation_status,32 teams; current-season data through Week 3; history archived
