@@ -210,6 +210,12 @@ def build_schedule() -> tuple[int, str]:
             return len(result), url
         except Exception as exc:
             last_error = exc
+    existing_path = LIVE / "schedule_2026.csv"
+    if existing_path.exists():
+        existing = pd.read_csv(existing_path)
+        required = {"week", "team", "opponent", "site"}
+        if required.issubset(existing.columns) and existing["team"].nunique() == 32:
+            return len(existing), "validated repository schedule fallback; remote release unavailable"
     raise RuntimeError(f"schedule ingestion failed: {last_error}")
 
 
