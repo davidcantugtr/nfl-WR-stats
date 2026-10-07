@@ -40,11 +40,17 @@ def clean_name(value: object) -> str:
 
 
 def get_target_week() -> int:
-    current = pd.read_csv(LIVE / "current_week_model.csv")
-    weeks = pd.to_numeric(current["week"], errors="raise")
-    if weeks.nunique() != 1:
-        raise RuntimeError("current_week_model.csv must contain exactly one target week")
-    return int(weeks.iloc[0])
+    """Advance only after the latest week has broad team coverage."""
+    stats = read_csv(STAT_URL.format(season=SEASON))
+    if "season_type" in stats:
+        stats = stats.loc[stats["season_type"].eq("REG")].copy()
+    team_col = "recent_team" if "recent_team" in stats else "team"
+    stats["week_num"] = pd.to_numeric(stats["week"], errors="coerce")
+    coverage = stats.dropna(subset=["week_num"]).groupby("week_num")[team_col].nunique()
+    completed = coverage.loc[coverage.ge(24)]
+    if completed.empty:
+        raise RuntimeError("No broadly completed 2026 week is available")
+    return int(completed.index.max()) + 1
 
 
 def archive_live(week: int) -> None:
@@ -90,9 +96,20 @@ def build_summary(stats: pd.DataFrame, snaps: pd.DataFrame, week: int) -> tuple[
         completed[column] = pd.to_numeric(completed.get(column, 0), errors="coerce").fillna(0)
     snap_history = snaps.loc[pd.to_numeric(snaps["week"], errors="coerce").lt(week), [
         "week", "team", "player_key", "offense_snaps", "offense_pct"
-    ]]
+    ]].copy()
+    snap_history["team_off_snaps_est"] = np.where(
+        snap_history["offense_pct"].gt(0),
+        snap_history["offense_snaps"] / snap_history["offense_pct"],
+        np.nan,
+    )
+    team_week_snaps = snap_history.groupby(["week", "team"], as_index=False)[
+        "team_off_snaps_est"
+    ].median().rename(columns={"team_off_snaps_est": "team_off_snaps"})
+    snap_history = snap_history.merge(team_week_snaps, on=["week", "team"], how="left")
     completed = completed.merge(snap_history, on=["week", "team", "player_key"], how="left")
-    completed[["offense_snaps", "offense_pct"]] = completed[["offense_snaps", "offense_pct"]].fillna(0)
+    completed[["offense_snaps", "offense_pct", "team_off_snaps"]] = completed[
+        ["offense_snaps", "offense_pct", "team_off_snaps"]
+    ].fillna(0)
     team_week = completed.groupby(["team", "week"], as_index=False)["targets"].sum().rename(
         columns={"targets": "team_targets"}
     )
@@ -122,7 +139,8 @@ def build_summary(stats: pd.DataFrame, snaps: pd.DataFrame, week: int) -> tuple[
         target_share_weekly_median=("weekly_target_share", "median"),
         receiving_yards_median=("receiving_yards", "median"),
         receiving_yards_std=("receiving_yards", "std"), offense_snaps=("offense_snaps", "sum"),
-        snap_share_mean=("offense_pct", "mean"), max_snap_share=("offense_pct", "max"),
+        team_off_snaps=("team_off_snaps", "sum"), snap_share_mean=("offense_pct", "mean"),
+        max_snap_share=("offense_pct", "max"),
     )
     td_games = wr.assign(td_hit=wr["receiving_tds"].gt(0).astype(int)).groupby(
         ["team", "player_key"], as_index=False
@@ -138,9 +156,11 @@ def build_summary(stats: pd.DataFrame, snaps: pd.DataFrame, week: int) -> tuple[
     grouped["td_game_rate"] = grouped["games_with_td"] / grouped["games"].replace(0, pd.NA)
     grouped["catch_rate"] = grouped["receptions"] / grouped["targets"].replace(0, pd.NA)
     grouped["receiving_yards_std"] = grouped["receiving_yards_std"].fillna(0)
-    # The model rule is "hidden until the player crosses 20%," not "drop a
-    # previously established player after one injury-limited game."
-    grouped["snap_eligible"] = grouped["max_snap_share"].fillna(0).ge(MIN_SNAP_SHARE)
+    grouped["s2d_snap_share"] = (
+        grouped["offense_snaps"] / grouped["team_off_snaps"].replace(0, pd.NA)
+    ).fillna(0)
+    # Strict rule: exactly 20.0% remains suppressed; target share never overrides.
+    grouped["snap_eligible"] = grouped["s2d_snap_share"].gt(MIN_SNAP_SHARE)
     eligible = grouped.loc[grouped["snap_eligible"]].copy()
     eligible["target_rank_team"] = eligible.groupby("team")["target_share"].rank(
         method="first", ascending=False
@@ -162,8 +182,8 @@ def build_summary(stats: pd.DataFrame, snaps: pd.DataFrame, week: int) -> tuple[
         "target_share_weekly_mean", "target_share_weekly_median", "receptions", "catch_rate",
         "receiving_yards", "yards_per_game", "receiving_yards_median", "receiving_yards_std",
         "yards_rank_team", "receiving_tds", "games_with_td", "td_game_rate",
-        "td_consistency_rank_team", "offense_snaps", "snap_share_mean", "latest_snap_share",
-        "snap_eligible", "stat_season", "data_status",
+        "td_consistency_rank_team", "offense_snaps", "team_off_snaps", "snap_share_mean",
+        "latest_snap_share", "s2d_snap_share", "snap_eligible", "stat_season", "data_status",
     ]
     return top[columns], weekly_actuals
 
@@ -198,15 +218,25 @@ def enrich_current(summary: pd.DataFrame, week: int) -> pd.DataFrame:
     generated = {
         "player_key", "official_targets_through_prior_week",
         "official_receptions_through_prior_week", "official_rec_yds_through_prior_week",
-        "yards_per_game", "target_share", "offense_snaps", "latest_snap_share",
-        "snap_eligible", "model_rec_yds_projection", "model_floor", "model_ceiling",
+        "yards_per_game", "target_share", "offense_snaps", "team_off_snaps",
+        "latest_snap_share", "s2d_snap_share", "snap_eligible",
+        "model_rec_yds_projection", "model_floor", "model_ceiling",
         "model_eligible", "history_source",
     }
     current = current.drop(columns=[c for c in generated if c in current.columns])
+    current["week"] = week
+    schedule = pd.read_csv(LIVE / "schedule_2026.csv")
+    selected = schedule.loc[pd.to_numeric(schedule["week"], errors="coerce").eq(week), [
+        "team", "opponent", "site"
+    ]]
+    current = current.drop(columns=["opponent", "site"], errors="ignore").merge(
+        selected, on="team", how="left"
+    )
     current["player_key"] = current["player"].map(clean_name)
     usage = summary[[
         "team", "player", "targets", "receptions", "receiving_yards", "yards_per_game",
-        "target_share", "offense_snaps", "latest_snap_share", "snap_eligible",
+        "target_share", "offense_snaps", "team_off_snaps", "latest_snap_share",
+        "s2d_snap_share", "snap_eligible",
     ]].copy()
     usage["player_key"] = usage["player"].map(clean_name)
     usage = usage.drop(columns="player").rename(columns={
@@ -216,14 +246,15 @@ def enrich_current(summary: pd.DataFrame, week: int) -> pd.DataFrame:
     })
     current = current.merge(usage, on=["team", "player_key"], how="left")
     history = pd.to_numeric(current["yards_per_game"], errors="coerce")
-    external = pd.to_numeric(current.get("espn_w4_rec_yds"), errors="coerce")
-    current["model_rec_yds_projection"] = np.where(
-        history.notna() & external.notna(), 0.40 * history + 0.60 * external, history.fillna(external)
-    )
+    current["model_rec_yds_projection"] = history
     current["model_floor"] = (current["model_rec_yds_projection"] * 0.62).clip(lower=0)
     current["model_ceiling"] = current["model_rec_yds_projection"] * 1.38
-    unavailable = current["status"].astype(str).str.upper().isin(["OUT", "DOUBTFUL", "IR"])
-    current["model_eligible"] = current["snap_eligible"].fillna(False) & ~unavailable
+    current["status"] = "PENDING"
+    current["availability"] = f"PENDING WEEK {week} OFFICIAL REPORT"
+    current["projection_source"] = (
+        f"Official 2026 full-game usage through Week {week - 1}; Week {week} injury report pending"
+    )
+    current["model_eligible"] = current["snap_eligible"].fillna(False)
     current["history_source"] = f"nflverse weekly stats and snap counts through Week {week - 1}"
     current["refresh_version"] = "v0.7-current-season-integrity"
     current.to_csv(LIVE / "current_week_model.csv", index=False)
@@ -262,7 +293,7 @@ def main() -> None:
         ["teams_with_top3", summary["team"].nunique()], ["wr_rows", len(summary)],
         ["schedule_rows", schedule_rows], ["schedule_source", schedule_source],
         ["snap_source", SNAP_URL.format(season=SEASON)],
-        ["snap_gate", f"hidden until offensive snap share crosses {MIN_SNAP_SHARE:.0%}"],
+        ["snap_gate", f"strict S2D offensive snap share > {MIN_SNAP_SHARE:.0%}; exactly 20% suppressed"],
         ["partial_week_rule", f"Week {week} actuals excluded from Week {week} projections"],
         ["validation_status", f"32 teams; current-season data through Week {week - 1}; history archived"],
     ], columns=["key", "value"]).to_csv(LIVE / "model_status.csv", index=False)
