@@ -5,7 +5,7 @@ data_status,CURRENT_2026_THROUGH_WEEK_4
 teams_with_top3,32
 wr_rows,96
 schedule_rows,544
-schedule_source,validated repository schedule fallback; remote release unavailable
+schedule_source,https://github.com/nflverse/nflverse-data/releases/download/schedules/games.csv
 snap_source,https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2026.csv
 snap_gate,strict S2D offensive snap share > 20%; exactly 20% suppressed
 partial_week_rule,Week 5 actuals excluded from Week 5 projections
