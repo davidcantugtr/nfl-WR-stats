@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install pandas numpy
-      - run: python src/build_wr_live.py
+      - run: python src/weekly_2026_refresh.py
       - name: Commit generated live feeds
         run: |
           git config user.name "github-actions[bot]"
