@@ -1,2 +1,2 @@
 Week,Model Version,Published Cohort,Top-10 Yardage Overlap,TD Hit Rate,Yardage MAE,Spearman,Target Share Stability,Notes,Refreshed
-7,v0.7 published preliminary cohort,12,0.200000,0.500000,40.758333,0.363636,0.097684,Graded only against the frozen Week 7 preliminary cohort; not represented as a full 96-player pregame model.,2026-10-28
+8,v0.8 full published cohort,96,0.400000,0.400000,25.253691,0.532986,0.084803,Graded against the frozen full Week 8 publication; bye rows retained in archive and excluded from active-opportunity interpretation.,2026-11-04
