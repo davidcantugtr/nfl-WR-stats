@@ -11,7 +11,7 @@
     "pass_defense": 32,
     "defense_elevation": 32,
     "accuracy": 1,
-    "weekly_archive": 109
+    "weekly_archive": 205
   },
   "top10": [
     {
@@ -195,7 +195,7 @@
       "prior_rank": 4,
       "rank_change": -1,
       "trend": "STABLE",
-      "QB_lift": 0.015606656977108899,
+      "QB_lift": 0.015606656977108915,
       "WR1_lift": 0.5884822755706748,
       "WR2_lift": 0.5063564150735591,
       "WR3_lift": -0.5539881445116543,
