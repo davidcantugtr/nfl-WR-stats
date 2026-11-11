@@ -1,13 +1,14 @@
 key,value
 season,2026
-current_target_week,9
-latest_completed_week,8
-last_refresh,2026-11-04 03:22 CT
+current_target_week,10
+latest_completed_week,9
+last_refresh,2026-11-11 03:24 CT
 wr_coverage,32 teams / 96 current WR roles
-active_week9_rows,90
-bye_teams,"PIT, TEN"
+active_week10_rows,84
+bye_teams,"CHI, DEN, PHI, TB"
 sharp_proprietary,STALE — Week 5 snapshot preserved; not guessed
-sharp_public_substitute,Current nflverse Weeks 1–8 PBP pass-defense rank; Sharp public Week 8 ranks preserved separately as stale
-defense_elevation,32 defenses normalized to opponent season baselines through Week 8
-injury_state,JAX-BAL official Wednesday report filed; most Sunday/Monday reports pending
-validation,PASS — 96 rows / 32 teams / 3 WRs each / schedule reciprocal / no duplicates / target denominators reconciled
+sharp_public_cross_check,Current Sharp public Week 10 matchup ranks; not proprietary Pass Efficiency DEF
+public_substitute,Current nflverse Weeks 1–9 PBP pass-defense performance
+defense_elevation,32 defenses normalized to opponent season baselines through Week 9
+injury_state,WAS-NYG official report filed; most Sunday/Monday reports pending
+validation,PASS — 96 rows / 32 teams / 3 WRs each / 28 reciprocal schedule rows / no duplicates / target denominators reconciled

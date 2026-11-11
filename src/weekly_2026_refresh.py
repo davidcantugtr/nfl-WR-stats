@@ -14,10 +14,10 @@ ROOT = Path(__file__).resolve().parents[1]
 LIVE = ROOT / "data" / "live"
 ARCHIVE = ROOT / "data" / "archive"
 SEASON = 2026
-TARGET_WEEK = 9
-COMPLETED_WEEK = 8
-REFRESH_DATE = "2026-11-04"
-REFRESH_CT = "2026-11-04 03:22 CT"
+TARGET_WEEK = 10
+COMPLETED_WEEK = 9
+REFRESH_DATE = "2026-11-11"
+REFRESH_CT = "2026-11-11 03:24 CT"
 
 STAT_URL = "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv"
 SNAP_URL = "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2026.csv"
@@ -33,34 +33,43 @@ OUT = {
     "romeo doubs": ("IR — shoulder; minimum four-game absence", 0.0),
     "kendrick bourne": ("OUT — fractured tibia; reported season-ending", 0.0),
     "zachariah branch": ("OUT — hamstring; coach ruled out for Week 9", 0.0),
+    "puka nacua": ("OUT — turf toe plus MCL/PCL sprains; likely IR", 0.0),
+    "michael wilson": ("IR — neck injury; unavailable Week 10", 0.0),
+    "christian kirk": ("IR — knee/meniscus; unavailable Week 10", 0.0),
+    "ricky pearsall": ("OUT — knee/PCL; reported season-ending", 0.0),
+    "jalen brooks": ("OUT — wrist; reported season-ending", 0.0),
 }
 EARLY_REPORT = {
-    "jakobi meyers": ("LIMITED — official Week 9 Wednesday report", 0.85),
+    "treylon burks": ("LIMITED — official Week 10 Tuesday report", 0.90),
+    "george pickens": ("PROVISIONAL — hamstring; Week 10 status pending", 0.78),
+    "mike evans": ("PROVISIONAL — Achilles/ribs; Week 10 status pending", 0.72),
+    "deebo samuel": ("PROVISIONAL — hamstring; expected to return to practice", 0.82),
+    "aj brown": ("PROVISIONAL — knee/ankle; Week 10 status pending", 0.78),
 }
-DEFAULT_AVAILABILITY = "PENDING — Sunday/Monday official Week 9 reports not yet filed"
+DEFAULT_AVAILABILITY = "PENDING — most Sunday/Monday official Week 10 reports not yet filed"
 
-# Sharp public Week 8 matchup ranks. These are public matchup-table ranks, not
+# Sharp public Week 10 matchup ranks. These are public matchup-table ranks, not
 # the inaccessible proprietary Pass Efficiency DEF field.
 SHARP_PASS = {
-    "GB": 11, "CAR": 15, "DAL": 31, "ARI": 22, "TB": 7, "ATL": 9,
-    "BUF": 27, "BAL": 18, "PIT": 21, "CLE": 4, "JAX": 19, "IND": 14,
-    "NYJ": 23, "LV": 29, "DET": 28, "MIN": 2, "CIN": 24, "TEN": 30,
-    "LA": 8, "LAC": 10, "DEN": 3, "KC": 13, "MIA": 32, "NE": 16,
-    "WAS": 25, "PHI": 6, "SEA": 1, "CHI": 17,
+    "NYG": 9, "WAS": 22, "DET": 25, "NE": 21, "NYJ": 29, "BUF": 15,
+    "NO": 26, "CAR": 24, "CLE": 7, "HOU": 8, "TEN": 32, "JAX": 6,
+    "ATL": 14, "KC": 12, "IND": 16, "MIA": 28, "GB": 4, "MIN": 2,
+    "ARI": 23, "LA": 10, "LV": 31, "SEA": 1, "DAL": 27, "SF": 17,
+    "CIN": 30, "PIT": 20, "BAL": 19, "LAC": 18,
 }
 SHARP_PRESSURE = {
-    "GB": 23, "CAR": 13, "DAL": 14, "ARI": 20, "TB": 28, "ATL": 3,
-    "BUF": 11, "BAL": 15, "PIT": 24, "CLE": 5, "JAX": 16, "IND": 30,
-    "NYJ": 19, "LV": 22, "DET": 10, "MIN": 1, "CIN": 9, "TEN": 32,
-    "LA": 17, "LAC": 7, "DEN": 4, "KC": 27, "MIA": 18, "NE": 8,
-    "WAS": 31, "PHI": 26, "SEA": 2, "CHI": 12,
+    "NYG": 21, "WAS": 28, "DET": 12, "NE": 7, "NYJ": 29, "BUF": 4,
+    "NO": 16, "CAR": 23, "CLE": 9, "HOU": 6, "TEN": 32, "JAX": 14,
+    "ATL": 3, "KC": 31, "IND": 20, "MIA": 13, "GB": 19, "MIN": 1,
+    "ARI": 24, "LA": 17, "LV": 26, "SEA": 5, "DAL": 11, "SF": 25,
+    "CIN": 10, "PIT": 18, "BAL": 22, "LAC": 8,
 }
 SHARP_EXPLOSIVE = {
-    "GB": 4, "CAR": 10, "DAL": 28, "ARI": 26, "TB": 13, "ATL": 11,
-    "BUF": 24, "BAL": 12, "PIT": 6, "CLE": 22, "JAX": 17, "IND": 16,
-    "NYJ": 7, "LV": 20, "DET": 27, "MIN": 3, "CIN": 32, "TEN": 29,
-    "LA": 5, "LAC": 18, "DEN": 8, "KC": 9, "MIA": 19, "NE": 15,
-    "WAS": 14, "PHI": 21, "SEA": 1, "CHI": 31,
+    "NYG": 27, "WAS": 13, "DET": 24, "NE": 19, "NYJ": 11, "BUF": 16,
+    "NO": 22, "CAR": 3, "CLE": 28, "HOU": 20, "TEN": 30, "JAX": 10,
+    "ATL": 18, "KC": 7, "IND": 29, "MIA": 15, "GB": 5, "MIN": 4,
+    "ARI": 17, "LA": 9, "LV": 31, "SEA": 1, "DAL": 25, "SF": 2,
+    "CIN": 32, "PIT": 6, "BAL": 14, "LAC": 21,
 }
 
 
@@ -83,13 +92,12 @@ def clip(v: float, lo: float, hi: float) -> float:
 
 
 def archive_outgoing() -> pd.DataFrame:
-    dest = ARCHIVE / "week_9" / "pre_refresh"
-    dest.mkdir(parents=True, exist_ok=True)
-    for p in LIVE.glob("*.csv"):
-        target = dest / p.name
-        if not target.exists():
-            shutil.copy2(p, target)
-    snapshot = ARCHIVE / "week_9" / "published_week_8_snapshot.csv"
+    dest = ARCHIVE / "week_10" / "pre_refresh"
+    if not dest.exists():
+        dest.mkdir(parents=True, exist_ok=True)
+        for p in LIVE.glob("*.csv"):
+            shutil.copy2(p, dest / p.name)
+    snapshot = ARCHIVE / "week_10" / "published_week_9_snapshot.csv"
     if not snapshot.exists():
         shutil.copy2(LIVE / "current_week_model.csv", snapshot)
     return pd.read_csv(snapshot)
@@ -119,15 +127,15 @@ def load_sources():
 
 def build_schedule(games: pd.DataFrame) -> pd.DataFrame:
     g = games.loc[(games.season.eq(SEASON)) & (games.week.eq(TARGET_WEEK)) & games.game_type.eq("REG")].copy()
-    if len(g) != 15:
-        raise AssertionError(f"Expected 15 Week 9 games, got {len(g)}")
+    if len(g) != 14:
+        raise AssertionError(f"Expected 14 Week 10 games, got {len(g)}")
     h = g.assign(team=g.home_team, opponent=g.away_team, site="H")
     a = g.assign(team=g.away_team, opponent=g.home_team, site="A")
     out = pd.concat([h, a], ignore_index=True)[["game_id", "gameday", "gametime", "team", "opponent", "site"]]
-    if out.duplicated("team").any() or len(out) != 30:
-        raise AssertionError("Week 9 team schedule coverage failed")
+    if out.duplicated("team").any() or len(out) != 28:
+        raise AssertionError("Week 10 team schedule coverage failed")
     reciprocal = out.merge(out[["team", "opponent"]], left_on=["team", "opponent"], right_on=["opponent", "team"])
-    if len(reciprocal) != 30:
+    if len(reciprocal) != 28:
         raise AssertionError("Reciprocal opponent validation failed")
     return out
 
@@ -145,7 +153,8 @@ def build_wr_summary(stats: pd.DataFrame, snaps: pd.DataFrame, depth: pd.DataFra
     weekly_actuals = wr[["week", "game_id", "team", "opponent_team", "player_id", "player", "targets", "team_targets", "weekly_target_share", "receptions", "receiving_yards", "receiving_tds", "offense_snaps", "offense_pct"]].sort_values(["week", "team", "targets"], ascending=[True, True, False])
 
     tt = stats.groupby("team", as_index=False).targets.sum().rename(columns={"targets": "team_season_targets"})
-    grouped = wr.groupby(["team", "player_id", "player_key", "player"], as_index=False).agg(
+    last_team = wr.sort_values(["week", "game_id"]).groupby("player_key", as_index=False).tail(1)[["player_key", "team"]].rename(columns={"team": "stat_team"})
+    grouped = wr.groupby(["player_id", "player_key", "player"], as_index=False).agg(
         games=("week", "nunique"), targets=("targets", "sum"), receptions=("receptions", "sum"),
         receiving_yards=("receiving_yards", "sum"), receiving_tds=("receiving_tds", "sum"),
         games_with_td=("receiving_tds", lambda x: int((x > 0).sum())),
@@ -154,8 +163,7 @@ def build_wr_summary(stats: pd.DataFrame, snaps: pd.DataFrame, depth: pd.DataFra
         offense_snaps=("offense_snaps", "sum"), snap_share_mean=("offense_pct", "mean"),
         latest_snap_share=("offense_pct", "last"), last3_ypg=("receiving_yards", lambda x: float(x.tail(3).mean())),
         games_50_plus=("receiving_yards", lambda x: int((x >= 50).sum())), games_75_plus=("receiving_yards", lambda x: int((x >= 75).sum())),
-    ).merge(tt, on="team", how="left")
-    grouped["target_share"] = grouped.targets / grouped.team_season_targets.replace(0, np.nan)
+    )
     grouped["yards_per_game"] = grouped.receiving_yards / grouped.games.replace(0, np.nan)
     grouped["td_game_rate"] = grouped.games_with_td / grouped.games.replace(0, np.nan)
     grouped["catch_rate"] = grouped.receptions / grouped.targets.replace(0, np.nan)
@@ -165,7 +173,11 @@ def build_wr_summary(stats: pd.DataFrame, snaps: pd.DataFrame, depth: pd.DataFra
     latest = depth.loc[depth.dt.eq(depth.dt.max()) & depth.pos_abb.astype(str).str.upper().eq("WR")].copy()
     latest["player_key"] = latest.player_name.map(norm_name)
     latest["depth_rank"] = pd.to_numeric(latest.pos_rank, errors="coerce")
-    grouped = grouped.merge(latest[["team", "player_key", "depth_rank"]].drop_duplicates(["team", "player_key"]), on=["team", "player_key"], how="left")
+    current_depth = latest[["team", "player_key", "depth_rank"]].sort_values("depth_rank").drop_duplicates("player_key")
+    grouped = grouped.merge(current_depth, on="player_key", how="left").merge(last_team, on="player_key", how="left")
+    grouped["team"] = grouped.team.fillna(grouped.stat_team)
+    grouped = grouped.merge(tt, on="team", how="left")
+    grouped["target_share"] = grouped.targets / grouped.team_season_targets.replace(0, np.nan)
     grouped["depth_rank"] = grouped.depth_rank.fillna(9)
     grouped["availability"] = grouped.player_key.map(lambda k: OUT.get(k, EARLY_REPORT.get(k, (DEFAULT_AVAILABILITY, 1.0)))[0])
     grouped["availability_factor"] = grouped.player_key.map(lambda k: OUT.get(k, EARLY_REPORT.get(k, ("", 1.0)))[1])
@@ -180,7 +192,7 @@ def build_wr_summary(stats: pd.DataFrame, snaps: pd.DataFrame, depth: pd.DataFra
     top["yards_rank_team"] = top.groupby("team").receiving_yards.rank(method="first", ascending=False).astype(int)
     top["td_consistency_rank_team"] = top.sort_values(["team", "td_game_rate", "receiving_tds", "targets"], ascending=[True, False, False, False]).groupby("team").cumcount() + 1
     top["role_confidence"] = np.clip(0.45 + top.latest_snap_share * 0.35 + top.target_share * 0.70 - top.target_share_weekly_std * 0.40, 0.35, 0.98)
-    top["data_status"] = "FINAL_2026_THROUGH_WEEK_8"
+    top["data_status"] = "FINAL_2026_THROUGH_WEEK_9"
     top["source_updated"] = REFRESH_CT
     return top.sort_values(["team", "usage_order"]), weekly_actuals
 
@@ -261,11 +273,11 @@ def build_defense(stats: pd.DataFrame, pbp: pd.DataFrame, roles: pd.DataFrame) -
     legacy.team = legacy.team.map(norm_team)
     monitor = pd.DataFrame({"team": sorted(set(p.team) | set(legacy.team))}).merge(legacy, on="team", how="left").merge(p, on="team", how="left").merge(current.rename(columns={"defense": "team"}), on="team", how="left")
     monitor["sharp_proprietary_status"] = "STALE — last verified Week 5 snapshot; not guessed"
-    monitor["sharp_public_week8_pass_rank_last_verified"] = monitor.team.map(SHARP_PASS).astype("Int64")
-    monitor["sharp_public_week8_pressure_rank_last_verified"] = monitor.team.map(SHARP_PRESSURE).astype("Int64")
-    monitor["sharp_public_week8_explosive_rank_last_verified"] = monitor.team.map(SHARP_EXPLOSIVE).astype("Int64")
-    monitor["sharp_public_status"] = "STALE — Week 9 page rechecked 2026-11-04 but table still labeled Week 8; values not advanced"
-    monitor["current_source"] = "nflverse PBP Weeks 1–8; current public pass-defense substitute"
+    monitor["sharp_public_week10_pass_rank_current"] = monitor.team.map(SHARP_PASS).astype("Int64")
+    monitor["sharp_public_week10_pressure_rank_current"] = monitor.team.map(SHARP_PRESSURE).astype("Int64")
+    monitor["sharp_public_week10_explosive_rank_current"] = monitor.team.map(SHARP_EXPLOSIVE).astype("Int64")
+    monitor["sharp_public_status"] = "CURRENT — Sharp public Week 10 matchup table; not proprietary Pass Efficiency DEF"
+    monitor["current_source"] = "nflverse PBP Weeks 1–9 plus Sharp public Week 10 matchup table"
     monitor["source_updated"] = REFRESH_CT
     elev_cols = ["defense", "rank", "elevation_score", "prior_rank", "rank_change", "trend", "QB_lift", "WR1_lift", "WR2_lift", "WR3_lift", "TE_lift", "RB_lift", "most_amplified", "games", "confidence"]
     elevation = current[elev_cols].copy(); elevation["source_updated"] = REFRESH_CT
@@ -289,11 +301,11 @@ def build_model(roles: pd.DataFrame, schedule: pd.DataFrame, monitor: pd.DataFra
             sharp_rank = public_rank = elev = np.nan
         else:
             d = dm[r.opponent]; e = em[r.opponent]
-            sharp_rank = d.get("sharp_public_week8_pass_rank_last_verified", np.nan); public_rank = d.get("public_pass_def_rank", np.nan)
+            sharp_rank = d.get("sharp_public_week10_pass_rank_current", np.nan); public_rank = d.get("public_pass_def_rank", np.nan)
             role_lift = e.get(f"{r.usage_role}_lift", 0.0)
-            # Stale Sharp public ranks are visible for context only. The current
-            # nflverse PBP pass-defense rank is the matchup substitute.
-            sharp_factor = 1.0
+            # Current public Sharp matchup ranks are a labeled cross-check, not
+            # the inaccessible proprietary Pass Efficiency DEF field.
+            sharp_factor = 1.0 if pd.isna(sharp_rank) else clip(1 + (float(sharp_rank) - 16.5) * .004, .94, 1.06)
             public_factor = 1.0 if pd.isna(public_rank) else clip(1 + (float(public_rank) - 16.5) * .011, .84, 1.17)
             elevation_factor = clip(1 + role_lift * .25, .82, 1.25)
             pace = clip((plays.get(r.team, league_plays) + plays.get(r.opponent, league_plays)) / (2 * league_plays), .92, 1.08)
@@ -316,7 +328,7 @@ def build_model(roles: pd.DataFrame, schedule: pd.DataFrame, monitor: pd.DataFra
             "defense_elevation_score": elev, "matchup_factor": matchup, "pace_factor": pace,
             "model_rec_yds_projection": proj, "model_floor": max(0, proj - max(10, r.ypg_std * .60)),
             "model_ceiling": proj + max(14, r.ypg_std * .75), "opportunity_score": score, "tier": tier,
-            "proprietary_sharp_status": "STALE W5 PRESERVED / PUBLIC W8 LAST VERIFIED STALE / CURRENT PBP SUBSTITUTE",
+            "proprietary_sharp_status": "PROPRIETARY W5 STALE PRESERVED / PUBLIC W10 CURRENT CROSS-CHECK / CURRENT PBP SUBSTITUTE",
             "source_updated": REFRESH_CT,
         })
     model = pd.DataFrame(rows).sort_values(["opportunity_score", "target_share"], ascending=False).reset_index(drop=True)
@@ -330,8 +342,8 @@ def build_model(roles: pd.DataFrame, schedule: pd.DataFrame, monitor: pd.DataFra
 
 def grade_and_archive(outgoing: pd.DataFrame, weekly: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     old = outgoing.copy(); old["week"] = pd.to_numeric(old.week, errors="coerce")
-    old = old.loc[old.week.eq(8)].copy()
-    old["player_key"] = old.player.map(norm_name); actual = weekly.loc[weekly.week.eq(8)].copy(); actual["player_key"] = actual.player.map(norm_name)
+    old = old.loc[old.week.eq(9)].copy()
+    old["player_key"] = old.player.map(norm_name); actual = weekly.loc[weekly.week.eq(9)].copy(); actual["player_key"] = actual.player.map(norm_name)
     actual = actual[["team", "player_key", "targets", "team_targets", "weekly_target_share", "receiving_yards", "receiving_tds"]].rename(columns={
         "targets": "actual_targets", "team_targets": "actual_team_targets", "weekly_target_share": "actual_target_share",
         "receiving_yards": "actual_receiving_yards", "receiving_tds": "actual_receiving_tds",
@@ -342,25 +354,27 @@ def grade_and_archive(outgoing: pd.DataFrame, weekly: pd.DataFrame) -> tuple[pd.
     pred_y = pd.to_numeric(joined.get("model_rec_yds_projection"), errors="coerce").fillna(pd.to_numeric(joined.get("yards_per_game"), errors="coerce")).fillna(0)
     pred_share = pd.to_numeric(joined.get("target_share"), errors="coerce").fillna(0)
     ranks = pd.to_numeric(joined.get("rank"), errors="coerce").fillna(pd.Series(range(1, len(joined)+1), index=joined.index))
-    actual_top10 = set(weekly.loc[weekly.week.eq(8)].sort_values("receiving_yards", ascending=False).head(10).player.map(norm_name))
+    actual_top10 = set(weekly.loc[weekly.week.eq(9)].sort_values("receiving_yards", ascending=False).head(10).player.map(norm_name))
     joined["published_rank"] = ranks
     cohort_top10 = joined.sort_values("published_rank").head(10) if len(joined) else joined
     overlap = sum(k in actual_top10 for k in cohort_top10.player_key) / 10 if len(joined) else np.nan
     mae = (pred_y - joined.actual_receiving_yards).abs().mean() if len(joined) else np.nan
     spearman = (-ranks).corr(joined.actual_receiving_yards.rank()) if len(joined) > 2 else np.nan
     acc = pd.DataFrame([{
-        "Week": 8, "Model Version": "v0.8 full published cohort", "Published Cohort": len(joined),
+        "Week": 9, "Model Version": "v0.9 full published cohort", "Published Cohort": len(joined),
         "Top-10 Yardage Overlap": overlap, "TD Hit Rate": (cohort_top10.actual_receiving_tds.gt(0)).mean() if len(joined) else np.nan,
         "Yardage MAE": mae, "Spearman": spearman,
         "Target Share Stability": (pred_share - joined.actual_target_share).abs().mean() if len(joined) else np.nan,
-        "Notes": "Graded against the frozen full Week 8 publication; bye rows retained in archive and excluded from active-opportunity interpretation.",
+        "Notes": "Graded against the frozen full Week 9 publication; bye rows retained in archive and excluded from active-opportunity interpretation.",
         "Refreshed": REFRESH_DATE,
     }])
     prior_archive_path = LIVE / "weekly_archive_2026.csv"
     archive_rows = pd.read_csv(prior_archive_path).to_dict("records") if prior_archive_path.exists() else []
     for _, r in old.iterrows():
-        archive_rows.append({"season": 2026, "week": 8, "published_date": "2026-10-28", "snapshot_status": "FROZEN FULL COHORT", "rank": r.get("rank", ""), "player": r.player, "team": r.team, "role": r.get("role", ""), "opponent": r.get("opponent", ""), "target_share": r.get("target_share", ""), "rec_yds_projection": r.get("model_rec_yds_projection", r.get("yards_per_game", "")), "opportunity_score": r.get("opportunity_score", ""), "tier": r.get("tier", ""), "source_note": "Outgoing Week 8 full publication frozen before Week 9 advance."})
-    return acc, pd.DataFrame(archive_rows)
+        archive_rows.append({"season": 2026, "week": 9, "published_date": "2026-11-04", "snapshot_status": "FROZEN FULL COHORT", "rank": r.get("rank", ""), "player": r.player, "team": r.team, "role": r.get("role", ""), "opponent": r.get("opponent", ""), "target_share": r.get("target_share", ""), "rec_yds_projection": r.get("model_rec_yds_projection", r.get("yards_per_game", "")), "opportunity_score": r.get("opportunity_score", ""), "tier": r.get("tier", ""), "source_note": "Outgoing Week 9 full publication frozen before Week 10 advance."})
+    archive = pd.DataFrame(archive_rows)
+    archive = archive.drop_duplicates(["season", "week", "player", "team", "snapshot_status"], keep="last")
+    return acc, archive
 
 
 def main() -> None:
@@ -386,24 +400,25 @@ def main() -> None:
     monitor.to_csv(LIVE / "pass_defense_monitor.csv", index=False, float_format="%.6f")
     elevation.to_csv(LIVE / "defense_elevation_watch.csv", index=False, float_format="%.6f")
     elevation.head(5).to_csv(LIVE / "defense_elevation_top5.csv", index=False, float_format="%.6f")
-    prior_top5.to_csv(ARCHIVE / "week_9" / "prior_week_defense_elevation_top5.csv", index=False, float_format="%.6f")
+    prior_top5.to_csv(ARCHIVE / "week_10" / "prior_week_defense_elevation_top5.csv", index=False, float_format="%.6f")
     accuracy.to_csv(LIVE / "model_accuracy_2026.csv", index=False, float_format="%.6f")
     weekly_archive.to_csv(LIVE / "weekly_archive_2026.csv", index=False, float_format="%.6f")
-    schedule.to_csv(LIVE / "schedule_week_9.csv", index=False)
-    pd.DataFrame([{"team": t, "public_week8_pass_def_rank_last_verified": r, "verified_date": "2026-10-27", "rechecked_date": "2026-11-04", "source": SHARP_PUBLIC_URL, "label": "STALE Sharp public Week 8 matchup passing-defense rank; not proprietary Pass Efficiency DEF; not used as current model input"} for t, r in sorted(SHARP_PASS.items())]).to_csv(LIVE / "sharp_public_week8_pass_def.csv", index=False)
+    schedule.to_csv(LIVE / "schedule_week_10.csv", index=False)
+    pd.DataFrame([{"team": t, "public_week10_pass_def_rank": r, "verified_date": "2026-11-11", "source": SHARP_PUBLIC_URL, "label": "CURRENT Sharp public Week 10 matchup passing-defense rank; not proprietary Pass Efficiency DEF"} for t, r in sorted(SHARP_PASS.items())]).to_csv(LIVE / "sharp_public_week10_pass_def.csv", index=False)
     status = pd.DataFrame([
-        ("season", 2026), ("current_target_week", 9), ("latest_completed_week", 8),
+        ("season", 2026), ("current_target_week", 10), ("latest_completed_week", 9),
         ("last_refresh", REFRESH_CT), ("wr_coverage", "32 teams / 96 current WR roles"),
-        ("active_week9_rows", 90), ("bye_teams", "PIT, TEN"),
+        ("active_week10_rows", 84), ("bye_teams", "CHI, DEN, PHI, TB"),
         ("sharp_proprietary", "STALE — Week 5 snapshot preserved; not guessed"),
-        ("sharp_public_substitute", "Current nflverse Weeks 1–8 PBP pass-defense rank; Sharp public Week 8 ranks preserved separately as stale"),
-        ("defense_elevation", "32 defenses normalized to opponent season baselines through Week 8"),
-        ("injury_state", "JAX-BAL official Wednesday report filed; most Sunday/Monday reports pending"),
-        ("validation", "PASS — 96 rows / 32 teams / 3 WRs each / schedule reciprocal / no duplicates / target denominators reconciled"),
+        ("sharp_public_cross_check", "Current Sharp public Week 10 matchup ranks; not proprietary Pass Efficiency DEF"),
+        ("public_substitute", "Current nflverse Weeks 1–9 PBP pass-defense performance"),
+        ("defense_elevation", "32 defenses normalized to opponent season baselines through Week 9"),
+        ("injury_state", "WAS-NYG official report filed; most Sunday/Monday reports pending"),
+        ("validation", "PASS — 96 rows / 32 teams / 3 WRs each / 28 reciprocal schedule rows / no duplicates / target denominators reconciled"),
     ], columns=["key", "value"])
     status.to_csv(LIVE / "model_status.csv", index=False)
     summary = {
-        "target_week": 9, "completed_week": 8,
+        "target_week": 10, "completed_week": 9,
         "rows": {"current_week_model": len(model), "dashboard": int((model.opponent != "BYE").sum()), "wr_grid": len(roles), "target_share": len(roles), "td_consistency": len(roles), "receiving_yards": len(roles), "pass_defense": len(monitor), "defense_elevation": len(elevation), "accuracy": len(accuracy), "weekly_archive": len(weekly_archive)},
         "top10": model.loc[~model.opponent.eq("BYE")].head(10)[["rank", "player", "team", "opponent", "model_rec_yds_projection", "opportunity_score", "tier", "availability"]].to_dict("records"),
         "elevation_top5": elevation.head(5).to_dict("records"), "accuracy": accuracy.iloc[0].to_dict(),
