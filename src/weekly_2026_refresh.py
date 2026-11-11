@@ -251,7 +251,11 @@ def elevation_table(outputs: pd.DataFrame, through_week: int) -> pd.DataFrame:
 def build_defense(stats: pd.DataFrame, pbp: pd.DataFrame, roles: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     outputs = team_game_outputs(stats, roles)
     current = elevation_table(outputs, COMPLETED_WEEK)
-    prior = elevation_table(outputs, COMPLETED_WEEK - 1)[["defense", "rank", "elevation_score"]].rename(columns={"rank": "prior_rank", "elevation_score": "prior_score"})
+    published_prior_path = ARCHIVE / "week_10" / "pre_refresh" / "defense_elevation_watch.csv"
+    if published_prior_path.exists():
+        prior = pd.read_csv(published_prior_path)[["defense", "rank", "elevation_score"]].rename(columns={"rank": "prior_rank", "elevation_score": "prior_score"})
+    else:
+        prior = elevation_table(outputs, COMPLETED_WEEK - 1)[["defense", "rank", "elevation_score"]].rename(columns={"rank": "prior_rank", "elevation_score": "prior_score"})
     current = current.merge(prior, on="defense", how="left")
     current["rank_change"] = current.prior_rank - current["rank"]
     current["trend"] = np.select([current.rank_change.ge(3), current.rank_change.le(-3)], ["RISING", "FALLING"], default="STABLE")
