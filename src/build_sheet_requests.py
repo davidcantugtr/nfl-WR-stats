@@ -54,6 +54,18 @@ def numfmt(sheet, r0, r1, c0, c1, pattern):
                            "fields": "userEnteredFormat.numberFormat"}}
 
 
+def merge(sheet, r0, r1, c0, c1):
+    return {"mergeCells": {"range": {"sheetId": SHEETS[sheet], "startRowIndex": r0, "endRowIndex": r1,
+                                      "startColumnIndex": c0, "endColumnIndex": c1},
+                           "mergeType": "MERGE_ALL"}}
+
+
+def row_height(sheet, r0, r1, pixels):
+    return {"updateDimensionProperties": {"range": {"sheetId": SHEETS[sheet], "dimension": "ROWS",
+                                                     "startIndex": r0, "endIndex": r1},
+                                          "properties": {"pixelSize": pixels}, "fields": "pixelSize"}}
+
+
 def main():
     roles = pd.read_csv(LIVE / "wr_top3_summary.csv")
     model = pd.read_csv(LIVE / "current_week_model.csv")
@@ -64,14 +76,26 @@ def main():
     elev = pd.read_csv(LIVE / "defense_elevation_watch.csv")
     acc = pd.read_csv(LIVE / "model_accuracy_2026.csv")
     archive = pd.read_csv(LIVE / "weekly_archive_2026.csv")
+    a = acc.iloc[0]
 
     req = []
     # Dashboard: retain the designed layout and replace only live values.
-    req += [write("WR Dashboard", 0, 0, [["NFL 2026 WR OPPORTUNITY MODEL — WEEK 10 LIVE"]]),
+    req += [clear("WR Dashboard", 0, 10, 0, 17), clear("WR Dashboard", 0, 40, 16, 26),
+            {"unmergeCells": {"range": {"sheetId": SHEETS["WR Dashboard"], "startRowIndex": 0, "endRowIndex": 10, "startColumnIndex": 0, "endColumnIndex": 16}}},
+            write("WR Dashboard", 0, 0, [["NFL 2026 WR OPPORTUNITY MODEL — WEEK 10 LIVE"]]),
+            merge("WR Dashboard", 0, 1, 0, 16),
             write("WR Dashboard", 2, 0, [["2026 usage through completed Week 9 • Official Week 10 schedule • Refreshed November 11, 2026"]]),
-            write("WR Dashboard", 5, 0, [[10, "", "", "W1–W9 FINAL", "", "", 96, "", "", "PUBLIC PBP W1–W9 / SHARP PUBLIC W10 CURRENT / PROPRIETARY W5 STALE", "", "", 84]]),
+            merge("WR Dashboard", 2, 3, 0, 16),
+            write("WR Dashboard", 4, 0, [["CURRENT WEEK", "", "", "STAT BASELINE", "", "", "WR PROFILES", "", "", "PASS DEFENSE INPUT", "", "", "ACTIVE MATCHUPS"]]),
+            merge("WR Dashboard", 4, 5, 0, 3), merge("WR Dashboard", 4, 5, 3, 6),
+            merge("WR Dashboard", 4, 5, 6, 9), merge("WR Dashboard", 4, 5, 9, 12), merge("WR Dashboard", 4, 5, 12, 16),
+            write("WR Dashboard", 5, 0, [[10, "", "", "W1–W9 FINAL", "", "", 96, "", "", "PBP W1–W9 + SHARP W10 / PROPRIETARY W5 STALE", "", "", 84]]),
+            merge("WR Dashboard", 5, 6, 0, 3), merge("WR Dashboard", 5, 6, 3, 6),
+            merge("WR Dashboard", 5, 6, 6, 9), merge("WR Dashboard", 5, 6, 9, 12), merge("WR Dashboard", 5, 6, 12, 16),
             write("WR Dashboard", 7, 0, [["DATA WARNING: Sharp proprietary Pass Efficiency DEF remains inaccessible; its last verified Week 5 value is preserved as STALE and never guessed. The current Sharp public Week 10 matchup pass/pressure/explosive ranks are shown separately and nflverse PBP through Week 9 remains the current public performance substitute. Most Sunday/Monday Week 10 injury reports are not yet filed; Puka Nacua is removed after the Rams reported likely IR."]]),
+            merge("WR Dashboard", 7, 8, 0, 16),
             write("WR Dashboard", 9, 0, [["TOP 10 — WEEK 10 RECEIVING OPPORTUNITIES"]]),
+            merge("WR Dashboard", 9, 10, 0, 16),
             clear("WR Dashboard", 11, 21, 0, 16), clear("WR Dashboard", 25, 30, 0, 16)]
     top = model.loc[model.opponent.ne("BYE")].head(10)
     top_rows = []
@@ -80,7 +104,19 @@ def main():
                          r.td_game_rate, r.sharp_public_pass_def_rank, r.defense_elevation_score,
                          r.model_rec_yds_projection, r.model_floor, r.model_ceiling, r.opportunity_score, r.tier])
     req.append(write("WR Dashboard", 11, 0, top_rows))
-    req.append(write("WR Dashboard", 25, 0, elev.head(5)[["rank", "defense", "elevation_score", "prior_rank", "rank_change", "trend", "QB_lift", "WR1_lift", "WR2_lift", "WR3_lift", "TE_lift", "RB_lift", "most_amplified", "games", "confidence"]].values.tolist()))
+    req += [clear("WR Dashboard", 21, 24, 0, 16),
+            write("WR Dashboard", 23, 0, [["DEFENSE ELEVATION TOP 5 — THROUGH WEEK 9"]]),
+            merge("WR Dashboard", 23, 24, 0, 16),
+            write("WR Dashboard", 25, 0, elev.head(5)[["rank", "defense", "elevation_score", "prior_rank", "rank_change", "trend", "QB_lift", "WR1_lift", "WR2_lift", "WR3_lift", "TE_lift", "RB_lift", "most_amplified", "games", "confidence"]].values.tolist()),
+            clear("WR Dashboard", 30, 36, 0, 16),
+            write("WR Dashboard", 32, 0, [["WEEK 9 ACCURACY — FULL PUBLISHED COHORT"]]),
+            merge("WR Dashboard", 32, 33, 0, 16),
+            write("WR Dashboard", 33, 0, [["Cohort", "Top-10 Yardage Overlap", "TD Hit Rate", "Yardage MAE", "Spearman", "Target Share Stability MAE"]]),
+            write("WR Dashboard", 34, 0, [[a["Published Cohort"], a["Top-10 Yardage Overlap"], a["TD Hit Rate"], a["Yardage MAE"], a.Spearman, a["Target Share Stability"]]]),
+            row_height("WR Dashboard", 0, 1, 36), row_height("WR Dashboard", 2, 3, 24),
+            row_height("WR Dashboard", 4, 6, 28), row_height("WR Dashboard", 7, 8, 54),
+            row_height("WR Dashboard", 9, 10, 30), row_height("WR Dashboard", 23, 24, 30),
+            row_height("WR Dashboard", 32, 33, 34), row_height("WR Dashboard", 33, 35, 28)]
 
     # Main role grid.
     req += [write("WR1-3 Grid", 0, 0, [["WR1–3 GRID — WEEK 10 CURRENT ROLES"]]),
@@ -114,7 +150,6 @@ def main():
     ecols = ["rank", "defense", "elevation_score", "prior_rank", "rank_change", "trend", "QB_lift", "WR1_lift", "WR2_lift", "WR3_lift", "TE_lift", "RB_lift", "most_amplified", "games", "confidence", "source_updated"]
     req.append(write("Defense Elevation", 5, 0, elev[ecols].values.tolist()))
 
-    a = acc.iloc[0]
     req += [write("Model Accuracy", 2, 0, [["Week 9 is graded against the frozen full 96-player publication; bye rows remain archived."]]),
             write("Model Accuracy", 5, 0, [[a.Week, a["Published Cohort"], a["Top-10 Yardage Overlap"], a["TD Hit Rate"], a["Yardage MAE"], a.Spearman, a["Target Share Stability"]]]),
             clear("Model Accuracy", 8, 20, 0, 10), write("Model Accuracy", 8, 0, [a.tolist()])]
@@ -162,6 +197,7 @@ def main():
     ]:
         req.append(numfmt(sh, r0, r1, c0, c1, "0.0"))
     req.append(numfmt("Weekly Archive", 4, 401, 9, 10, "0.0%"))
+    req.append(numfmt("WR Dashboard", 34, 35, 5, 6, "0.0%"))
     expanded = []
     for item in req:
         uc = item.get("updateCells")
