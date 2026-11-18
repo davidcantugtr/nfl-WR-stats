@@ -1,2 +1,2 @@
 Week,Model Version,Published Cohort,Top-10 Yardage Overlap,TD Hit Rate,Yardage MAE,Spearman,Target Share Stability,Notes,Refreshed
-9,v0.9 full published cohort,96,0.400000,0.400000,27.286188,0.520183,0.086319,Graded against the frozen full Week 9 publication; bye rows retained in archive and excluded from active-opportunity interpretation.,2026-11-11
+10,v1.0 full published cohort,96,0.400000,0.400000,27.230662,0.540933,0.094553,Graded against the frozen full Week 10 publication; bye rows retained in archive and excluded from active-opportunity interpretation.,2026-11-18

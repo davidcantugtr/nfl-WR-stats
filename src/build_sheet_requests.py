@@ -82,19 +82,19 @@ def main():
     # Dashboard: retain the designed layout and replace only live values.
     req += [clear("WR Dashboard", 0, 10, 0, 17), clear("WR Dashboard", 0, 40, 16, 26),
             {"unmergeCells": {"range": {"sheetId": SHEETS["WR Dashboard"], "startRowIndex": 0, "endRowIndex": 10, "startColumnIndex": 0, "endColumnIndex": 16}}},
-            write("WR Dashboard", 0, 0, [["NFL 2026 WR OPPORTUNITY MODEL — WEEK 10 LIVE"]]),
+            write("WR Dashboard", 0, 0, [["NFL 2026 WR OPPORTUNITY MODEL — WEEK 11 LIVE"]]),
             merge("WR Dashboard", 0, 1, 0, 16),
-            write("WR Dashboard", 2, 0, [["2026 usage through completed Week 9 • Official Week 10 schedule • Refreshed November 11, 2026"]]),
+            write("WR Dashboard", 2, 0, [["2026 usage through completed Week 10 • Official Week 11 schedule • Refreshed November 18, 2026"]]),
             merge("WR Dashboard", 2, 3, 0, 16),
             write("WR Dashboard", 4, 0, [["CURRENT WEEK", "", "", "STAT BASELINE", "", "", "WR PROFILES", "", "", "PASS DEFENSE INPUT", "", "", "ACTIVE MATCHUPS"]]),
             merge("WR Dashboard", 4, 5, 0, 3), merge("WR Dashboard", 4, 5, 3, 6),
             merge("WR Dashboard", 4, 5, 6, 9), merge("WR Dashboard", 4, 5, 9, 12), merge("WR Dashboard", 4, 5, 12, 16),
-            write("WR Dashboard", 5, 0, [[10, "", "", "W1–W9 FINAL", "", "", 96, "", "", "PBP W1–W9 + SHARP W10 / PROPRIETARY W5 STALE", "", "", 84]]),
+            write("WR Dashboard", 5, 0, [[11, "", "", "W1–W10 FINAL", "", "", 96, "", "", "PBP W1–W10 + SHARP W11 / PROPRIETARY W5 STALE", "", "", 78]]),
             merge("WR Dashboard", 5, 6, 0, 3), merge("WR Dashboard", 5, 6, 3, 6),
             merge("WR Dashboard", 5, 6, 6, 9), merge("WR Dashboard", 5, 6, 9, 12), merge("WR Dashboard", 5, 6, 12, 16),
-            write("WR Dashboard", 7, 0, [["DATA WARNING: Sharp proprietary Pass Efficiency DEF remains inaccessible; its last verified Week 5 value is preserved as STALE and never guessed. The current Sharp public Week 10 matchup pass/pressure/explosive ranks are shown separately and nflverse PBP through Week 9 remains the current public performance substitute. Most Sunday/Monday Week 10 injury reports are not yet filed; Puka Nacua is removed after the Rams reported likely IR."]]),
+            write("WR Dashboard", 7, 0, [["DATA WARNING: Sharp proprietary Pass Efficiency DEF remains inaccessible; its last verified Week 5 value is preserved as STALE and never guessed. Current Sharp public Week 11 pass/pressure/explosive ranks are separate, with nflverse PBP through Week 10 as the public performance substitute. Most Sunday/Monday reports are pending; Jordan Addison is high-risk after thumb surgery and Marvin Harrison Jr. opened DNP."]]),
             merge("WR Dashboard", 7, 8, 0, 16),
-            write("WR Dashboard", 9, 0, [["TOP 10 — WEEK 10 RECEIVING OPPORTUNITIES"]]),
+            write("WR Dashboard", 9, 0, [["TOP 10 — WEEK 11 RECEIVING OPPORTUNITIES"]]),
             merge("WR Dashboard", 9, 10, 0, 16),
             clear("WR Dashboard", 11, 21, 0, 16), clear("WR Dashboard", 25, 30, 0, 16)]
     top = model.loc[model.opponent.ne("BYE")].head(10)
@@ -105,11 +105,11 @@ def main():
                          r.model_rec_yds_projection, r.model_floor, r.model_ceiling, r.opportunity_score, r.tier])
     req.append(write("WR Dashboard", 11, 0, top_rows))
     req += [clear("WR Dashboard", 21, 24, 0, 16),
-            write("WR Dashboard", 23, 0, [["DEFENSE ELEVATION TOP 5 — THROUGH WEEK 9"]]),
+            write("WR Dashboard", 23, 0, [["DEFENSE ELEVATION TOP 5 — THROUGH WEEK 10"]]),
             merge("WR Dashboard", 23, 24, 0, 16),
             write("WR Dashboard", 25, 0, elev.head(5)[["rank", "defense", "elevation_score", "prior_rank", "rank_change", "trend", "QB_lift", "WR1_lift", "WR2_lift", "WR3_lift", "TE_lift", "RB_lift", "most_amplified", "games", "confidence"]].values.tolist()),
             clear("WR Dashboard", 30, 36, 0, 16),
-            write("WR Dashboard", 32, 0, [["WEEK 9 ACCURACY — FULL PUBLISHED COHORT"]]),
+            write("WR Dashboard", 32, 0, [["WEEK 10 ACCURACY — FULL PUBLISHED COHORT"]]),
             merge("WR Dashboard", 32, 33, 0, 16),
             write("WR Dashboard", 33, 0, [["Cohort", "Top-10 Yardage Overlap", "TD Hit Rate", "Yardage MAE", "Spearman", "Target Share Stability MAE"]]),
             write("WR Dashboard", 34, 0, [[a["Published Cohort"], a["Top-10 Yardage Overlap"], a["TD Hit Rate"], a["Yardage MAE"], a.Spearman, a["Target Share Stability"]]]),
@@ -119,60 +119,60 @@ def main():
             row_height("WR Dashboard", 32, 33, 34), row_height("WR Dashboard", 33, 35, 28)]
 
     # Main role grid.
-    req += [write("WR1-3 Grid", 0, 0, [["WR1–3 GRID — WEEK 10 CURRENT ROLES"]]),
-            write("WR1-3 Grid", 1, 0, [["Actual 2026 usage through Week 9; role confidence combines depth, targets and snaps. Injured/inactive players are reduced or excluded."]]),
+    req += [write("WR1-3 Grid", 0, 0, [["WR1–3 GRID — WEEK 11 CURRENT ROLES"]]),
+            write("WR1-3 Grid", 1, 0, [["Actual 2026 usage through Week 10; role confidence combines depth, targets and snaps. Injured/inactive players are reduced or excluded."]]),
             clear("WR1-3 Grid", 4, 120, 0, 21)]
     cols = ["team", "usage_role", "player", "games", "targets", "team_season_targets", "target_share", "target_rank_team", "receptions", "receiving_yards", "yards_per_game", "yards_rank_team", "receiving_tds", "td_game_rate", "td_consistency_rank_team", "weekly_consistency", "latest_snap_share", "depth_rank", "role_confidence", "availability", "data_status"]
     req.append(write("WR1-3 Grid", 4, 0, roles[cols].values.tolist()))
 
-    req += [write("Target Share", 0, 0, [["TARGET SHARE — 2026 THROUGH WEEK 9"]]), clear("Target Share", 4, 120, 0, 12)]
+    req += [write("Target Share", 0, 0, [["TARGET SHARE — 2026 THROUGH WEEK 10"]]), clear("Target Share", 4, 120, 0, 12)]
     rows = [[i + 1, r.player, r.team, r.usage_role, r.targets, r.team_season_targets, r.target_share, r.target_rank_team, r.receiving_yards, r.yards_per_game, r.td_game_rate, r.availability] for i, (_, r) in enumerate(target.iterrows())]
     req.append(write("Target Share", 4, 0, rows))
 
-    req += [write("TD Consistency", 0, 0, [["TD CONSISTENCY — 2026 THROUGH WEEK 9"]]), clear("TD Consistency", 4, 120, 0, 12)]
+    req += [write("TD Consistency", 0, 0, [["TD CONSISTENCY — 2026 THROUGH WEEK 10"]]), clear("TD Consistency", 4, 120, 0, 12)]
     rows = [[i + 1, r.player, r.team, r.usage_role, r.receiving_tds, r.games_with_td, r.td_game_rate, r.td_consistency_rank_team, r.targets, r.target_share, r.yards_per_game, r.availability] for i, (_, r) in enumerate(td.iterrows())]
     req.append(write("TD Consistency", 4, 0, rows))
 
-    req += [write("Receiving Yards", 0, 0, [["RECEIVING YARDS — 2026 THROUGH WEEK 9"]]), clear("Receiving Yards", 4, 120, 0, 12)]
+    req += [write("Receiving Yards", 0, 0, [["RECEIVING YARDS — 2026 THROUGH WEEK 10"]]), clear("Receiving Yards", 4, 120, 0, 12)]
     rows = [[i + 1, r.player, r.team, r.usage_role, r.receiving_yards, r.yards_per_game, r.ypg_median, r.ypg_std, r.weekly_consistency, r.targets, r.target_share, r.availability] for i, (_, r) in enumerate(yards.iterrows())]
     req.append(write("Receiving Yards", 4, 0, rows))
 
-    req += [write("Pass Defense Monitor", 0, 0, [["PASS DEFENSE MONITOR — WEEK 10"]]),
-            write("Pass Defense Monitor", 2, 0, [["Sharp proprietary Pass Efficiency DEF: last verified Week 5 snapshot preserved as STALE and never guessed. Current Sharp public Week 10 pass / pressure / explosive matchup ranks are labeled separately; current nflverse Weeks 1–9 PBP is the public performance substitute."]]),
-            write("Pass Defense Monitor", 5, 4, [["Sharp Public W10 Pass Rank", "Sharp Public W10 Pressure Rank", "Sharp Public W10 Explosive Rank"]]),
+    req += [write("Pass Defense Monitor", 0, 0, [["PASS DEFENSE MONITOR — WEEK 11"]]),
+            write("Pass Defense Monitor", 2, 0, [["Sharp proprietary Pass Efficiency DEF: last verified Week 5 snapshot preserved as STALE and never guessed. Current Sharp public Week 11 pass / pressure / explosive matchup ranks are labeled separately; current nflverse Weeks 1–10 PBP is the public performance substitute."]]),
+            write("Pass Defense Monitor", 5, 4, [["Sharp Public W11 Pass Rank", "Sharp Public W11 Pressure Rank", "Sharp Public W11 Explosive Rank"]]),
             clear("Pass Defense Monitor", 6, 50, 0, 16)]
-    dcols = ["team", "sharp_pass_def_rank", "last_verified", "sharp_proprietary_status", "sharp_public_week10_pass_rank_current", "sharp_public_week10_pressure_rank_current", "sharp_public_week10_explosive_rank_current", "public_pass_def_rank", "pass_yds_allowed_pg", "completion_rate_allowed", "pass_tds_allowed_pg", "yards_per_attempt_allowed", "sack_rate", "pressure_event_rate", "explosive_pass_rate_allowed", "pass_success_rate_allowed"]
+    dcols = ["team", "sharp_pass_def_rank", "last_verified", "sharp_proprietary_status", "sharp_public_week11_pass_rank_current", "sharp_public_week11_pressure_rank_current", "sharp_public_week11_explosive_rank_current", "public_pass_def_rank", "pass_yds_allowed_pg", "completion_rate_allowed", "pass_tds_allowed_pg", "yards_per_attempt_allowed", "sack_rate", "pressure_event_rate", "explosive_pass_rate_allowed", "pass_success_rate_allowed"]
     req.append(write("Pass Defense Monitor", 6, 0, defense[dcols].values.tolist()))
 
-    req += [write("Defense Elevation", 0, 0, [["DEFENSE ELEVATION WATCH — THROUGH WEEK 9"]]),
-            write("Defense Elevation", 1, 0, [["Opponent-normalized lift versus each offense's own season baseline; rank movement compares results through Week 8."]]),
+    req += [write("Defense Elevation", 0, 0, [["DEFENSE ELEVATION WATCH — THROUGH WEEK 10"]]),
+            write("Defense Elevation", 1, 0, [["Opponent-normalized lift versus each offense's own season baseline; rank movement compares the published Week 10 ranks."]]),
             clear("Defense Elevation", 5, 50, 0, 16)]
     ecols = ["rank", "defense", "elevation_score", "prior_rank", "rank_change", "trend", "QB_lift", "WR1_lift", "WR2_lift", "WR3_lift", "TE_lift", "RB_lift", "most_amplified", "games", "confidence", "source_updated"]
     req.append(write("Defense Elevation", 5, 0, elev[ecols].values.tolist()))
 
-    req += [write("Model Accuracy", 2, 0, [["Week 9 is graded against the frozen full 96-player publication; bye rows remain archived."]]),
+    req += [write("Model Accuracy", 2, 0, [["Week 10 is graded against the frozen full 96-player publication; bye rows remain archived."]]),
             write("Model Accuracy", 5, 0, [[a.Week, a["Published Cohort"], a["Top-10 Yardage Overlap"], a["TD Hit Rate"], a["Yardage MAE"], a.Spearman, a["Target Share Stability"]]]),
             clear("Model Accuracy", 8, 20, 0, 10), write("Model Accuracy", 8, 0, [a.tolist()])]
 
-    req += [write("Weekly Archive", 1, 0, [["Outgoing Week 9 full player publication is frozen before Week 10 advance; all earlier historical rows remain preserved."]]),
+    req += [write("Weekly Archive", 1, 0, [["Outgoing Week 10 full player publication is frozen before Week 11 advance; all earlier historical rows remain preserved."]]),
             clear("Weekly Archive", 4, 500, 0, 14)]
     req.append(write("Weekly Archive", 4, 0, archive.values.tolist()))
 
     status = [
-        ["Current target week", "Week 10", "LIVE", "Official NFL schedule"],
-        ["Completed statistical baseline", "Weeks 1–9", "FINAL", "nflverse weekly + PBP"],
+        ["Current target week", "Week 11", "LIVE", "Official NFL schedule"],
+        ["Completed statistical baseline", "Weeks 1–10", "FINAL", "nflverse weekly + PBP"],
         ["WR role coverage", "96 rows / 32 teams", "PASS", "Three current WRs per team"],
-        ["Active matchup coverage", "84 rows / 28 teams", "PASS", "CHI, DEN, PHI, TB bye"],
-        ["Schedule alignment", "14 games / 28 reciprocal rows", "PASS", "NFL Week 10 schedule"],
+        ["Active matchup coverage", "78 rows / 26 teams", "PASS", "ATL, CLE, GB, LA, NE, SEA bye"],
+        ["Schedule alignment", "13 games / 26 reciprocal rows", "PASS", "NFL Week 11 schedule"],
         ["Duplicate players", "0", "PASS", "Team-player key"],
         ["Target denominator", "All team pass targets", "PASS", "nflverse weekly stats"],
         ["Sharp proprietary", "Week 5 last verified", "STALE", "Never guessed"],
-        ["Sharp public table", "Week 10 current", "CURRENT", "Sharp public matchup page checked 2026-11-11"],
-        ["Current public substitute", "PBP Weeks 1–9 pass defense", "CURRENT", "nflverse"],
+        ["Sharp public table", "Week 11 current", "CURRENT", "Sharp public matchup page checked 2026-11-18"],
+        ["Current public substitute", "PBP Weeks 1–10 pass defense", "CURRENT", "nflverse"],
         ["Defense elevation", "32 defenses", "PASS", "Opponent-baseline normalized"],
-        ["Injury reports", "Thursday filed; later games pending", "PROVISIONAL", "Official NFL Week 10 report"],
+        ["Injury reports", "Thursday filed; later games pending", "PROVISIONAL", "Official NFL Week 11 report"],
     ]
-    req += [write("System Status", 0, 0, [["SYSTEM STATUS — WEEK 10"]]), clear("System Status", 5, 30, 0, 4), write("System Status", 5, 0, status)]
+    req += [write("System Status", 0, 0, [["SYSTEM STATUS — WEEK 11"]]), clear("System Status", 5, 30, 0, 4), write("System Status", 5, 0, status)]
 
     # Correct previously inherited percentage formats while preserving visual styling.
     for sh, r0, r1, cols_pct in [
