@@ -195,7 +195,7 @@
       "prior_rank": 9,
       "rank_change": 4,
       "trend": "RISING",
-      "QB_lift": 0.04282711498523615,
+      "QB_lift": 0.04282711498523613,
       "WR1_lift": 0.30438998048724386,
       "WR2_lift": 0.20911414726221517,
       "WR3_lift": -0.1647922219058153,
@@ -214,7 +214,7 @@
     "Top-10 Yardage Overlap": 0.4,
     "TD Hit Rate": 0.4,
     "Yardage MAE": 27.230662447916668,
-    "Spearman": 0.5409334191309372,
+    "Spearman": 0.5409334191309373,
     "Target Share Stability": 0.09455341552686669,
     "Notes": "Graded against the frozen full Week 10 publication; bye rows retained in archive and excluded from active-opportunity interpretation.",
     "Refreshed": "2026-11-18"
