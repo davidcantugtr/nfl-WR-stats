@@ -1,2 +1,3 @@
 Week,Model Version,Published Cohort,Top-10 Yardage Overlap,TD Hit Rate,Yardage MAE,Spearman,Target Share Stability,Notes,Refreshed
-10,v1.0 full published cohort,96,0.400000,0.400000,27.230662,0.540933,0.094553,Graded against the frozen full Week 10 publication; bye rows retained in archive and excluded from active-opportunity interpretation.,2026-11-18
+10.000000,v1.0 full published cohort,96.000000,0.400000,0.400000,27.230662,0.540933,0.094553,Graded against the frozen full Week 10 publication; bye rows retained in archive and excluded from active-opportunity interpretation.,2026-11-18
+11.000000,v1.1 published Top-10 + full 96-role cohort,96.000000,0.400000,0.500000,36.843992,-0.291795,0.086547,"Top-10 overlap, TD, yardage MAE and Spearman use the frozen published Top 10; target-share stability uses all 96 frozen WR role rows. Week 11 final only.",2026-11-25

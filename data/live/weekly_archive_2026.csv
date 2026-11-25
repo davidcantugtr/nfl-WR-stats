@@ -1,302 +1,398 @@
-season,week,published_date,snapshot_status,rank,player,team,role,opponent,target_share,rec_yds_projection,opportunity_score,tier,source_note
-2026,6,,LEGACY SUMMARY — NOT VERIFIED FULL SLATE,,,,,,,,,,Prior Sheet record preserved; no complete 96-player pregame snapshot.
-2026,7,2026-10-21,FROZEN PRELIMINARY COHORT,1.000000,Jaxon Smith-Njigba,SEA,WR1,KC,0.351064,119.500000,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.
-2026,7,2026-10-21,FROZEN PRELIMINARY COHORT,2.000000,Ja'Marr Chase,CIN,WR1,BAL,0.204301,57.800000,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.
-2026,7,2026-10-21,FROZEN PRELIMINARY COHORT,3.000000,Amon-Ra St. Brown,DET,WR1,GB,0.303191,74.400000,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.
-2026,7,2026-10-21,FROZEN PRELIMINARY COHORT,4.000000,CeeDee Lamb,DAL,WR1,PHI,0.287500,96.166667,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.
-2026,7,2026-10-21,FROZEN PRELIMINARY COHORT,5.000000,Chris Olave,NO,WR1,PIT,0.271111,96.666667,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.
-2026,7,2026-10-21,FROZEN PRELIMINARY COHORT,6.000000,Drake London,ATL,WR1,SF,0.287500,91.666667,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.
-2026,7,2026-10-21,FROZEN PRELIMINARY COHORT,7.000000,Parker Washington,JAX,WR1,,0.258427,69.333333,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.
-2026,7,2026-10-21,FROZEN PRELIMINARY COHORT,8.000000,Garrett Wilson,NYJ,WR1,MIA,0.285714,69.666667,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.
-2026,7,2026-10-21,FROZEN PRELIMINARY COHORT,9.000000,Nico Collins,HOU,WR1,NYG,0.147783,80.750000,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.
-2026,7,2026-10-21,FROZEN PRELIMINARY COHORT,10.000000,Puka Nacua,LA,WR1,LV,0.214876,104.250000,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.
-2026,7,2026-10-21,FROZEN PRELIMINARY COHORT,11.000000,Justin Jefferson,MIN,WR1,IND,0.186047,64.500000,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.
-2026,7,2026-10-21,FROZEN PRELIMINARY COHORT,12.000000,Zay Flowers,BAL,WR1,CIN,0.256098,94.200000,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.
-2026,8,2026-10-28,FROZEN FULL COHORT,1.000000,Jaxon Smith-Njigba,SEA,WR1,CHI,0.362791,150.525513,100.000000,ELITE,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,2.000000,Zay Flowers,BAL,WR1,BUF,0.267677,130.998553,90.018553,ELITE,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,3.000000,CeeDee Lamb,DAL,WR1,ARI,0.304511,91.123863,87.604322,ELITE,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,4.000000,Amon-Ra St. Brown,DET,WR1,MIN,0.310502,68.704503,79.278712,PRIME,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,5.000000,Tee Higgins,CIN,WR2,TEN,0.233645,113.639134,78.760276,PRIME,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,6.000000,Garrett Wilson,NYJ,WR1,LV,0.258883,71.129453,75.204034,PRIME,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,7.000000,Ja'Marr Chase,CIN,WR1,TEN,0.210280,70.799537,73.292722,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,8.000000,Drake London,ATL,WR1,TB,0.291667,68.019613,72.859173,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,9.000000,Parker Washington,JAX,WR1,IND,0.258427,63.454820,70.761409,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,10.000000,Puka Nacua,LA,WR1,LAC,0.228782,84.251453,70.556750,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,11.000000,Justin Jefferson,MIN,WR1,DET,0.202614,78.864173,70.466369,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,12.000000,Tetairoa McMillan,CAR,WR1,GB,0.255924,89.416472,69.934819,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,13.000000,DeVonta Smith,PHI,WR1,WAS,0.186364,94.453526,69.430368,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,14.000000,Christian Watson,GB,WR1,CAR,0.212928,74.712739,68.863847,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,15.000000,Carnell Tate,TEN,WR1,CIN,0.261538,56.623270,68.689704,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,16.000000,Michael Wilson,ARI,WR1,DAL,0.242647,62.019612,66.638253,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,17.000000,George Pickens,DAL,WR2,ARI,0.218045,86.926812,65.666651,WATCH,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,18.000000,Denzel Boston,CLE,WR1,PIT,0.202899,48.189438,62.886259,WATCH,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,19.000000,Emeka Egbuka,TB,WR1,ATL,0.247475,36.816548,62.384142,WATCH,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,20.000000,Tre Tucker,LV,WR1,NYJ,0.185039,66.625711,62.140605,WATCH,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,21.000000,Malik Washington,MIA,WR1,NE,0.261745,45.113242,61.776766,WATCH,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,22.000000,Stefon Diggs,WAS,WR1,PHI,0.203209,39.804741,59.988324,WATCH,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,23.000000,DK Metcalf,PIT,WR1,CLE,0.235772,42.459608,58.496557,WATCH,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,24.000000,DeMario Douglas,NE,WR2,MIA,0.162679,51.883966,57.637411,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,25.000000,Wan'Dale Robinson,TEN,WR2,CIN,0.220513,26.786266,56.666533,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,26.000000,Jaylen Waddle,DEN,WR1,KC,0.229592,31.429993,55.873246,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,27.000000,Khalil Shakir,BUF,WR1,BAL,0.200000,52.825065,55.701396,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,28.000000,KC Concepcion,CLE,WR2,PIT,0.217391,47.476593,55.407734,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,29.000000,Omar Cooper Jr.,NYJ,WR2,LV,0.065990,103.758131,55.220948,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,30.000000,Keenan Allen,IND,WR2,JAX,0.191111,51.621657,55.134588,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,31.000000,Luther Burden III,CHI,WR2,SEA,0.209821,52.990861,54.963444,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,32.000000,Josh Downs,IND,WR1,JAX,0.204444,43.930085,54.584566,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,33.000000,Keon Coleman,BUF,WR2,BAL,0.150000,51.229864,54.325100,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,34.000000,Jalen Coker,CAR,WR2,GB,0.184834,51.897003,53.394688,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,35.000000,Jordan Addison,MIN,WR2,DET,0.163399,46.742088,53.343220,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,36.000000,Jakobi Meyers,JAX,WR2,IND,0.157303,48.195637,52.175581,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,37.000000,Dontayvion Wicks,PHI,WR3,WAS,0.145455,51.650958,51.182334,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,38.000000,Jameson Williams,DET,WR2,MIN,0.173516,45.667248,50.907771,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,39.000000,Xavier Worthy,KC,WR1,DEN,0.195531,28.930661,49.049936,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,40.000000,Ryan Flournoy,DAL,WR3,ARI,0.150376,52.999663,48.449362,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,41.000000,Makai Lemon,PHI,WR2,WAS,0.163636,33.125271,48.139926,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,42.000000,Caleb Douglas,MIA,WR2,NE,0.087248,69.062479,47.811559,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,43.000000,Chris Godwin Jr.,TB,WR2,ATL,0.171717,37.705376,47.785081,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,44.000000,Matthew Golden,GB,WR2,CAR,0.262357,50.757984,47.356487,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,45.000000,Rome Odunze,CHI,WR1,SEA,0.169643,43.996385,46.551234,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,46.000000,Elic Ayomanor,TEN,WR3,CIN,0.107692,27.396046,45.029106,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,47.000000,Kendrick Bourne,ARI,WR2,DAL,0.132353,49.091036,44.889144,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,48.000000,Rashod Bateman,BAL,WR2,BUF,0.131313,38.156656,44.685625,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,49.000000,Laquon Treadwell,IND,WR3,JAX,0.115556,34.833432,44.304863,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,50.000000,Jahan Dotson,ATL,WR2,TB,0.130208,33.790969,43.278753,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,51.000000,Rashee Rice,KC,WR2,DEN,0.094972,54.988994,43.053944,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,52.000000,Courtland Sutton,DEN,WR2,KC,0.168367,19.977761,43.037428,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,53.000000,Antonio Williams,WAS,WR2,PHI,0.139037,30.367782,42.358521,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,54.000000,Cooper Kupp,SEA,WR2,CHI,0.125581,30.969440,41.675882,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,55.000000,DJ Moore,BUF,WR3,BAL,0.125000,35.411066,41.396132,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,56.000000,Germie Bernard,PIT,WR2,CLE,0.150407,31.905197,41.206542,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,57.000000,Tre Harris,LAC,WR3,LA,0.143678,44.915922,40.587239,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,58.000000,Treylon Burks,WAS,WR3,PHI,0.090909,35.114309,40.272527,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,59.000000,Adonai Mitchell,NYJ,WR3,LV,0.091371,51.328040,37.796229,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,60.000000,Jerry Jeudy,CLE,WR3,PIT,0.111111,31.866697,37.528867,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,61.000000,A.J. Brown,NE,WR1,MIA,0.095694,32.349467,37.036859,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,62.000000,Dohnte Meyers,CIN,WR3,TEN,0.093458,27.339735,36.478113,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,63.000000,Kalif Raymond,CHI,WR3,SEA,0.138393,18.522797,36.297596,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,64.000000,Ja'Kobi Lane,BAL,WR3,BUF,0.065657,32.504643,36.214049,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,65.000000,Efton Chism III,NE,WR3,MIA,0.071770,21.567560,36.070332,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,66.000000,Ted Hurst III,TB,WR3,ATL,0.116162,23.673151,35.975922,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,67.000000,Quentin Johnston,LAC,WR1,LA,0.126437,31.516612,35.249913,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,68.000000,Rashid Shaheed,SEA,WR3,CHI,0.139535,23.647954,34.840239,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,69.000000,Jauan Jennings,MIN,WR3,DET,0.052288,12.122042,32.282004,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,70.000000,Chris Bell,MIA,WR3,NE,0.127517,12.072092,31.484474,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,71.000000,Josh Cameron,JAX,WR3,IND,0.067416,20.530824,31.408785,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,72.000000,John Metchie III,CAR,WR3,GB,0.080569,20.799819,30.360758,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,73.000000,Jalen Nailor,LV,WR2,NYJ,0.078740,14.691585,30.024598,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,74.000000,Jack Bech,LV,WR3,NYJ,0.023622,22.746462,28.720697,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,75.000000,Jalen Brooks,ARI,WR3,DAL,0.062500,18.473467,28.214984,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,76.000000,Isaac TeSlaa,DET,WR3,MIN,0.095890,21.967629,27.393555,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,77.000000,Michael Pittman,PIT,WR3,CLE,0.048780,25.940416,27.105429,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,78.000000,Konata Mumpfield,LA,WR2,LAC,0.070111,16.422524,26.874500,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,79.000000,KeAndre Lambert-Smith,LAC,WR2,LA,0.051724,28.713501,26.583945,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,80.000000,Savion Williams,GB,WR3,CAR,0.026616,40.664915,26.384519,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,81.000000,Jalen Royals,KC,WR3,DEN,0.061453,5.377763,24.830328,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,82.000000,Troy Franklin,DEN,WR3,KC,0.045918,8.064962,20.370807,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,83.000000,Tutu Atwell,LA,WR3,LAC,0.014760,10.925262,18.694839,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,84.000000,Olamide Zaccheaus,ATL,WR3,TB,0.057292,1.477581,18.176328,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,85.000000,Malik Nabers,NYG,WR1,BYE,0.300429,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,86.000000,Chris Olave,NO,WR1,BYE,0.269962,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,87.000000,Mike Evans,SF,WR1,BYE,0.190244,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,88.000000,Devaughn Vele,NO,WR2,BYE,0.182510,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,89.000000,Xavier Hutchinson,HOU,WR2,BYE,0.173160,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,90.000000,Nico Collins,HOU,WR1,BYE,0.151515,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,91.000000,Malachi Fields,NYG,WR2,BYE,0.128755,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,92.000000,Jaylin Noel,HOU,WR3,BYE,0.099567,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,93.000000,Deebo Samuel Sr.,SF,WR3,BYE,0.097561,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,94.000000,Darnell Mooney,NYG,WR3,BYE,0.094421,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,95.000000,Bryce Lance,NO,WR3,BYE,0.083650,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,8,2026-10-28,FROZEN FULL COHORT,96.000000,Jordan Watkins,SF,WR2,BYE,0.043902,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,1.000000,Jaxon Smith-Njigba,SEA,WR1,ARI,0.357430,141.634937,100.000000,ELITE,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,2.000000,CeeDee Lamb,DAL,WR1,IND,0.312925,75.551382,82.473777,ELITE,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,3.000000,Puka Nacua,LA,WR1,WAS,0.250000,104.422638,81.475639,PRIME,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,4.000000,Malik Nabers,NYG,WR1,PHI,0.300429,115.063225,81.374119,PRIME,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,5.000000,Zay Flowers,BAL,WR1,JAX,0.258929,88.939468,79.213555,PRIME,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,6.000000,Amon-Ra St. Brown,DET,WR1,MIA,0.311475,67.708320,78.362417,PRIME,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,7.000000,Tee Higgins,CIN,WR2,ATL,0.233716,107.722030,77.924290,PRIME,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,8.000000,Matthew Golden,GB,WR1,NE,0.271523,73.190583,75.849067,PRIME,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,9.000000,Drake London,ATL,WR1,CIN,0.288372,68.971442,75.682950,PRIME,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,10.000000,Chris Olave,NO,WR1,CLE,0.269962,73.368415,74.306947,PRIME,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,11.000000,Ja'Marr Chase,CIN,WR1,ATL,0.233716,71.721878,72.849840,STRONG,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,12.000000,Tetairoa McMillan,CAR,WR1,DEN,0.264228,77.363045,72.345848,STRONG,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,13.000000,Garrett Wilson,NYJ,WR1,KC,0.276316,57.580165,72.157014,STRONG,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,14.000000,Justin Jefferson,MIN,WR1,BUF,0.220994,66.465568,71.854325,STRONG,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,15.000000,Christian Watson,GB,WR2,NE,0.218543,86.810997,70.807194,STRONG,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,16.000000,Parker Washington,JAX,WR1,BAL,0.246154,67.737790,70.448668,STRONG,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,17.000000,Malik Washington,MIA,WR1,DET,0.251397,53.700652,67.390281,STRONG,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,18.000000,Luther Burden III,CHI,WR2,TB,0.217054,80.821026,64.811104,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,19.000000,Michael Wilson,ARI,WR1,SEA,0.258786,55.329446,64.352145,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,20.000000,Denzel Boston,CLE,WR1,NO,0.214575,47.907322,63.775544,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,21.000000,Mike Evans,SF,WR1,LV,0.190244,80.520891,63.680374,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,22.000000,Emeka Egbuka,TB,WR1,CHI,0.243781,42.786092,63.358567,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,23.000000,Jalen Coker,CAR,WR2,DEN,0.178862,65.985311,62.260631,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,24.000000,George Pickens,DAL,WR2,IND,0.210884,66.209671,60.852855,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,25.000000,Jameson Williams,DET,WR2,MIA,0.180328,62.287818,60.453850,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,26.000000,Stefon Diggs,WAS,WR1,LA,0.205607,36.555935,58.862771,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,27.000000,Josh Downs,IND,WR1,DAL,0.200000,45.858456,57.603895,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,28.000000,DeVonta Smith,PHI,WR2,NYG,0.162698,64.021315,56.700859,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,29.000000,KC Concepcion,CLE,WR2,NO,0.198381,55.816664,55.129129,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,30.000000,Tre Tucker,LV,WR1,SF,0.172043,54.473639,54.786939,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,31.000000,Nico Collins,HOU,WR1,LAC,0.151515,58.353933,54.303361,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,32.000000,Jordan Addison,MIN,WR2,BUF,0.182320,43.824233,54.294374,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,33.000000,Jaylen Waddle,DEN,WR1,CAR,0.226667,30.777317,53.380036,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,34.000000,Devaughn Vele,NO,WR2,CLE,0.182510,38.494711,53.357577,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,35.000000,Keenan Allen,IND,WR2,DAL,0.196078,49.766717,52.368276,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,36.000000,Ladd McConkey,LAC,WR1,HOU,0.117647,57.063297,50.903704,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,37.000000,DeMario Douglas,NE,WR2,GB,0.162281,42.197326,50.396717,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,38.000000,Khalil Shakir,BUF,WR2,MIN,0.196891,40.513547,50.100893,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,39.000000,Caleb Douglas,MIA,WR2,DET,0.106145,62.756860,49.997389,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,40.000000,Rome Odunze,CHI,WR1,TB,0.170543,53.856867,48.855653,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,41.000000,Jahan Dotson,ATL,WR2,CIN,0.139535,48.561913,48.706214,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,42.000000,Rashee Rice,KC,WR2,NYJ,0.115207,58.938657,48.411221,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,43.000000,Xavier Worthy,KC,WR1,NYJ,0.188940,25.086842,48.390391,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,44.000000,Ryan Flournoy,DAL,WR3,IND,0.149660,44.893906,48.271807,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,45.000000,Deebo Samuel Sr.,SF,WR3,LV,0.097561,45.226854,47.961854,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,46.000000,Omar Cooper Jr.,NYJ,WR3,KC,0.057018,77.983896,47.918804,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,47.000000,DJ Moore,BUF,WR1,MIN,0.139896,44.904346,46.569316,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,48.000000,Chris Godwin Jr.,TB,WR2,CHI,0.174129,31.666454,46.128463,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,49.000000,Quentin Johnston,LAC,WR2,HOU,0.127451,47.076081,46.054157,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,50.000000,Adonai Mitchell,NYJ,WR2,KC,0.118421,56.109184,45.533985,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,51.000000,Courtland Sutton,DEN,WR2,CAR,0.164444,28.222259,45.225301,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,52.000000,Chris Bell,MIA,WR3,DET,0.134078,27.980211,44.958595,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,53.000000,Rashod Bateman,BAL,WR2,JAX,0.129464,33.536374,44.833526,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,54.000000,Malachi Fields,NYG,WR2,PHI,0.128755,38.141078,44.293395,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,55.000000,Makai Lemon,PHI,WR1,NYG,0.178571,27.329309,44.207183,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,56.000000,Keon Coleman,BUF,WR3,MIN,0.139896,26.562342,44.120991,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,57.000000,Antonio Williams,WAS,WR2,LA,0.154206,34.503214,44.074334,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,58.000000,Cooper Kupp,SEA,WR2,ARI,0.120482,27.288971,42.809748,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,59.000000,Jakobi Meyers,JAX,WR2,BAL,0.158974,37.171241,42.806479,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,60.000000,Xavier Hutchinson,HOU,WR2,LAC,0.173160,25.697426,42.231137,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,61.000000,Tre Harris,LAC,WR3,HOU,0.137255,38.926105,41.111847,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,62.000000,Treylon Burks,WAS,WR3,LA,0.102804,40.328350,39.683064,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,63.000000,Kalif Raymond,CHI,WR3,TB,0.131783,21.531991,38.065782,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,64.000000,Darius Cooper,PHI,WR3,NYG,0.095238,17.572318,36.926668,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,65.000000,Laquon Treadwell,IND,WR3,DAL,0.109804,24.858698,35.824161,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,66.000000,Isaac TeSlaa,DET,WR3,MIA,0.086066,34.211545,35.460155,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,67.000000,Tyquan Thornton,KC,WR3,NYJ,0.069124,47.731878,35.260636,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,68.000000,Brian Thomas Jr.,JAX,WR3,BAL,0.107692,11.387441,35.136083,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,69.000000,A.J. Brown,NE,WR1,GB,0.087719,32.223772,34.872171,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,70.000000,Jordan Watkins,SF,WR2,LV,0.043902,55.938421,34.761046,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,71.000000,Ted Hurst III,TB,WR3,CHI,0.119403,21.177254,34.627251,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,72.000000,Ja'Kobi Lane,BAL,WR3,JAX,0.062500,27.442560,33.795971,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,73.000000,Darnell Mooney,NYG,WR3,PHI,0.094421,15.195606,33.578141,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,74.000000,John Metchie III,CAR,WR3,DEN,0.081301,20.271625,32.529301,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,75.000000,Kayshon Boutte,HOU,WR3,LAC,0.099567,26.438663,32.417413,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,76.000000,Bryce Lance,NO,WR3,CLE,0.083650,9.961088,32.219651,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,77.000000,Efton Chism III,NE,WR3,GB,0.087719,17.035259,31.617167,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,78.000000,Konata Mumpfield,LA,WR2,WAS,0.070946,17.243326,30.735648,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,79.000000,Jerry Jeudy,CLE,WR3,NO,0.097166,22.564585,30.179728,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,80.000000,Dohnte Meyers,CIN,WR3,ATL,0.088123,18.453269,29.253173,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,81.000000,Jalen Nailor,LV,WR2,SF,0.086022,15.411613,28.612246,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,82.000000,Tory Horton,SEA,WR3,ARI,0.064257,15.608108,28.444541,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,83.000000,Olamide Zaccheaus,ATL,WR3,CIN,0.060465,3.171931,28.367174,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,84.000000,Jauan Jennings,MIN,WR3,BUF,0.055249,11.257659,28.014304,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,85.000000,Jack Bech,LV,WR3,SF,0.021505,21.214695,27.103510,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,86.000000,Tutu Atwell,LA,WR3,WAS,0.027027,23.321757,24.509096,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,87.000000,Savion Williams,GB,WR3,NE,0.029801,28.412199,23.826961,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,88.000000,Troy Franklin,DEN,WR3,CAR,0.048889,6.268973,23.231540,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,89.000000,Marvin Harrison Jr.,ARI,WR3,SEA,0.041534,16.150863,22.688024,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,90.000000,Jalen Brooks,ARI,WR2,SEA,0.054313,12.559099,19.050693,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,91.000000,DK Metcalf,PIT,WR1,BYE,0.238806,0.000000,0.000000,BYE,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,92.000000,Carnell Tate,TEN,WR1,BYE,0.217949,0.000000,0.000000,BYE,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,93.000000,Wan'Dale Robinson,TEN,WR2,BYE,0.213675,0.000000,0.000000,BYE,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,94.000000,Germie Bernard,PIT,WR2,BYE,0.156716,0.000000,0.000000,BYE,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,95.000000,Elic Ayomanor,TEN,WR3,BYE,0.111111,0.000000,0.000000,BYE,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,9,2026-11-04,FROZEN FULL COHORT,96.000000,Michael Pittman,PIT,WR3,BYE,0.044776,0.000000,0.000000,BYE,Outgoing Week 9 full publication frozen before Week 10 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,1.000000,Jaxon Smith-Njigba,SEA,WR1,LV,0.357401,128.662734,100.000000,ELITE,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,2.000000,CeeDee Lamb,DAL,WR1,SF,0.329268,85.246657,88.138880,ELITE,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,3.000000,Amon-Ra St. Brown,DET,WR1,NE,0.319703,93.323629,84.572930,ELITE,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,4.000000,Malik Nabers,NYG,WR1,WAS,0.300000,114.544218,83.150442,ELITE,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,5.000000,Ja'Marr Chase,CIN,WR1,PIT,0.252595,101.676567,81.578662,PRIME,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,6.000000,Chris Olave,NO,WR1,CAR,0.281356,81.537616,75.506450,PRIME,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,7.000000,Parker Washington,JAX,WR1,TEN,0.248869,68.207501,75.477412,PRIME,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,8.000000,Tee Higgins,CIN,WR2,PIT,0.231834,101.848730,75.013497,PRIME,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,9.000000,Matthew Golden,GB,WR2,MIN,0.279635,64.102447,74.682384,PRIME,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,10.000000,Tetairoa McMillan,CAR,WR1,NO,0.250883,87.930700,74.478879,PRIME,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,11.000000,Zay Flowers,BAL,WR1,LAC,0.266667,65.208589,72.633268,STRONG,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,12.000000,Garrett Wilson,NYJ,WR1,BUF,0.244186,71.411715,71.857845,STRONG,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,13.000000,Christian Watson,GB,WR1,MIN,0.224924,77.038694,70.425190,STRONG,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,14.000000,Drake London,ATL,WR1,KC,0.276860,57.613268,69.850029,STRONG,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,15.000000,Justin Jefferson,MIN,WR1,GB,0.241706,48.682217,66.808156,STRONG,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,16.000000,Denzel Boston,CLE,WR1,HOU,0.217391,61.306966,66.489097,STRONG,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,17.000000,DK Metcalf,PIT,WR1,CIN,0.238806,49.171639,62.595158,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,18.000000,Keenan Allen,SF,WR1,DAL,0.254386,45.795081,62.494319,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,19.000000,Jalen Coker,CAR,WR2,NO,0.173145,58.558025,60.638445,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,20.000000,Jameson Williams,DET,WR2,NE,0.171004,68.129261,60.400550,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,21.000000,KC Concepcion,CLE,WR2,HOU,0.199275,65.560638,59.836353,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,22.000000,Jakobi Meyers,JAX,WR2,TEN,0.167421,60.625378,59.560009,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,23.000000,Malik Washington,MIA,WR1,IND,0.240000,38.299043,59.396026,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,24.000000,DeMario Douglas,NE,WR2,DET,0.174242,64.445725,59.255646,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,25.000000,Josh Downs,KC,WR1,ATL,0.231707,34.950217,58.376098,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,26.000000,Carnell Tate,TEN,WR1,JAX,0.217949,47.068731,58.349331,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,27.000000,Wan'Dale Robinson,TEN,WR2,JAX,0.213675,27.362068,57.001970,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,28.000000,Omar Cooper Jr.,NYJ,WR3,BUF,0.093023,94.546563,55.368877,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,29.000000,Devaughn Vele,NO,WR2,CAR,0.176271,45.611505,55.084980,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,30.000000,Stefon Diggs,WAS,WR1,NYG,0.197581,34.792347,54.396139,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,31.000000,Nico Collins,HOU,WR1,CLE,0.145522,51.795003,53.194940,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,32.000000,Tre Tucker,LV,WR1,SEA,0.180064,43.847272,52.326777,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,33.000000,Khalil Shakir,BUF,WR2,NYJ,0.189189,49.713862,51.971342,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,34.000000,Rashee Rice,KC,WR3,ATL,0.130081,57.407570,50.367555,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,35.000000,Xavier Worthy,KC,WR2,ATL,0.191057,28.050414,50.274297,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,36.000000,Jordan Addison,MIN,WR2,GB,0.170616,35.629560,50.130648,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,37.000000,Germie Bernard,PIT,WR2,CIN,0.156716,43.616338,49.565386,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,38.000000,Malachi Fields,NYG,WR2,WAS,0.134615,48.552549,49.541218,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,39.000000,Adonai Mitchell,NYJ,WR2,BUF,0.131783,55.654906,49.184690,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,40.000000,Caleb Douglas,MIA,WR2,IND,0.135000,59.528211,48.797128,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,41.000000,Mack Hollins,NE,WR3,DET,0.098485,67.643990,47.547555,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,42.000000,DJ Moore,BUF,WR1,NYJ,0.144144,39.957510,46.256020,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,43.000000,Keon Coleman,BUF,WR3,NYJ,0.148649,29.101313,45.939392,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,44.000000,Cooper Kupp,SEA,WR2,LV,0.122744,28.716233,45.724977,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,45.000000,Ryan Flournoy,DAL,WR2,SF,0.143293,38.824354,45.525557,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,46.000000,Quentin Johnston,LAC,WR2,BAL,0.128205,43.404405,44.921570,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,47.000000,Ladd McConkey,LAC,WR1,BAL,0.102564,48.810568,44.790764,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,48.000000,Xavier Hutchinson,HOU,WR2,CLE,0.167910,23.246725,44.419192,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,49.000000,George Pickens,DAL,WR3,SF,0.189024,47.301734,44.139814,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,50.000000,Mike Evans,SF,WR2,DAL,0.171053,57.705616,43.505490,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,51.000000,Tre Harris,LAC,WR3,BAL,0.149573,29.638117,43.451747,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,52.000000,Antonio Williams,WAS,WR2,NYG,0.157258,29.890452,42.385035,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,53.000000,Jahan Dotson,ATL,WR2,KC,0.132231,26.695622,40.706769,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,54.000000,Rashod Bateman,BAL,WR2,LAC,0.129167,28.370055,40.124043,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,55.000000,Elic Ayomanor,TEN,WR3,JAX,0.111111,26.293029,40.119536,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,56.000000,Jordan Watkins,SF,WR3,DAL,0.057018,59.322614,39.577601,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,57.000000,Brian Thomas Jr.,JAX,WR3,TEN,0.095023,14.041376,39.147307,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,58.000000,Darnell Mooney,NYG,WR3,WAS,0.100000,24.552838,36.890867,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,59.000000,Isaac TeSlaa,DET,WR3,NE,0.085502,23.793849,35.831885,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,60.000000,Chris Bell,MIA,WR3,IND,0.125000,15.732856,34.219096,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,61.000000,Marvin Harrison Jr.,HOU,WR3,CLE,0.089552,19.194616,33.463049,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,62.000000,Treylon Burks,WAS,WR3,NYG,0.088710,34.962178,33.363385,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,63.000000,Jerry Jeudy,CLE,WR3,HOU,0.101449,22.715615,33.177352,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,64.000000,Tory Horton,SEA,WR3,LV,0.068592,20.358600,32.991177,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,65.000000,Dohnte Meyers,CIN,WR3,PIT,0.089965,28.062244,32.716737,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,66.000000,John Metchie III,CAR,WR3,NO,0.077739,25.685839,31.947470,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,67.000000,Laquon Treadwell,IND,WR1,MIA,0.101045,17.245956,31.671396,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,68.000000,A.J. Brown,NE,WR1,DET,0.075758,34.406438,31.645255,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,69.000000,Michael Pittman,PIT,WR3,CIN,0.044776,31.977728,31.461832,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,70.000000,Bryce Lance,NO,WR3,CAR,0.077966,9.759692,29.934410,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,71.000000,Konata Mumpfield,LA,WR1,ARI,0.068249,18.720176,29.737380,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,72.000000,Jalen Nailor,LV,WR2,SEA,0.090032,14.215580,29.122287,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,73.000000,Ja'Kobi Lane,BAL,WR3,LAC,0.058333,14.469639,24.639978,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,74.000000,Savion Williams,GB,WR3,MIN,0.039514,18.697271,22.198307,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,75.000000,Tutu Atwell,LA,WR2,ARI,0.038576,20.709520,21.859197,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,76.000000,Olamide Zaccheaus,ATL,WR3,KC,0.066116,2.788893,21.408775,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,77.000000,Ashton Dulin,IND,WR2,MIA,0.031359,12.491489,21.391180,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,78.000000,Jack Bech,LV,WR3,SEA,0.025723,15.049611,19.941594,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,79.000000,Deion Burks,IND,WR3,MIA,0.031359,6.302582,19.889144,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,80.000000,Myles Price,MIN,WR3,GB,0.052133,2.313883,19.756053,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,81.000000,Reggie Virgil,ARI,WR1,LA,0.032164,18.063837,17.962550,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,82.000000,Xavier Smith,LA,WR3,ARI,0.002967,0.000000,12.224341,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,83.000000,Simi Fehoko,ARI,WR2,LA,0.005848,2.465385,11.221522,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,84.000000,Devin Duvernay,ARI,WR3,LA,0.011696,2.754053,11.170164,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,85.000000,Emeka Egbuka,TB,WR1,BYE,0.233766,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,86.000000,Luther Burden III,CHI,WR1,BYE,0.222603,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,87.000000,Jaylen Waddle,DEN,WR2,BYE,0.200772,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,88.000000,Makai Lemon,PHI,WR1,BYE,0.189474,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,89.000000,Courtland Sutton,DEN,WR1,BYE,0.177606,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,90.000000,Rome Odunze,CHI,WR2,BYE,0.174658,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,91.000000,Chris Godwin Jr.,TB,WR2,BYE,0.164502,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,92.000000,DeVonta Smith,PHI,WR2,BYE,0.143860,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,93.000000,Kalif Raymond,CHI,WR3,BYE,0.140411,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,94.000000,Darius Cooper,PHI,WR3,BYE,0.112281,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,95.000000,Tez Johnson,TB,WR3,BYE,0.086580,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.
-2026,10,2026-11-11,FROZEN FULL COHORT,96.000000,Pat Bryant,DEN,WR3,BYE,0.065637,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.
+season,week,published_date,snapshot_status,rank,player,team,role,opponent,target_share,projected_rec_yds,opportunity_score,tier,source_note,rec_yds_projection
+2026.000000,6.000000,,LEGACY SUMMARY — NOT VERIFIED FULL SLATE,,,,,,,,,,Prior Sheet record preserved; no complete 96-player pregame snapshot.,
+2026.000000,7.000000,2026-10-21,FROZEN PRELIMINARY COHORT,1.000000,Jaxon Smith-Njigba,SEA,WR1,KC,0.351064,119.500000,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.,
+2026.000000,7.000000,2026-10-21,FROZEN PRELIMINARY COHORT,2.000000,Ja'Marr Chase,CIN,WR1,BAL,0.204301,57.800000,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.,
+2026.000000,7.000000,2026-10-21,FROZEN PRELIMINARY COHORT,3.000000,Amon-Ra St. Brown,DET,WR1,GB,0.303191,74.400000,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.,
+2026.000000,7.000000,2026-10-21,FROZEN PRELIMINARY COHORT,4.000000,CeeDee Lamb,DAL,WR1,PHI,0.287500,96.166667,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.,
+2026.000000,7.000000,2026-10-21,FROZEN PRELIMINARY COHORT,5.000000,Chris Olave,NO,WR1,PIT,0.271111,96.666667,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.,
+2026.000000,7.000000,2026-10-21,FROZEN PRELIMINARY COHORT,6.000000,Drake London,ATL,WR1,SF,0.287500,91.666667,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.,
+2026.000000,7.000000,2026-10-21,FROZEN PRELIMINARY COHORT,7.000000,Parker Washington,JAX,WR1,,0.258427,69.333333,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.,
+2026.000000,7.000000,2026-10-21,FROZEN PRELIMINARY COHORT,8.000000,Garrett Wilson,NYJ,WR1,MIA,0.285714,69.666667,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.,
+2026.000000,7.000000,2026-10-21,FROZEN PRELIMINARY COHORT,9.000000,Nico Collins,HOU,WR1,NYG,0.147783,80.750000,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.,
+2026.000000,7.000000,2026-10-21,FROZEN PRELIMINARY COHORT,10.000000,Puka Nacua,LA,WR1,LV,0.214876,104.250000,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.,
+2026.000000,7.000000,2026-10-21,FROZEN PRELIMINARY COHORT,11.000000,Justin Jefferson,MIN,WR1,IND,0.186047,64.500000,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.,
+2026.000000,7.000000,2026-10-21,FROZEN PRELIMINARY COHORT,12.000000,Zay Flowers,BAL,WR1,CIN,0.256098,94.200000,,,Outgoing Week 7 publication frozen before Week 8 advance; source lag disclosed at publication.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,1.000000,Jaxon Smith-Njigba,SEA,WR1,CHI,0.362791,150.525513,100.000000,ELITE,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,2.000000,Zay Flowers,BAL,WR1,BUF,0.267677,130.998553,90.018553,ELITE,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,3.000000,CeeDee Lamb,DAL,WR1,ARI,0.304511,91.123863,87.604322,ELITE,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,4.000000,Amon-Ra St. Brown,DET,WR1,MIN,0.310502,68.704503,79.278712,PRIME,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,5.000000,Tee Higgins,CIN,WR2,TEN,0.233645,113.639134,78.760276,PRIME,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,6.000000,Garrett Wilson,NYJ,WR1,LV,0.258883,71.129453,75.204034,PRIME,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,7.000000,Ja'Marr Chase,CIN,WR1,TEN,0.210280,70.799537,73.292722,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,8.000000,Drake London,ATL,WR1,TB,0.291667,68.019613,72.859173,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,9.000000,Parker Washington,JAX,WR1,IND,0.258427,63.454820,70.761409,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,10.000000,Puka Nacua,LA,WR1,LAC,0.228782,84.251453,70.556750,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,11.000000,Justin Jefferson,MIN,WR1,DET,0.202614,78.864173,70.466369,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,12.000000,Tetairoa McMillan,CAR,WR1,GB,0.255924,89.416472,69.934819,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,13.000000,DeVonta Smith,PHI,WR1,WAS,0.186364,94.453526,69.430368,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,14.000000,Christian Watson,GB,WR1,CAR,0.212928,74.712739,68.863847,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,15.000000,Carnell Tate,TEN,WR1,CIN,0.261538,56.623270,68.689704,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,16.000000,Michael Wilson,ARI,WR1,DAL,0.242647,62.019612,66.638253,STRONG,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,17.000000,George Pickens,DAL,WR2,ARI,0.218045,86.926812,65.666651,WATCH,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,18.000000,Denzel Boston,CLE,WR1,PIT,0.202899,48.189438,62.886259,WATCH,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,19.000000,Emeka Egbuka,TB,WR1,ATL,0.247475,36.816548,62.384142,WATCH,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,20.000000,Tre Tucker,LV,WR1,NYJ,0.185039,66.625711,62.140605,WATCH,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,21.000000,Malik Washington,MIA,WR1,NE,0.261745,45.113242,61.776766,WATCH,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,22.000000,Stefon Diggs,WAS,WR1,PHI,0.203209,39.804741,59.988324,WATCH,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,23.000000,DK Metcalf,PIT,WR1,CLE,0.235772,42.459608,58.496557,WATCH,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,24.000000,DeMario Douglas,NE,WR2,MIA,0.162679,51.883966,57.637411,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,25.000000,Wan'Dale Robinson,TEN,WR2,CIN,0.220513,26.786266,56.666533,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,26.000000,Jaylen Waddle,DEN,WR1,KC,0.229592,31.429993,55.873246,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,27.000000,Khalil Shakir,BUF,WR1,BAL,0.200000,52.825065,55.701396,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,28.000000,KC Concepcion,CLE,WR2,PIT,0.217391,47.476593,55.407734,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,29.000000,Omar Cooper Jr.,NYJ,WR2,LV,0.065990,103.758131,55.220948,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,30.000000,Keenan Allen,IND,WR2,JAX,0.191111,51.621657,55.134588,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,31.000000,Luther Burden III,CHI,WR2,SEA,0.209821,52.990861,54.963444,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,32.000000,Josh Downs,IND,WR1,JAX,0.204444,43.930085,54.584566,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,33.000000,Keon Coleman,BUF,WR2,BAL,0.150000,51.229864,54.325100,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,34.000000,Jalen Coker,CAR,WR2,GB,0.184834,51.897003,53.394688,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,35.000000,Jordan Addison,MIN,WR2,DET,0.163399,46.742088,53.343220,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,36.000000,Jakobi Meyers,JAX,WR2,IND,0.157303,48.195637,52.175581,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,37.000000,Dontayvion Wicks,PHI,WR3,WAS,0.145455,51.650958,51.182334,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,38.000000,Jameson Williams,DET,WR2,MIN,0.173516,45.667248,50.907771,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,39.000000,Xavier Worthy,KC,WR1,DEN,0.195531,28.930661,49.049936,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,40.000000,Ryan Flournoy,DAL,WR3,ARI,0.150376,52.999663,48.449362,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,41.000000,Makai Lemon,PHI,WR2,WAS,0.163636,33.125271,48.139926,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,42.000000,Caleb Douglas,MIA,WR2,NE,0.087248,69.062479,47.811559,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,43.000000,Chris Godwin Jr.,TB,WR2,ATL,0.171717,37.705376,47.785081,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,44.000000,Matthew Golden,GB,WR2,CAR,0.262357,50.757984,47.356487,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,45.000000,Rome Odunze,CHI,WR1,SEA,0.169643,43.996385,46.551234,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,46.000000,Elic Ayomanor,TEN,WR3,CIN,0.107692,27.396046,45.029106,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,47.000000,Kendrick Bourne,ARI,WR2,DAL,0.132353,49.091036,44.889144,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,48.000000,Rashod Bateman,BAL,WR2,BUF,0.131313,38.156656,44.685625,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,49.000000,Laquon Treadwell,IND,WR3,JAX,0.115556,34.833432,44.304863,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,50.000000,Jahan Dotson,ATL,WR2,TB,0.130208,33.790969,43.278753,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,51.000000,Rashee Rice,KC,WR2,DEN,0.094972,54.988994,43.053944,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,52.000000,Courtland Sutton,DEN,WR2,KC,0.168367,19.977761,43.037428,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,53.000000,Antonio Williams,WAS,WR2,PHI,0.139037,30.367782,42.358521,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,54.000000,Cooper Kupp,SEA,WR2,CHI,0.125581,30.969440,41.675882,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,55.000000,DJ Moore,BUF,WR3,BAL,0.125000,35.411066,41.396132,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,56.000000,Germie Bernard,PIT,WR2,CLE,0.150407,31.905197,41.206542,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,57.000000,Tre Harris,LAC,WR3,LA,0.143678,44.915922,40.587239,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,58.000000,Treylon Burks,WAS,WR3,PHI,0.090909,35.114309,40.272527,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,59.000000,Adonai Mitchell,NYJ,WR3,LV,0.091371,51.328040,37.796229,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,60.000000,Jerry Jeudy,CLE,WR3,PIT,0.111111,31.866697,37.528867,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,61.000000,A.J. Brown,NE,WR1,MIA,0.095694,32.349467,37.036859,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,62.000000,Dohnte Meyers,CIN,WR3,TEN,0.093458,27.339735,36.478113,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,63.000000,Kalif Raymond,CHI,WR3,SEA,0.138393,18.522797,36.297596,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,64.000000,Ja'Kobi Lane,BAL,WR3,BUF,0.065657,32.504643,36.214049,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,65.000000,Efton Chism III,NE,WR3,MIA,0.071770,21.567560,36.070332,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,66.000000,Ted Hurst III,TB,WR3,ATL,0.116162,23.673151,35.975922,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,67.000000,Quentin Johnston,LAC,WR1,LA,0.126437,31.516612,35.249913,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,68.000000,Rashid Shaheed,SEA,WR3,CHI,0.139535,23.647954,34.840239,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,69.000000,Jauan Jennings,MIN,WR3,DET,0.052288,12.122042,32.282004,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,70.000000,Chris Bell,MIA,WR3,NE,0.127517,12.072092,31.484474,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,71.000000,Josh Cameron,JAX,WR3,IND,0.067416,20.530824,31.408785,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,72.000000,John Metchie III,CAR,WR3,GB,0.080569,20.799819,30.360758,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,73.000000,Jalen Nailor,LV,WR2,NYJ,0.078740,14.691585,30.024598,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,74.000000,Jack Bech,LV,WR3,NYJ,0.023622,22.746462,28.720697,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,75.000000,Jalen Brooks,ARI,WR3,DAL,0.062500,18.473467,28.214984,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,76.000000,Isaac TeSlaa,DET,WR3,MIN,0.095890,21.967629,27.393555,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,77.000000,Michael Pittman,PIT,WR3,CLE,0.048780,25.940416,27.105429,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,78.000000,Konata Mumpfield,LA,WR2,LAC,0.070111,16.422524,26.874500,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,79.000000,KeAndre Lambert-Smith,LAC,WR2,LA,0.051724,28.713501,26.583945,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,80.000000,Savion Williams,GB,WR3,CAR,0.026616,40.664915,26.384519,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,81.000000,Jalen Royals,KC,WR3,DEN,0.061453,5.377763,24.830328,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,82.000000,Troy Franklin,DEN,WR3,KC,0.045918,8.064962,20.370807,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,83.000000,Tutu Atwell,LA,WR3,LAC,0.014760,10.925262,18.694839,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,84.000000,Olamide Zaccheaus,ATL,WR3,TB,0.057292,1.477581,18.176328,PASS,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,85.000000,Malik Nabers,NYG,WR1,BYE,0.300429,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,86.000000,Chris Olave,NO,WR1,BYE,0.269962,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,87.000000,Mike Evans,SF,WR1,BYE,0.190244,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,88.000000,Devaughn Vele,NO,WR2,BYE,0.182510,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,89.000000,Xavier Hutchinson,HOU,WR2,BYE,0.173160,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,90.000000,Nico Collins,HOU,WR1,BYE,0.151515,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,91.000000,Malachi Fields,NYG,WR2,BYE,0.128755,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,92.000000,Jaylin Noel,HOU,WR3,BYE,0.099567,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,93.000000,Deebo Samuel Sr.,SF,WR3,BYE,0.097561,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,94.000000,Darnell Mooney,NYG,WR3,BYE,0.094421,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,95.000000,Bryce Lance,NO,WR3,BYE,0.083650,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,8.000000,2026-10-28,FROZEN FULL COHORT,96.000000,Jordan Watkins,SF,WR2,BYE,0.043902,0.000000,0.000000,BYE,Outgoing Week 8 full publication frozen before Week 9 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,1.000000,Jaxon Smith-Njigba,SEA,WR1,ARI,0.357430,141.634937,100.000000,ELITE,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,2.000000,CeeDee Lamb,DAL,WR1,IND,0.312925,75.551382,82.473777,ELITE,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,3.000000,Puka Nacua,LA,WR1,WAS,0.250000,104.422638,81.475639,PRIME,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,4.000000,Malik Nabers,NYG,WR1,PHI,0.300429,115.063225,81.374119,PRIME,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,5.000000,Zay Flowers,BAL,WR1,JAX,0.258929,88.939468,79.213555,PRIME,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,6.000000,Amon-Ra St. Brown,DET,WR1,MIA,0.311475,67.708320,78.362417,PRIME,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,7.000000,Tee Higgins,CIN,WR2,ATL,0.233716,107.722030,77.924290,PRIME,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,8.000000,Matthew Golden,GB,WR1,NE,0.271523,73.190583,75.849067,PRIME,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,9.000000,Drake London,ATL,WR1,CIN,0.288372,68.971442,75.682950,PRIME,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,10.000000,Chris Olave,NO,WR1,CLE,0.269962,73.368415,74.306947,PRIME,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,11.000000,Ja'Marr Chase,CIN,WR1,ATL,0.233716,71.721878,72.849840,STRONG,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,12.000000,Tetairoa McMillan,CAR,WR1,DEN,0.264228,77.363045,72.345848,STRONG,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,13.000000,Garrett Wilson,NYJ,WR1,KC,0.276316,57.580165,72.157014,STRONG,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,14.000000,Justin Jefferson,MIN,WR1,BUF,0.220994,66.465568,71.854325,STRONG,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,15.000000,Christian Watson,GB,WR2,NE,0.218543,86.810997,70.807194,STRONG,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,16.000000,Parker Washington,JAX,WR1,BAL,0.246154,67.737790,70.448668,STRONG,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,17.000000,Malik Washington,MIA,WR1,DET,0.251397,53.700652,67.390281,STRONG,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,18.000000,Luther Burden III,CHI,WR2,TB,0.217054,80.821026,64.811104,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,19.000000,Michael Wilson,ARI,WR1,SEA,0.258786,55.329446,64.352145,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,20.000000,Denzel Boston,CLE,WR1,NO,0.214575,47.907322,63.775544,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,21.000000,Mike Evans,SF,WR1,LV,0.190244,80.520891,63.680374,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,22.000000,Emeka Egbuka,TB,WR1,CHI,0.243781,42.786092,63.358567,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,23.000000,Jalen Coker,CAR,WR2,DEN,0.178862,65.985311,62.260631,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,24.000000,George Pickens,DAL,WR2,IND,0.210884,66.209671,60.852855,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,25.000000,Jameson Williams,DET,WR2,MIA,0.180328,62.287818,60.453850,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,26.000000,Stefon Diggs,WAS,WR1,LA,0.205607,36.555935,58.862771,WATCH,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,27.000000,Josh Downs,IND,WR1,DAL,0.200000,45.858456,57.603895,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,28.000000,DeVonta Smith,PHI,WR2,NYG,0.162698,64.021315,56.700859,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,29.000000,KC Concepcion,CLE,WR2,NO,0.198381,55.816664,55.129129,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,30.000000,Tre Tucker,LV,WR1,SF,0.172043,54.473639,54.786939,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,31.000000,Nico Collins,HOU,WR1,LAC,0.151515,58.353933,54.303361,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,32.000000,Jordan Addison,MIN,WR2,BUF,0.182320,43.824233,54.294374,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,33.000000,Jaylen Waddle,DEN,WR1,CAR,0.226667,30.777317,53.380036,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,34.000000,Devaughn Vele,NO,WR2,CLE,0.182510,38.494711,53.357577,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,35.000000,Keenan Allen,IND,WR2,DAL,0.196078,49.766717,52.368276,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,36.000000,Ladd McConkey,LAC,WR1,HOU,0.117647,57.063297,50.903704,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,37.000000,DeMario Douglas,NE,WR2,GB,0.162281,42.197326,50.396717,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,38.000000,Khalil Shakir,BUF,WR2,MIN,0.196891,40.513547,50.100893,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,39.000000,Caleb Douglas,MIA,WR2,DET,0.106145,62.756860,49.997389,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,40.000000,Rome Odunze,CHI,WR1,TB,0.170543,53.856867,48.855653,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,41.000000,Jahan Dotson,ATL,WR2,CIN,0.139535,48.561913,48.706214,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,42.000000,Rashee Rice,KC,WR2,NYJ,0.115207,58.938657,48.411221,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,43.000000,Xavier Worthy,KC,WR1,NYJ,0.188940,25.086842,48.390391,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,44.000000,Ryan Flournoy,DAL,WR3,IND,0.149660,44.893906,48.271807,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,45.000000,Deebo Samuel Sr.,SF,WR3,LV,0.097561,45.226854,47.961854,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,46.000000,Omar Cooper Jr.,NYJ,WR3,KC,0.057018,77.983896,47.918804,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,47.000000,DJ Moore,BUF,WR1,MIN,0.139896,44.904346,46.569316,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,48.000000,Chris Godwin Jr.,TB,WR2,CHI,0.174129,31.666454,46.128463,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,49.000000,Quentin Johnston,LAC,WR2,HOU,0.127451,47.076081,46.054157,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,50.000000,Adonai Mitchell,NYJ,WR2,KC,0.118421,56.109184,45.533985,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,51.000000,Courtland Sutton,DEN,WR2,CAR,0.164444,28.222259,45.225301,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,52.000000,Chris Bell,MIA,WR3,DET,0.134078,27.980211,44.958595,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,53.000000,Rashod Bateman,BAL,WR2,JAX,0.129464,33.536374,44.833526,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,54.000000,Malachi Fields,NYG,WR2,PHI,0.128755,38.141078,44.293395,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,55.000000,Makai Lemon,PHI,WR1,NYG,0.178571,27.329309,44.207183,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,56.000000,Keon Coleman,BUF,WR3,MIN,0.139896,26.562342,44.120991,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,57.000000,Antonio Williams,WAS,WR2,LA,0.154206,34.503214,44.074334,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,58.000000,Cooper Kupp,SEA,WR2,ARI,0.120482,27.288971,42.809748,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,59.000000,Jakobi Meyers,JAX,WR2,BAL,0.158974,37.171241,42.806479,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,60.000000,Xavier Hutchinson,HOU,WR2,LAC,0.173160,25.697426,42.231137,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,61.000000,Tre Harris,LAC,WR3,HOU,0.137255,38.926105,41.111847,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,62.000000,Treylon Burks,WAS,WR3,LA,0.102804,40.328350,39.683064,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,63.000000,Kalif Raymond,CHI,WR3,TB,0.131783,21.531991,38.065782,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,64.000000,Darius Cooper,PHI,WR3,NYG,0.095238,17.572318,36.926668,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,65.000000,Laquon Treadwell,IND,WR3,DAL,0.109804,24.858698,35.824161,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,66.000000,Isaac TeSlaa,DET,WR3,MIA,0.086066,34.211545,35.460155,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,67.000000,Tyquan Thornton,KC,WR3,NYJ,0.069124,47.731878,35.260636,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,68.000000,Brian Thomas Jr.,JAX,WR3,BAL,0.107692,11.387441,35.136083,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,69.000000,A.J. Brown,NE,WR1,GB,0.087719,32.223772,34.872171,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,70.000000,Jordan Watkins,SF,WR2,LV,0.043902,55.938421,34.761046,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,71.000000,Ted Hurst III,TB,WR3,CHI,0.119403,21.177254,34.627251,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,72.000000,Ja'Kobi Lane,BAL,WR3,JAX,0.062500,27.442560,33.795971,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,73.000000,Darnell Mooney,NYG,WR3,PHI,0.094421,15.195606,33.578141,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,74.000000,John Metchie III,CAR,WR3,DEN,0.081301,20.271625,32.529301,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,75.000000,Kayshon Boutte,HOU,WR3,LAC,0.099567,26.438663,32.417413,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,76.000000,Bryce Lance,NO,WR3,CLE,0.083650,9.961088,32.219651,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,77.000000,Efton Chism III,NE,WR3,GB,0.087719,17.035259,31.617167,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,78.000000,Konata Mumpfield,LA,WR2,WAS,0.070946,17.243326,30.735648,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,79.000000,Jerry Jeudy,CLE,WR3,NO,0.097166,22.564585,30.179728,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,80.000000,Dohnte Meyers,CIN,WR3,ATL,0.088123,18.453269,29.253173,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,81.000000,Jalen Nailor,LV,WR2,SF,0.086022,15.411613,28.612246,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,82.000000,Tory Horton,SEA,WR3,ARI,0.064257,15.608108,28.444541,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,83.000000,Olamide Zaccheaus,ATL,WR3,CIN,0.060465,3.171931,28.367174,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,84.000000,Jauan Jennings,MIN,WR3,BUF,0.055249,11.257659,28.014304,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,85.000000,Jack Bech,LV,WR3,SF,0.021505,21.214695,27.103510,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,86.000000,Tutu Atwell,LA,WR3,WAS,0.027027,23.321757,24.509096,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,87.000000,Savion Williams,GB,WR3,NE,0.029801,28.412199,23.826961,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,88.000000,Troy Franklin,DEN,WR3,CAR,0.048889,6.268973,23.231540,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,89.000000,Marvin Harrison Jr.,ARI,WR3,SEA,0.041534,16.150863,22.688024,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,90.000000,Jalen Brooks,ARI,WR2,SEA,0.054313,12.559099,19.050693,PASS,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,91.000000,DK Metcalf,PIT,WR1,BYE,0.238806,0.000000,0.000000,BYE,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,92.000000,Carnell Tate,TEN,WR1,BYE,0.217949,0.000000,0.000000,BYE,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,93.000000,Wan'Dale Robinson,TEN,WR2,BYE,0.213675,0.000000,0.000000,BYE,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,94.000000,Germie Bernard,PIT,WR2,BYE,0.156716,0.000000,0.000000,BYE,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,95.000000,Elic Ayomanor,TEN,WR3,BYE,0.111111,0.000000,0.000000,BYE,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,9.000000,2026-11-04,FROZEN FULL COHORT,96.000000,Michael Pittman,PIT,WR3,BYE,0.044776,0.000000,0.000000,BYE,Outgoing Week 9 full publication frozen before Week 10 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,1.000000,Jaxon Smith-Njigba,SEA,WR1,LV,0.357401,128.662734,100.000000,ELITE,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,2.000000,CeeDee Lamb,DAL,WR1,SF,0.329268,85.246657,88.138880,ELITE,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,3.000000,Amon-Ra St. Brown,DET,WR1,NE,0.319703,93.323629,84.572930,ELITE,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,4.000000,Malik Nabers,NYG,WR1,WAS,0.300000,114.544218,83.150442,ELITE,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,5.000000,Ja'Marr Chase,CIN,WR1,PIT,0.252595,101.676567,81.578662,PRIME,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,6.000000,Chris Olave,NO,WR1,CAR,0.281356,81.537616,75.506450,PRIME,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,7.000000,Parker Washington,JAX,WR1,TEN,0.248869,68.207501,75.477412,PRIME,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,8.000000,Tee Higgins,CIN,WR2,PIT,0.231834,101.848730,75.013497,PRIME,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,9.000000,Matthew Golden,GB,WR2,MIN,0.279635,64.102447,74.682384,PRIME,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,10.000000,Tetairoa McMillan,CAR,WR1,NO,0.250883,87.930700,74.478879,PRIME,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,11.000000,Zay Flowers,BAL,WR1,LAC,0.266667,65.208589,72.633268,STRONG,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,12.000000,Garrett Wilson,NYJ,WR1,BUF,0.244186,71.411715,71.857845,STRONG,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,13.000000,Christian Watson,GB,WR1,MIN,0.224924,77.038694,70.425190,STRONG,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,14.000000,Drake London,ATL,WR1,KC,0.276860,57.613268,69.850029,STRONG,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,15.000000,Justin Jefferson,MIN,WR1,GB,0.241706,48.682217,66.808156,STRONG,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,16.000000,Denzel Boston,CLE,WR1,HOU,0.217391,61.306966,66.489097,STRONG,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,17.000000,DK Metcalf,PIT,WR1,CIN,0.238806,49.171639,62.595158,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,18.000000,Keenan Allen,SF,WR1,DAL,0.254386,45.795081,62.494319,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,19.000000,Jalen Coker,CAR,WR2,NO,0.173145,58.558025,60.638445,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,20.000000,Jameson Williams,DET,WR2,NE,0.171004,68.129261,60.400550,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,21.000000,KC Concepcion,CLE,WR2,HOU,0.199275,65.560638,59.836353,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,22.000000,Jakobi Meyers,JAX,WR2,TEN,0.167421,60.625378,59.560009,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,23.000000,Malik Washington,MIA,WR1,IND,0.240000,38.299043,59.396026,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,24.000000,DeMario Douglas,NE,WR2,DET,0.174242,64.445725,59.255646,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,25.000000,Josh Downs,KC,WR1,ATL,0.231707,34.950217,58.376098,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,26.000000,Carnell Tate,TEN,WR1,JAX,0.217949,47.068731,58.349331,WATCH,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,27.000000,Wan'Dale Robinson,TEN,WR2,JAX,0.213675,27.362068,57.001970,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,28.000000,Omar Cooper Jr.,NYJ,WR3,BUF,0.093023,94.546563,55.368877,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,29.000000,Devaughn Vele,NO,WR2,CAR,0.176271,45.611505,55.084980,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,30.000000,Stefon Diggs,WAS,WR1,NYG,0.197581,34.792347,54.396139,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,31.000000,Nico Collins,HOU,WR1,CLE,0.145522,51.795003,53.194940,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,32.000000,Tre Tucker,LV,WR1,SEA,0.180064,43.847272,52.326777,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,33.000000,Khalil Shakir,BUF,WR2,NYJ,0.189189,49.713862,51.971342,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,34.000000,Rashee Rice,KC,WR3,ATL,0.130081,57.407570,50.367555,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,35.000000,Xavier Worthy,KC,WR2,ATL,0.191057,28.050414,50.274297,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,36.000000,Jordan Addison,MIN,WR2,GB,0.170616,35.629560,50.130648,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,37.000000,Germie Bernard,PIT,WR2,CIN,0.156716,43.616338,49.565386,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,38.000000,Malachi Fields,NYG,WR2,WAS,0.134615,48.552549,49.541218,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,39.000000,Adonai Mitchell,NYJ,WR2,BUF,0.131783,55.654906,49.184690,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,40.000000,Caleb Douglas,MIA,WR2,IND,0.135000,59.528211,48.797128,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,41.000000,Mack Hollins,NE,WR3,DET,0.098485,67.643990,47.547555,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,42.000000,DJ Moore,BUF,WR1,NYJ,0.144144,39.957510,46.256020,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,43.000000,Keon Coleman,BUF,WR3,NYJ,0.148649,29.101313,45.939392,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,44.000000,Cooper Kupp,SEA,WR2,LV,0.122744,28.716233,45.724977,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,45.000000,Ryan Flournoy,DAL,WR2,SF,0.143293,38.824354,45.525557,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,46.000000,Quentin Johnston,LAC,WR2,BAL,0.128205,43.404405,44.921570,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,47.000000,Ladd McConkey,LAC,WR1,BAL,0.102564,48.810568,44.790764,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,48.000000,Xavier Hutchinson,HOU,WR2,CLE,0.167910,23.246725,44.419192,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,49.000000,George Pickens,DAL,WR3,SF,0.189024,47.301734,44.139814,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,50.000000,Mike Evans,SF,WR2,DAL,0.171053,57.705616,43.505490,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,51.000000,Tre Harris,LAC,WR3,BAL,0.149573,29.638117,43.451747,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,52.000000,Antonio Williams,WAS,WR2,NYG,0.157258,29.890452,42.385035,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,53.000000,Jahan Dotson,ATL,WR2,KC,0.132231,26.695622,40.706769,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,54.000000,Rashod Bateman,BAL,WR2,LAC,0.129167,28.370055,40.124043,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,55.000000,Elic Ayomanor,TEN,WR3,JAX,0.111111,26.293029,40.119536,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,56.000000,Jordan Watkins,SF,WR3,DAL,0.057018,59.322614,39.577601,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,57.000000,Brian Thomas Jr.,JAX,WR3,TEN,0.095023,14.041376,39.147307,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,58.000000,Darnell Mooney,NYG,WR3,WAS,0.100000,24.552838,36.890867,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,59.000000,Isaac TeSlaa,DET,WR3,NE,0.085502,23.793849,35.831885,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,60.000000,Chris Bell,MIA,WR3,IND,0.125000,15.732856,34.219096,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,61.000000,Marvin Harrison Jr.,HOU,WR3,CLE,0.089552,19.194616,33.463049,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,62.000000,Treylon Burks,WAS,WR3,NYG,0.088710,34.962178,33.363385,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,63.000000,Jerry Jeudy,CLE,WR3,HOU,0.101449,22.715615,33.177352,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,64.000000,Tory Horton,SEA,WR3,LV,0.068592,20.358600,32.991177,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,65.000000,Dohnte Meyers,CIN,WR3,PIT,0.089965,28.062244,32.716737,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,66.000000,John Metchie III,CAR,WR3,NO,0.077739,25.685839,31.947470,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,67.000000,Laquon Treadwell,IND,WR1,MIA,0.101045,17.245956,31.671396,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,68.000000,A.J. Brown,NE,WR1,DET,0.075758,34.406438,31.645255,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,69.000000,Michael Pittman,PIT,WR3,CIN,0.044776,31.977728,31.461832,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,70.000000,Bryce Lance,NO,WR3,CAR,0.077966,9.759692,29.934410,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,71.000000,Konata Mumpfield,LA,WR1,ARI,0.068249,18.720176,29.737380,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,72.000000,Jalen Nailor,LV,WR2,SEA,0.090032,14.215580,29.122287,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,73.000000,Ja'Kobi Lane,BAL,WR3,LAC,0.058333,14.469639,24.639978,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,74.000000,Savion Williams,GB,WR3,MIN,0.039514,18.697271,22.198307,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,75.000000,Tutu Atwell,LA,WR2,ARI,0.038576,20.709520,21.859197,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,76.000000,Olamide Zaccheaus,ATL,WR3,KC,0.066116,2.788893,21.408775,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,77.000000,Ashton Dulin,IND,WR2,MIA,0.031359,12.491489,21.391180,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,78.000000,Jack Bech,LV,WR3,SEA,0.025723,15.049611,19.941594,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,79.000000,Deion Burks,IND,WR3,MIA,0.031359,6.302582,19.889144,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,80.000000,Myles Price,MIN,WR3,GB,0.052133,2.313883,19.756053,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,81.000000,Reggie Virgil,ARI,WR1,LA,0.032164,18.063837,17.962550,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,82.000000,Xavier Smith,LA,WR3,ARI,0.002967,0.000000,12.224341,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,83.000000,Simi Fehoko,ARI,WR2,LA,0.005848,2.465385,11.221522,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,84.000000,Devin Duvernay,ARI,WR3,LA,0.011696,2.754053,11.170164,PASS,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,85.000000,Emeka Egbuka,TB,WR1,BYE,0.233766,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,86.000000,Luther Burden III,CHI,WR1,BYE,0.222603,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,87.000000,Jaylen Waddle,DEN,WR2,BYE,0.200772,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,88.000000,Makai Lemon,PHI,WR1,BYE,0.189474,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,89.000000,Courtland Sutton,DEN,WR1,BYE,0.177606,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,90.000000,Rome Odunze,CHI,WR2,BYE,0.174658,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,91.000000,Chris Godwin Jr.,TB,WR2,BYE,0.164502,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,92.000000,DeVonta Smith,PHI,WR2,BYE,0.143860,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,93.000000,Kalif Raymond,CHI,WR3,BYE,0.140411,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,94.000000,Darius Cooper,PHI,WR3,BYE,0.112281,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,95.000000,Tez Johnson,TB,WR3,BYE,0.086580,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,10.000000,2026-11-11,FROZEN FULL COHORT,96.000000,Pat Bryant,DEN,WR3,BYE,0.065637,0.000000,0.000000,BYE,Outgoing Week 10 full publication frozen before Week 11 advance.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Simi Fehoko,ARI,WR1,KC,0.011111,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Reggie Virgil,ARI,WR2,KC,0.030556,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Devin Duvernay,ARI,WR3,KC,0.019444,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Drake London,ATL,WR1,BYE,0.278169,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Jahan Dotson,ATL,WR2,BYE,0.133803,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Olamide Zaccheaus,ATL,WR3,BYE,0.070423,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Zay Flowers,BAL,WR1,CAR,0.247387,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Rashod Bateman,BAL,WR2,CAR,0.125436,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Ja'Kobi Lane,BAL,WR3,CAR,0.087108,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,DJ Moore,BUF,WR1,MIA,0.156379,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Khalil Shakir,BUF,WR2,MIA,0.185185,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Keon Coleman,BUF,WR3,MIA,0.148148,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Tetairoa McMillan,CAR,WR1,BAL,0.250000,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Jalen Coker,CAR,WR2,BAL,0.169872,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,John Metchie III,CAR,WR3,BAL,0.073718,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Luther Burden III,CHI,WR1,NO,0.222603,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Rome Odunze,CHI,WR2,NO,0.174658,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Kalif Raymond,CHI,WR3,NO,0.140411,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,2.000000,Ja'Marr Chase,CIN,WR1,WAS,0.262840,,86.924885,ELITE,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,135.246680
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,4.000000,Tee Higgins,CIN,WR2,WAS,0.220544,,75.517128,PRIME,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,104.920028
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Dohnte Meyers,CIN,WR3,WAS,0.084592,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Denzel Boston,CLE,WR1,BYE,0.196203,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,KC Concepcion,CLE,WR2,BYE,0.199367,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Jerry Jeudy,CLE,WR3,BYE,0.101266,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,1.000000,CeeDee Lamb,DAL,WR1,TEN,0.320955,,95.843507,ELITE,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,121.000103
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,5.000000,George Pickens,DAL,WR2,TEN,0.212202,,75.392857,PRIME,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,108.319942
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Ryan Flournoy,DAL,WR3,TEN,0.143236,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Courtland Sutton,DEN,WR1,LV,0.177606,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Jaylen Waddle,DEN,WR2,LV,0.200772,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Pat Bryant,DEN,WR3,LV,0.065637,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,3.000000,Amon-Ra St. Brown,DET,WR1,TB,0.302326,,77.128005,PRIME,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,68.791557
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Jameson Williams,DET,WR2,TB,0.176080,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Isaac TeSlaa,DET,WR3,TB,0.093023,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Christian Watson,GB,WR1,BYE,0.220670,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Matthew Golden,GB,WR2,BYE,0.282123,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Savion Williams,GB,WR3,BYE,0.041899,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Nico Collins,HOU,WR1,IND,0.180921,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Xavier Hutchinson,HOU,WR2,IND,0.177632,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Kayshon Boutte,HOU,WR3,IND,0.095395,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Laquon Treadwell,IND,WR1,HOU,0.103896,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Deion Burks,IND,WR2,HOU,0.035714,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Anthony Gould,IND,WR3,HOU,0.016234,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,10.000000,Parker Washington,JAX,WR1,NYG,0.250980,,69.373464,STRONG,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,59.667284
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Jakobi Meyers,JAX,WR2,NYG,0.168627,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Brian Thomas Jr.,JAX,WR3,NYG,0.098039,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Xavier Worthy,KC,WR1,ARI,0.179211,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Rashee Rice,KC,WR2,ARI,0.136201,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Josh Downs,KC,WR3,ARI,0.222222,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Konata Mumpfield,LA,WR1,BYE,0.074380,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,CJ Daniels,LA,WR2,BYE,0.005510,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Tutu Atwell,LA,WR3,BYE,0.041322,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Ladd McConkey,LAC,WR1,NYJ,0.096000,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Tre Harris,LAC,WR2,NYJ,0.160000,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Quentin Johnston,LAC,WR3,NYJ,0.124000,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Tre Tucker,LV,WR1,DEN,0.171598,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Jalen Nailor,LV,WR2,DEN,0.094675,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Jack Bech,LV,WR3,DEN,0.044379,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Malik Washington,MIA,WR1,BUF,0.219828,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Caleb Douglas,MIA,WR2,BUF,0.150862,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Chris Bell,MIA,WR3,BUF,0.107759,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,9.000000,Justin Jefferson,MIN,WR1,SF,0.265560,,69.420005,STRONG,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,51.790802
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Jordan Addison,MIN,WR2,SF,0.149378,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Tai Felton,MIN,WR3,SF,0.049793,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Mack Hollins,NE,WR1,BYE,0.110345,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,DeMario Douglas,NE,WR2,BYE,0.168966,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,A.J. Brown,NE,WR3,BYE,0.089655,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,8.000000,Chris Olave,NO,WR1,CHI,0.265244,,71.948696,STRONG,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,78.619509
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Devaughn Vele,NO,WR2,CHI,0.164634,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Jordyn Tyson,NO,WR3,CHI,0.054878,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,6.000000,Malik Nabers,NYG,WR1,JAX,0.289116,,73.853801,STRONG,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,70.006034
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Malachi Fields,NYG,WR2,JAX,0.132653,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Darnell Mooney,NYG,WR3,JAX,0.105442,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,7.000000,Garrett Wilson,NYJ,WR1,LAC,0.258389,,73.340842,STRONG,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,76.233380
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Adonai Mitchell,NYJ,WR2,LAC,0.140940,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Omar Cooper Jr.,NYJ,WR3,LAC,0.080537,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Makai Lemon,PHI,WR1,PIT,0.189474,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,DeVonta Smith,PHI,WR2,PIT,0.143860,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Darius Cooper,PHI,WR3,PIT,0.112281,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,DK Metcalf,PIT,WR1,PHI,0.235690,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Germie Bernard,PIT,WR2,PHI,0.151515,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Brandon Smith,PIT,WR3,PHI,0.016835,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Jaxon Smith-Njigba,SEA,WR1,BYE,0.370748,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Cooper Kupp,SEA,WR2,BYE,0.119048,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Rashid Shaheed,SEA,WR3,BYE,0.108844,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Keenan Allen,SF,WR1,MIN,0.253906,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Mike Evans,SF,WR2,MIN,0.152344,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Deebo Samuel Sr.,SF,WR3,MIN,0.089844,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Emeka Egbuka,TB,WR1,DET,0.233766,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Chris Godwin Jr.,TB,WR2,DET,0.164502,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Tez Johnson,TB,WR3,DET,0.086580,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Carnell Tate,TEN,WR1,DAL,0.188192,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Elic Ayomanor,TEN,WR2,DAL,0.132841,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Chimere Dike,TEN,WR3,DAL,0.059041,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Stefon Diggs,WAS,WR1,CIN,0.209964,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Antonio Williams,WAS,WR2,CIN,0.145907,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,
+2026.000000,11.000000,2026-11-18,FROZEN FULL WR ROLE COHORT / TOP-10 RANKED,,Treylon Burks,WAS,WR3,CIN,0.088968,,,ROLE COHORT,Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.,

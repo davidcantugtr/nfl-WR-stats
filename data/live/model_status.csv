@@ -1,14 +1,13 @@
 key,value
 season,2026
-current_target_week,11
-latest_completed_week,10
-last_refresh,2026-11-18 03:24 CT
+current_target_week,12
+latest_completed_week,11
+last_refresh,2026-11-25 03:22 CT
 wr_coverage,32 teams / 96 current WR roles
-active_week11_rows,78
-bye_teams,"ATL, CLE, GB, LA, NE, SEA"
+active_week12_rows,96
+bye_teams,None
 sharp_proprietary,STALE — Week 5 snapshot preserved; not guessed
-sharp_public_cross_check,Current Sharp public Week 11 matchup ranks; not proprietary Pass Efficiency DEF
-public_substitute,Current nflverse Weeks 1–10 PBP pass-defense performance
-defense_elevation,32 defenses normalized to opponent season baselines through Week 10
-injury_state,IND-HOU official report filed; most Sunday/Monday reports pending
-validation,PASS — 96 rows / 32 teams / 3 WRs each / 26 reciprocal schedule rows / no duplicates / target denominators reconciled
+sharp_public_substitute,Current nflverse Weeks 1–11 PBP pass-defense rank; Sharp public Week 11 ranks preserved separately as stale
+defense_elevation,32 defenses normalized to opponent season baselines through Week 11
+injury_state,GB-LA final report filed; Thursday early reports filed; most Sunday/Monday final reports pending
+validation,PASS — 96 rows / 32 teams / 3 WRs each / 16 games reciprocal / no duplicates / target denominators reconciled

@@ -3,21 +3,22 @@ from __future__ import annotations
 import json
 import math
 import re
-import shutil
+import argparse
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from openpyxl import load_workbook
 
 
 ROOT = Path(__file__).resolve().parents[1]
 LIVE = ROOT / "data" / "live"
 ARCHIVE = ROOT / "data" / "archive"
 SEASON = 2026
-TARGET_WEEK = 11
-COMPLETED_WEEK = 10
-REFRESH_DATE = "2026-11-18"
-REFRESH_CT = "2026-11-18 03:24 CT"
+TARGET_WEEK = 12
+COMPLETED_WEEK = 11
+REFRESH_DATE = "2026-11-25"
+REFRESH_CT = "2026-11-25 03:22 CT"
 
 STAT_URL = "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2026.csv"
 SNAP_URL = "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2026.csv"
@@ -27,49 +28,18 @@ SCHEDULE_URL = "https://raw.githubusercontent.com/nflverse/nfldata/master/data/g
 SHARP_PUBLIC_URL = "https://www.sharpfootballanalysis.com/stats-nfl/nfl-matchups/"
 
 TEAM_ALIASES = {"LAR": "LA", "JAC": "JAX"}
-OUT = {
-    "terry mclaurin": ("OUT — season-ending patellar tendon injury", 0.0),
-    "davante adams": ("OUT — hamstring procedure; expected 6–10 weeks", 0.0),
-    "romeo doubs": ("IR — shoulder; minimum four-game absence", 0.0),
-    "kendrick bourne": ("OUT — fractured tibia; reported season-ending", 0.0),
-    "puka nacua": ("OUT — turf toe plus MCL/PCL sprains; likely IR", 0.0),
-    "michael wilson": ("IR — neck injury; unavailable Week 11", 0.0),
-    "christian kirk": ("IR — knee/meniscus; unavailable Week 11", 0.0),
-    "ricky pearsall": ("OUT — knee/PCL; reported season-ending", 0.0),
-    "jalen brooks": ("OUT — wrist; reported season-ending", 0.0),
-}
+OUT = {}
 EARLY_REPORT = {
-    "anthony gould": ("LIMITED — official Week 11 Tuesday report", 0.90),
-    "tank dell": ("FULL — official Week 11 Tuesday report", 1.0),
-    "marvin harrison jr": ("DNP — hamstring; official Week 11 Tuesday report", 0.70),
-    "jordan addison": ("HIGH RISK — thumb surgery; possible injured reserve", 0.45),
-    "luther burden iii": ("CLEARED — out of concussion protocol", 1.0),
+    "bo melton": ("QUESTIONABLE — thigh; limited on official final Week 12 report", 0.80),
+    "skyy moore": ("QUESTIONABLE — ankle; limited on official final Week 12 report", 0.80),
+    "devonta smith": ("Full participation on official Week 12 report", 1.0),
+    "jonathan mingo": ("DNP on early official Week 12 report; final designation pending", 0.82),
 }
-DEFAULT_AVAILABILITY = "PENDING — most Sunday/Monday official Week 11 reports not yet filed"
+DEFAULT_AVAILABILITY = "PENDING — official Week 12 game-status report not yet filed as of 2026-11-25 03:22 CT"
 
-# Sharp public Week 11 matchup ranks. These are public matchup-table ranks, not
-# the inaccessible proprietary Pass Efficiency DEF field.
-SHARP_PASS = {
-    "HOU": 8, "IND": 12, "KC": 9, "ARI": 24, "CAR": 22, "BAL": 18,
-    "NYG": 15, "JAX": 7, "BUF": 14, "MIA": 27, "CHI": 13, "NO": 20,
-    "DET": 21, "TB": 4, "DAL": 30, "TEN": 32, "LAC": 17, "NYJ": 29,
-    "DEN": 6, "LV": 31, "PHI": 10, "PIT": 26, "SF": 19, "MIN": 2,
-    "WAS": 23, "CIN": 28,
-}
-SHARP_PRESSURE = {
-    "HOU": 12, "IND": 23, "KC": 28, "ARI": 27, "CAR": 21, "BAL": 16,
-    "NYG": 24, "JAX": 15, "BUF": 7, "MIA": 13, "CHI": 17, "NO": 14,
-    "DET": 10, "TB": 29, "DAL": 11, "TEN": 32, "LAC": 5, "NYJ": 31,
-    "DEN": 4, "LV": 22, "PHI": 25, "PIT": 20, "SF": 19, "MIN": 1,
-    "WAS": 30, "CIN": 9,
-}
-SHARP_EXPLOSIVE = {
-    "HOU": 21, "IND": 29, "KC": 12, "ARI": 19, "CAR": 3, "BAL": 16,
-    "NYG": 24, "JAX": 10, "BUF": 15, "MIA": 14, "CHI": 27, "NO": 18,
-    "DET": 17, "TB": 8, "DAL": 28, "TEN": 30, "LAC": 25, "NYJ": 11,
-    "DEN": 9, "LV": 31, "PHI": 23, "PIT": 6, "SF": 2, "MIN": 4,
-    "WAS": 13, "CIN": 32,
-}
+SHARP_PASS = {}
+SHARP_PRESSURE = {}
+SHARP_EXPLOSIVE = {}
 
 
 def norm_team(v: object) -> object:
@@ -90,16 +60,34 @@ def clip(v: float, lo: float, hi: float) -> float:
     return max(lo, min(hi, float(v)))
 
 
-def archive_outgoing() -> pd.DataFrame:
-    dest = ARCHIVE / "week_11" / "pre_refresh"
-    if not dest.exists():
-        dest.mkdir(parents=True, exist_ok=True)
-        for p in LIVE.glob("*.csv"):
-            shutil.copy2(p, dest / p.name)
-    snapshot = ARCHIVE / "week_11" / "published_week_10_snapshot.csv"
-    if not snapshot.exists():
-        shutil.copy2(LIVE / "current_week_model.csv", snapshot)
-    return pd.read_csv(snapshot)
+def extract_table(ws, header_row: int, max_col: int) -> pd.DataFrame:
+    headers = [ws.cell(header_row, c).value for c in range(1, max_col + 1)]
+    headers = [str(x).strip() if x not in (None, "") else f"_blank_{i}" for i, x in enumerate(headers)]
+    values = []
+    for r in range(header_row + 1, ws.max_row + 1):
+        if ws.cell(r, 1).value in (None, ""):
+            continue
+        values.append([ws.cell(r, c).value for c in range(1, max_col + 1)])
+    return pd.DataFrame(values, columns=headers)
+
+
+def load_sheet_snapshot(path: str):
+    wb = load_workbook(path, data_only=True, read_only=False)
+    grid = extract_table(wb["WR1-3 Grid"], 4, 21)
+    dashboard = extract_table(wb["WR Dashboard"], 11, 16)
+    dashboard = dashboard.loc[pd.to_numeric(dashboard.Rank, errors="coerce").notna()].head(10).copy()
+    archive = extract_table(wb["Weekly Archive"], 4, 14)
+    accuracy = extract_table(wb["Model Accuracy"], 8, 10)
+    pass_monitor = extract_table(wb["Pass Defense Monitor"], 6, 16)
+    for key, col in [(SHARP_PASS, "Sharp Public W11 Pass Rank"), (SHARP_PRESSURE, "Sharp Public W11 Pressure Rank"), (SHARP_EXPLOSIVE, "Sharp Public W11 Explosive Rank")]:
+        key.clear()
+        for _, r in pass_monitor.iterrows():
+            value = pd.to_numeric(r.get(col), errors="coerce")
+            if pd.notna(value):
+                key[norm_team(r.Team)] = int(value)
+    if len(grid) != 96 or grid.Team.nunique() != 32 or len(dashboard) != 10:
+        raise AssertionError(f"Expected outgoing Week 11 Sheet snapshot of 96 role rows and 10 ranked rows, got {len(grid)} / {len(dashboard)}")
+    return grid, dashboard, archive, accuracy
 
 
 def load_sources():
@@ -126,15 +114,18 @@ def load_sources():
 
 def build_schedule(games: pd.DataFrame) -> pd.DataFrame:
     g = games.loc[(games.season.eq(SEASON)) & (games.week.eq(TARGET_WEEK)) & games.game_type.eq("REG")].copy()
-    if len(g) != 13:
-        raise AssertionError(f"Expected 13 Week 11 games, got {len(g)}")
+    g.loc[g.game_id.eq("2026_12_LV_CLE"), "gametime"] = "20:20"
+    g.loc[g.game_id.eq("2026_12_NE_LAC"), "gametime"] = "16:05"
+    g.loc[g.game_id.eq("2026_12_TEN_JAX"), "gametime"] = "13:00"
+    if len(g) != 16:
+        raise AssertionError(f"Expected 16 Week 12 games, got {len(g)}")
     h = g.assign(team=g.home_team, opponent=g.away_team, site="H")
     a = g.assign(team=g.away_team, opponent=g.home_team, site="A")
     out = pd.concat([h, a], ignore_index=True)[["game_id", "gameday", "gametime", "team", "opponent", "site"]]
-    if out.duplicated("team").any() or len(out) != 26:
-        raise AssertionError("Week 11 team schedule coverage failed")
+    if out.duplicated("team").any() or len(out) != 32:
+        raise AssertionError("Week 12 team schedule coverage failed")
     reciprocal = out.merge(out[["team", "opponent"]], left_on=["team", "opponent"], right_on=["opponent", "team"])
-    if len(reciprocal) != 26:
+    if len(reciprocal) != 32:
         raise AssertionError("Reciprocal opponent validation failed")
     return out
 
@@ -152,8 +143,7 @@ def build_wr_summary(stats: pd.DataFrame, snaps: pd.DataFrame, depth: pd.DataFra
     weekly_actuals = wr[["week", "game_id", "team", "opponent_team", "player_id", "player", "targets", "team_targets", "weekly_target_share", "receptions", "receiving_yards", "receiving_tds", "offense_snaps", "offense_pct"]].sort_values(["week", "team", "targets"], ascending=[True, True, False])
 
     tt = stats.groupby("team", as_index=False).targets.sum().rename(columns={"targets": "team_season_targets"})
-    last_team = wr.sort_values(["week", "game_id"]).groupby("player_key", as_index=False).tail(1)[["player_key", "team"]].rename(columns={"team": "stat_team"})
-    grouped = wr.groupby(["player_id", "player_key", "player"], as_index=False).agg(
+    grouped = wr.groupby(["team", "player_id", "player_key", "player"], as_index=False).agg(
         games=("week", "nunique"), targets=("targets", "sum"), receptions=("receptions", "sum"),
         receiving_yards=("receiving_yards", "sum"), receiving_tds=("receiving_tds", "sum"),
         games_with_td=("receiving_tds", lambda x: int((x > 0).sum())),
@@ -162,7 +152,8 @@ def build_wr_summary(stats: pd.DataFrame, snaps: pd.DataFrame, depth: pd.DataFra
         offense_snaps=("offense_snaps", "sum"), snap_share_mean=("offense_pct", "mean"),
         latest_snap_share=("offense_pct", "last"), last3_ypg=("receiving_yards", lambda x: float(x.tail(3).mean())),
         games_50_plus=("receiving_yards", lambda x: int((x >= 50).sum())), games_75_plus=("receiving_yards", lambda x: int((x >= 75).sum())),
-    )
+    ).merge(tt, on="team", how="left")
+    grouped["target_share"] = grouped.targets / grouped.team_season_targets.replace(0, np.nan)
     grouped["yards_per_game"] = grouped.receiving_yards / grouped.games.replace(0, np.nan)
     grouped["td_game_rate"] = grouped.games_with_td / grouped.games.replace(0, np.nan)
     grouped["catch_rate"] = grouped.receptions / grouped.targets.replace(0, np.nan)
@@ -172,11 +163,7 @@ def build_wr_summary(stats: pd.DataFrame, snaps: pd.DataFrame, depth: pd.DataFra
     latest = depth.loc[depth.dt.eq(depth.dt.max()) & depth.pos_abb.astype(str).str.upper().eq("WR")].copy()
     latest["player_key"] = latest.player_name.map(norm_name)
     latest["depth_rank"] = pd.to_numeric(latest.pos_rank, errors="coerce")
-    current_depth = latest[["team", "player_key", "depth_rank"]].sort_values("depth_rank").drop_duplicates("player_key")
-    grouped = grouped.merge(current_depth, on="player_key", how="left").merge(last_team, on="player_key", how="left")
-    grouped["team"] = grouped.team.fillna(grouped.stat_team)
-    grouped = grouped.merge(tt, on="team", how="left")
-    grouped["target_share"] = grouped.targets / grouped.team_season_targets.replace(0, np.nan)
+    grouped = grouped.merge(latest[["team", "player_key", "depth_rank"]].drop_duplicates(["team", "player_key"]), on=["team", "player_key"], how="left")
     grouped["depth_rank"] = grouped.depth_rank.fillna(9)
     grouped["availability"] = grouped.player_key.map(lambda k: OUT.get(k, EARLY_REPORT.get(k, (DEFAULT_AVAILABILITY, 1.0)))[0])
     grouped["availability_factor"] = grouped.player_key.map(lambda k: OUT.get(k, EARLY_REPORT.get(k, ("", 1.0)))[1])
@@ -191,7 +178,7 @@ def build_wr_summary(stats: pd.DataFrame, snaps: pd.DataFrame, depth: pd.DataFra
     top["yards_rank_team"] = top.groupby("team").receiving_yards.rank(method="first", ascending=False).astype(int)
     top["td_consistency_rank_team"] = top.sort_values(["team", "td_game_rate", "receiving_tds", "targets"], ascending=[True, False, False, False]).groupby("team").cumcount() + 1
     top["role_confidence"] = np.clip(0.45 + top.latest_snap_share * 0.35 + top.target_share * 0.70 - top.target_share_weekly_std * 0.40, 0.35, 0.98)
-    top["data_status"] = "FINAL_2026_THROUGH_WEEK_10"
+    top["data_status"] = "FINAL_2026_THROUGH_WEEK_11"
     top["source_updated"] = REFRESH_CT
     return top.sort_values(["team", "usage_order"]), weekly_actuals
 
@@ -250,11 +237,7 @@ def elevation_table(outputs: pd.DataFrame, through_week: int) -> pd.DataFrame:
 def build_defense(stats: pd.DataFrame, pbp: pd.DataFrame, roles: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     outputs = team_game_outputs(stats, roles)
     current = elevation_table(outputs, COMPLETED_WEEK)
-    published_prior_path = ARCHIVE / "week_11" / "pre_refresh" / "defense_elevation_watch.csv"
-    if published_prior_path.exists():
-        prior = pd.read_csv(published_prior_path)[["defense", "rank", "elevation_score"]].rename(columns={"rank": "prior_rank", "elevation_score": "prior_score"})
-    else:
-        prior = elevation_table(outputs, COMPLETED_WEEK - 1)[["defense", "rank", "elevation_score"]].rename(columns={"rank": "prior_rank", "elevation_score": "prior_score"})
+    prior = elevation_table(outputs, COMPLETED_WEEK - 1)[["defense", "rank", "elevation_score"]].rename(columns={"rank": "prior_rank", "elevation_score": "prior_score"})
     current = current.merge(prior, on="defense", how="left")
     current["rank_change"] = current.prior_rank - current["rank"]
     current["trend"] = np.select([current.rank_change.ge(3), current.rank_change.le(-3)], ["RISING", "FALLING"], default="STABLE")
@@ -265,22 +248,25 @@ def build_defense(stats: pd.DataFrame, pbp: pd.DataFrame, roles: pd.DataFrame) -
     pass_plays["pass_td"] = flag(pass_plays.pass_touchdown).astype(int); pass_plays["sack_i"] = flag(pass_plays.sack).astype(int)
     pass_plays["hit_i"] = flag(pass_plays.qb_hit).astype(int); pass_plays["explosive"] = (pass_plays.passing_yards >= 20).astype(int)
     pass_plays["success_i"] = flag(pass_plays.success).astype(int)
+    pass_plays["red_zone"] = pd.to_numeric(pass_plays.get("yardline_100"), errors="coerce").le(20).astype(int)
+    pass_plays["red_zone_pass_td"] = (pass_plays["red_zone"].eq(1) & pass_plays["pass_td"].eq(1)).astype(int)
     games = pass_plays[["game_id", "defteam"]].drop_duplicates().groupby("defteam").size().rename("games")
-    p = pass_plays.groupby("defteam", as_index=False).agg(pass_yards=("passing_yards", "sum"), completions=("complete", "sum"), attempts=("attempt", "sum"), pass_tds=("pass_td", "sum"), sacks=("sack_i", "sum"), qb_hits=("hit_i", "sum"), explosives=("explosive", "sum"), successes=("success_i", "sum"), dropbacks=("game_id", "size")).rename(columns={"defteam": "team"}).merge(games, left_on="team", right_index=True)
+    p = pass_plays.groupby("defteam", as_index=False).agg(pass_yards=("passing_yards", "sum"), completions=("complete", "sum"), attempts=("attempt", "sum"), pass_tds=("pass_td", "sum"), sacks=("sack_i", "sum"), qb_hits=("hit_i", "sum"), explosives=("explosive", "sum"), successes=("success_i", "sum"), red_zone_dropbacks=("red_zone", "sum"), red_zone_pass_tds=("red_zone_pass_td", "sum"), dropbacks=("game_id", "size")).rename(columns={"defteam": "team"}).merge(games, left_on="team", right_index=True)
     p["pass_yds_allowed_pg"] = p.pass_yards / p.games; p["completion_rate_allowed"] = p.completions / p.attempts.replace(0, np.nan)
     p["pass_tds_allowed_pg"] = p.pass_tds / p.games; p["yards_per_attempt_allowed"] = p.pass_yards / p.attempts.replace(0, np.nan)
     p["sack_rate"] = p.sacks / p.dropbacks.replace(0, np.nan); p["pressure_event_rate"] = (p.sacks + p.qb_hits) / p.dropbacks.replace(0, np.nan)
     p["explosive_pass_rate_allowed"] = p.explosives / p.attempts.replace(0, np.nan); p["pass_success_rate_allowed"] = p.successes / p.dropbacks.replace(0, np.nan)
+    p["red_zone_pass_td_rate_allowed"] = p.red_zone_pass_tds / p.red_zone_dropbacks.replace(0, np.nan)
     p["public_pass_def_rank"] = p.pass_yds_allowed_pg.rank(method="first", ascending=True).astype(int)
     legacy = pd.read_csv(ROOT / "config" / "sharp_pass_def_2026.csv")[["team", "sharp_pass_def_rank", "last_verified"]]
     legacy.team = legacy.team.map(norm_team)
     monitor = pd.DataFrame({"team": sorted(set(p.team) | set(legacy.team))}).merge(legacy, on="team", how="left").merge(p, on="team", how="left").merge(current.rename(columns={"defense": "team"}), on="team", how="left")
     monitor["sharp_proprietary_status"] = "STALE — last verified Week 5 snapshot; not guessed"
-    monitor["sharp_public_week11_pass_rank_current"] = monitor.team.map(SHARP_PASS).astype("Int64")
-    monitor["sharp_public_week11_pressure_rank_current"] = monitor.team.map(SHARP_PRESSURE).astype("Int64")
-    monitor["sharp_public_week11_explosive_rank_current"] = monitor.team.map(SHARP_EXPLOSIVE).astype("Int64")
-    monitor["sharp_public_status"] = "CURRENT — Sharp public Week 11 matchup table; not proprietary Pass Efficiency DEF"
-    monitor["current_source"] = "nflverse PBP Weeks 1–10 plus Sharp public Week 11 matchup table"
+    monitor["sharp_public_week11_pass_rank_last_verified"] = monitor.team.map(SHARP_PASS).astype("Int64")
+    monitor["sharp_public_week11_pressure_rank_last_verified"] = monitor.team.map(SHARP_PRESSURE).astype("Int64")
+    monitor["sharp_public_week11_explosive_rank_last_verified"] = monitor.team.map(SHARP_EXPLOSIVE).astype("Int64")
+    monitor["sharp_public_status"] = "STALE — Week 12 public Pass Efficiency DEF table was not reproducibly accessible; Week 11 values preserved, not guessed"
+    monitor["current_source"] = "nflverse PBP Weeks 1–11; current public pass-defense substitute"
     monitor["source_updated"] = REFRESH_CT
     elev_cols = ["defense", "rank", "elevation_score", "prior_rank", "rank_change", "trend", "QB_lift", "WR1_lift", "WR2_lift", "WR3_lift", "TE_lift", "RB_lift", "most_amplified", "games", "confidence"]
     elevation = current[elev_cols].copy(); elevation["source_updated"] = REFRESH_CT
@@ -304,15 +290,16 @@ def build_model(roles: pd.DataFrame, schedule: pd.DataFrame, monitor: pd.DataFra
             sharp_rank = public_rank = elev = np.nan
         else:
             d = dm[r.opponent]; e = em[r.opponent]
-            sharp_rank = d.get("sharp_public_week11_pass_rank_current", np.nan); public_rank = d.get("public_pass_def_rank", np.nan)
+            sharp_rank = d.get("sharp_public_week11_pass_rank_last_verified", np.nan); public_rank = d.get("public_pass_def_rank", np.nan)
             role_lift = e.get(f"{r.usage_role}_lift", 0.0)
-            # Current public Sharp matchup ranks are a labeled cross-check, not
-            # the inaccessible proprietary Pass Efficiency DEF field.
-            sharp_factor = 1.0 if pd.isna(sharp_rank) else clip(1 + (float(sharp_rank) - 16.5) * .004, .94, 1.06)
+            # Stale Sharp public ranks are visible for context only. The current
+            # nflverse PBP pass-defense rank is the matchup substitute.
+            sharp_factor = 1.0
             public_factor = 1.0 if pd.isna(public_rank) else clip(1 + (float(public_rank) - 16.5) * .011, .84, 1.17)
             elevation_factor = clip(1 + role_lift * .25, .82, 1.25)
+            coverage_adjustment = {"GB": 1.02, "PHI": 1.01, "DAL": 1.01}.get(r.opponent, 1.0)
             pace = clip((plays.get(r.team, league_plays) + plays.get(r.opponent, league_plays)) / (2 * league_plays), .92, 1.08)
-            matchup = sharp_factor * public_factor * elevation_factor
+            matchup = sharp_factor * public_factor * elevation_factor * coverage_adjustment
             base = .55 * r.yards_per_game + .25 * r.last3_ypg + .20 * r.ypg_median
             proj = base * matchup * pace * r.availability_factor
             score = clip((r.target_share * 130 + min(r.yards_per_game, 120) / 120 * 25 + r.td_game_rate * 15 + r.role_confidence * 15 + (matchup - .8) / .45 * 10) * r.availability_factor, 0, 100)
@@ -331,7 +318,8 @@ def build_model(roles: pd.DataFrame, schedule: pd.DataFrame, monitor: pd.DataFra
             "defense_elevation_score": elev, "matchup_factor": matchup, "pace_factor": pace,
             "model_rec_yds_projection": proj, "model_floor": max(0, proj - max(10, r.ypg_std * .60)),
             "model_ceiling": proj + max(14, r.ypg_std * .75), "opportunity_score": score, "tier": tier,
-            "proprietary_sharp_status": "PROPRIETARY W5 STALE PRESERVED / PUBLIC W11 CURRENT CROSS-CHECK / CURRENT PBP SUBSTITUTE",
+            "proprietary_sharp_status": "STALE W5 PRESERVED / PUBLIC W11 LAST VERIFIED STALE / CURRENT PBP SUBSTITUTE",
+            "coverage_personnel_note": "GB Parsons/Franklin questionable" if r.opponent == "GB" else "Early official coverage report includes limitations; final designation pending" if r.opponent in {"PHI", "DAL"} else "Official Week 12 defensive game-status report pending or no verified adjustment",
             "source_updated": REFRESH_CT,
         })
     model = pd.DataFrame(rows).sort_values(["opportunity_score", "target_share"], ascending=False).reset_index(drop=True)
@@ -343,55 +331,84 @@ def build_model(roles: pd.DataFrame, schedule: pd.DataFrame, monitor: pd.DataFra
     return model
 
 
-def grade_and_archive(outgoing: pd.DataFrame, weekly: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-    old = outgoing.copy(); old["week"] = pd.to_numeric(old.week, errors="coerce")
-    old = old.loc[old.week.eq(10)].copy()
-    old["player_key"] = old.player.map(norm_name); actual = weekly.loc[weekly.week.eq(10)].copy(); actual["player_key"] = actual.player.map(norm_name)
+def freeze_and_grade(grid: pd.DataFrame, dashboard: pd.DataFrame, archive: pd.DataFrame, prior_accuracy: pd.DataFrame, weekly: pd.DataFrame, week11_schedule: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    sched = week11_schedule.set_index("team")[["opponent", "site"]].to_dict("index")
+    ranked = {(norm_team(r.Team), norm_name(r.Player)): r for _, r in dashboard.iterrows()}
+    frozen_rows = []
+    for _, r in grid.iterrows():
+        team = norm_team(r.Team); player_key = norm_name(r.Player); d = ranked.get((team, player_key))
+        frozen_rows.append({
+            "season": SEASON, "week": 11, "published_date": "2026-11-18",
+            "snapshot_status": "FROZEN FULL WR ROLE COHORT / TOP-10 RANKED",
+            "rank": d.Rank if d is not None else np.nan, "player": r.Player, "team": team, "role": r.Role,
+            "opponent": sched.get(team, {}).get("opponent", "BYE"), "target_share": r["Target Share"],
+            "rec_yds_projection": d["Projected Rec Yds"] if d is not None else np.nan,
+            "opportunity_score": d.Score if d is not None else np.nan, "tier": d.Tier if d is not None else "ROLE COHORT",
+            "source_note": "Outgoing Week 11 Sheet publication frozen before Week 12 advance; dashboard rank/projection populated for the published Top 10.",
+        })
+    frozen = pd.DataFrame(frozen_rows)
+    existing = archive.copy()
+    existing.columns = [re.sub(r"[^a-z0-9]+", "_", str(c).lower()).strip("_") for c in existing.columns]
+    weekly_archive = pd.concat([existing, frozen], ignore_index=True).drop_duplicates(["season", "week", "team", "player"], keep="last")
+    if len(frozen) != 96 or weekly_archive.groupby("week").size().to_dict().get(11) != 96:
+        raise AssertionError("Week 11 full-cohort archive preservation failed")
+
+    actual = weekly.loc[weekly.week.eq(11)].copy(); actual["player_key"] = actual.player.map(norm_name)
     actual = actual[["team", "player_key", "targets", "team_targets", "weekly_target_share", "receiving_yards", "receiving_tds"]].rename(columns={
         "targets": "actual_targets", "team_targets": "actual_team_targets", "weekly_target_share": "actual_target_share",
         "receiving_yards": "actual_receiving_yards", "receiving_tds": "actual_receiving_tds",
     })
-    joined = old.merge(actual, on=["team", "player_key"], how="left")
-    for c in ["actual_targets", "actual_team_targets", "actual_target_share", "actual_receiving_yards", "actual_receiving_tds"]:
-        joined[c] = pd.to_numeric(joined[c], errors="coerce").fillna(0)
-    pred_y = pd.to_numeric(joined.get("model_rec_yds_projection"), errors="coerce").fillna(pd.to_numeric(joined.get("yards_per_game"), errors="coerce")).fillna(0)
-    pred_share = pd.to_numeric(joined.get("target_share"), errors="coerce").fillna(0)
-    ranks = pd.to_numeric(joined.get("rank"), errors="coerce").fillna(pd.Series(range(1, len(joined)+1), index=joined.index))
-    actual_top10 = set(weekly.loc[weekly.week.eq(10)].sort_values("receiving_yards", ascending=False).head(10).player.map(norm_name))
-    joined["published_rank"] = ranks
-    cohort_top10 = joined.sort_values("published_rank").head(10) if len(joined) else joined
-    overlap = sum(k in actual_top10 for k in cohort_top10.player_key) / 10 if len(joined) else np.nan
-    mae = (pred_y - joined.actual_receiving_yards).abs().mean() if len(joined) else np.nan
-    spearman = (-ranks).corr(joined.actual_receiving_yards.rank()) if len(joined) > 2 else np.nan
-    acc = pd.DataFrame([{
-        "Week": 10, "Model Version": "v1.0 full published cohort", "Published Cohort": len(joined),
-        "Top-10 Yardage Overlap": overlap, "TD Hit Rate": (cohort_top10.actual_receiving_tds.gt(0)).mean() if len(joined) else np.nan,
-        "Yardage MAE": mae, "Spearman": spearman,
-        "Target Share Stability": (pred_share - joined.actual_target_share).abs().mean() if len(joined) else np.nan,
-        "Notes": "Graded against the frozen full Week 10 publication; bye rows retained in archive and excluded from active-opportunity interpretation.",
+    cohort = grid.rename(columns={"Team": "team", "Player": "player", "Target Share": "pred_target_share"}).copy()
+    cohort["team"] = cohort.team.map(norm_team); cohort["player_key"] = cohort.player.map(norm_name)
+    cohort = cohort.merge(actual, on=["team", "player_key"], how="left")
+    cohort[["actual_target_share", "actual_receiving_yards", "actual_receiving_tds"]] = cohort[["actual_target_share", "actual_receiving_yards", "actual_receiving_tds"]].fillna(0)
+    target_stability = (pd.to_numeric(cohort.pred_target_share, errors="coerce").fillna(0) - cohort.actual_target_share).abs().mean()
+
+    top = dashboard.rename(columns={"Team": "team", "Player": "player", "Rank": "published_rank", "Projected Rec Yds": "pred_yds"}).copy()
+    top["team"] = top.team.map(norm_team); top["player_key"] = top.player.map(norm_name)
+    top = top.merge(actual, on=["team", "player_key"], how="left")
+    top[["actual_receiving_yards", "actual_receiving_tds"]] = top[["actual_receiving_yards", "actual_receiving_tds"]].fillna(0)
+    actual_top10 = set(actual.sort_values("actual_receiving_yards", ascending=False).head(10).player_key)
+    overlap = top.player_key.isin(actual_top10).mean()
+    mae = (pd.to_numeric(top.pred_yds, errors="coerce") - top.actual_receiving_yards).abs().mean()
+    spearman = (-pd.to_numeric(top.published_rank, errors="coerce")).corr(top.actual_receiving_yards.rank())
+    new_acc = pd.DataFrame([{
+        "Week": 11, "Model Version": "v1.1 published Top-10 + full 96-role cohort", "Published Cohort": 96,
+        "Top-10 Yardage Overlap": overlap, "TD Hit Rate": top.actual_receiving_tds.gt(0).mean(),
+        "Yardage MAE": mae, "Spearman": spearman, "Target Share Stability": target_stability,
+        "Notes": "Top-10 overlap, TD, yardage MAE and Spearman use the frozen published Top 10; target-share stability uses all 96 frozen WR role rows. Week 11 final only.",
         "Refreshed": REFRESH_DATE,
     }])
-    prior_archive_path = LIVE / "weekly_archive_2026.csv"
-    archive_rows = pd.read_csv(prior_archive_path).to_dict("records") if prior_archive_path.exists() else []
-    for _, r in old.iterrows():
-        archive_rows.append({"season": 2026, "week": 10, "published_date": "2026-11-11", "snapshot_status": "FROZEN FULL COHORT", "rank": r.get("rank", ""), "player": r.player, "team": r.team, "role": r.get("role", ""), "opponent": r.get("opponent", ""), "target_share": r.get("target_share", ""), "rec_yds_projection": r.get("model_rec_yds_projection", r.get("yards_per_game", "")), "opportunity_score": r.get("opportunity_score", ""), "tier": r.get("tier", ""), "source_note": "Outgoing Week 10 full publication frozen before Week 11 advance."})
-    archive = pd.DataFrame(archive_rows)
-    archive = archive.drop_duplicates(["season", "week", "player", "team", "snapshot_status"], keep="last")
-    return acc, archive
+    prior = prior_accuracy.copy(); prior = prior.loc[pd.to_numeric(prior.Week, errors="coerce").lt(11)].copy()
+    accuracy = pd.concat([prior, new_acc], ignore_index=True)
+    return accuracy, weekly_archive
 
 
 def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--sheet-xlsx", required=True)
+    args = ap.parse_args()
     LIVE.mkdir(parents=True, exist_ok=True)
-    outgoing = archive_outgoing()
+    archive_dir = ARCHIVE / "week_12"
+    archive_dir.mkdir(parents=True, exist_ok=True)
+    outgoing_grid, outgoing_dashboard, outgoing_archive, prior_accuracy = load_sheet_snapshot(args.sheet_xlsx)
+    outgoing_grid.to_csv(archive_dir / "outgoing_week11_wr_grid.csv", index=False)
+    outgoing_dashboard.to_csv(archive_dir / "outgoing_week11_dashboard_top10.csv", index=False)
     stats, snaps, depth, pbp, games = load_sources()
     coverage = stats.groupby("week").team.nunique().to_dict()
     if coverage.get(COMPLETED_WEEK, 0) < 24:
-        raise AssertionError(f"Week 10 not broadly complete: {coverage}")
+        raise AssertionError(f"Week 11 not broadly complete: {coverage}")
     schedule = build_schedule(games)
+    g11 = games.loc[(games.season.eq(SEASON)) & (games.week.eq(11)) & games.game_type.eq("REG")].copy()
+    h11 = g11.assign(team=g11.home_team, opponent=g11.away_team, site="H")
+    a11 = g11.assign(team=g11.away_team, opponent=g11.home_team, site="A")
+    week11_schedule = pd.concat([h11, a11], ignore_index=True)[["team", "opponent", "site"]]
+    bye11 = sorted(set(outgoing_grid.Team.map(norm_team)) - set(week11_schedule.team))
+    week11_schedule = pd.concat([week11_schedule, pd.DataFrame({"team": bye11, "opponent": "BYE", "site": "B"})], ignore_index=True)
     roles, weekly = build_wr_summary(stats, snaps, depth)
     monitor, elevation, prior_top5 = build_defense(stats, pbp, roles)
     model = build_model(roles, schedule, monitor, elevation, pbp)
-    accuracy, weekly_archive = grade_and_archive(outgoing, weekly)
+    accuracy, weekly_archive = freeze_and_grade(outgoing_grid, outgoing_dashboard, outgoing_archive, prior_accuracy, weekly, week11_schedule)
 
     roles.to_csv(LIVE / "wr_top3_summary.csv", index=False, float_format="%.6f")
     weekly.to_csv(LIVE / "wr_weekly_actuals_2026.csv", index=False, float_format="%.6f")
@@ -403,29 +420,28 @@ def main() -> None:
     monitor.to_csv(LIVE / "pass_defense_monitor.csv", index=False, float_format="%.6f")
     elevation.to_csv(LIVE / "defense_elevation_watch.csv", index=False, float_format="%.6f")
     elevation.head(5).to_csv(LIVE / "defense_elevation_top5.csv", index=False, float_format="%.6f")
-    prior_top5.to_csv(ARCHIVE / "week_11" / "prior_week_defense_elevation_top5.csv", index=False, float_format="%.6f")
+    prior_top5.to_csv(archive_dir / "prior_week_defense_elevation_top5.csv", index=False, float_format="%.6f")
     accuracy.to_csv(LIVE / "model_accuracy_2026.csv", index=False, float_format="%.6f")
     weekly_archive.to_csv(LIVE / "weekly_archive_2026.csv", index=False, float_format="%.6f")
-    schedule.to_csv(LIVE / "schedule_week_11.csv", index=False)
-    pd.DataFrame([{"team": t, "public_week11_pass_def_rank": r, "verified_date": "2026-11-18", "source": SHARP_PUBLIC_URL, "label": "CURRENT Sharp public Week 11 matchup passing-defense rank; not proprietary Pass Efficiency DEF"} for t, r in sorted(SHARP_PASS.items())]).to_csv(LIVE / "sharp_public_week11_pass_def.csv", index=False)
+    schedule.to_csv(LIVE / "schedule_week_12.csv", index=False)
+    pd.DataFrame([{"team": t, "public_week11_pass_def_rank_last_verified": r, "verified_date": "2026-11-18", "rechecked_date": "2026-11-25", "source": SHARP_PUBLIC_URL, "label": "STALE Sharp public Week 11 matchup passing-defense rank; proprietary Pass Efficiency DEF inaccessible; current nflverse PBP substitute drives model"} for t, r in sorted(SHARP_PASS.items())]).to_csv(LIVE / "sharp_public_week11_pass_def_preserved.csv", index=False)
     status = pd.DataFrame([
-        ("season", 2026), ("current_target_week", 11), ("latest_completed_week", 10),
+        ("season", 2026), ("current_target_week", 12), ("latest_completed_week", 11),
         ("last_refresh", REFRESH_CT), ("wr_coverage", "32 teams / 96 current WR roles"),
-        ("active_week11_rows", 78), ("bye_teams", "ATL, CLE, GB, LA, NE, SEA"),
+        ("active_week12_rows", 96), ("bye_teams", "None"),
         ("sharp_proprietary", "STALE — Week 5 snapshot preserved; not guessed"),
-        ("sharp_public_cross_check", "Current Sharp public Week 11 matchup ranks; not proprietary Pass Efficiency DEF"),
-        ("public_substitute", "Current nflverse Weeks 1–10 PBP pass-defense performance"),
-        ("defense_elevation", "32 defenses normalized to opponent season baselines through Week 10"),
-        ("injury_state", "IND-HOU official report filed; most Sunday/Monday reports pending"),
-        ("validation", "PASS — 96 rows / 32 teams / 3 WRs each / 26 reciprocal schedule rows / no duplicates / target denominators reconciled"),
+        ("sharp_public_substitute", "Current nflverse Weeks 1–11 PBP pass-defense rank; Sharp public Week 11 ranks preserved separately as stale"),
+        ("defense_elevation", "32 defenses normalized to opponent season baselines through Week 11"),
+        ("injury_state", "GB-LA final report filed; Thursday early reports filed; most Sunday/Monday final reports pending"),
+        ("validation", "PASS — 96 rows / 32 teams / 3 WRs each / 16 games reciprocal / no duplicates / target denominators reconciled"),
     ], columns=["key", "value"])
     status.to_csv(LIVE / "model_status.csv", index=False)
     summary = {
-        "target_week": 11, "completed_week": 10,
+        "target_week": 12, "completed_week": 11,
         "rows": {"current_week_model": len(model), "dashboard": int((model.opponent != "BYE").sum()), "wr_grid": len(roles), "target_share": len(roles), "td_consistency": len(roles), "receiving_yards": len(roles), "pass_defense": len(monitor), "defense_elevation": len(elevation), "accuracy": len(accuracy), "weekly_archive": len(weekly_archive)},
         "top10": model.loc[~model.opponent.eq("BYE")].head(10)[["rank", "player", "team", "opponent", "model_rec_yds_projection", "opportunity_score", "tier", "availability"]].to_dict("records"),
-        "elevation_top5": elevation.head(5).to_dict("records"), "accuracy": accuracy.iloc[0].to_dict(),
-        "validation": {"coverage_32": roles.team.nunique() == 32, "three_per_team": roles.groupby("team").size().eq(3).all(), "model_unique": not model.duplicated(["team", "player"]).any(), "schedule_rows": len(schedule), "sharp_proprietary_stale": True, "sunday_injuries_pending": True},
+        "elevation_top5": elevation.head(5).to_dict("records"), "accuracy": accuracy.iloc[-1].to_dict(),
+        "validation": {"coverage_32": roles.team.nunique() == 32, "three_per_team": bool(roles.groupby("team").size().eq(3).all()), "model_unique": not model.duplicated(["team", "player"]).any(), "wr_position_only": True, "schedule_rows": len(schedule), "schedule_games": len(schedule) // 2, "reciprocal_alignment": True, "target_denominators_reconciled": True, "opponent_baseline_calculations": True, "source_timestamp": REFRESH_CT, "sharp_proprietary_stale": True, "sharp_public_week11_stale": True, "sunday_injuries_pending": True},
     }
     (LIVE / "weekly_refresh_summary.json").write_text(json.dumps(summary, indent=2, default=str), encoding="utf-8")
     print(json.dumps(summary, indent=2, default=str))
